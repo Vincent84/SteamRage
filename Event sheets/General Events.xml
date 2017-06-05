@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>General Events</name>
+    <events>
+        <variable constant="0" name="ArmaUtilizzata" sid="708975744883052" static="0" type="number">0</variable>
+        <event-group description="" sid="897467903832367" title="Configurazioni Generali">
+            <sub-events>
+                <event-block sid="172336751252339">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="174201032270030" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="809960523446398" type="Protagonista">
+                            <param id="0" name="Object">PlayerBox</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="550501636430351" title="Gestione Protagonista">
+            <sub-events>
+                <event-group description="" sid="322184154686564" title="Movimento Protagonista">
+                    <sub-events>
+                        <event-group description="" sid="576985381990431" title="Tastiera Movimento Protagonista">
+                            <sub-events>
+                                <event-block sid="857109224666825">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="311852950112242" type="Keyboard">
+                                            <param id="0" name="Key">68 (D)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="985528489999351" type="PlayerBox">
+                                            <param id="0" name="Control">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="814013761230110" type="Protagonista">
+                                            <param id="0" name="Instance variable">Direzione</param>
+                                            <param id="1" name="Value">&quot;Right&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="918896794604835">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="602469381734936" type="Keyboard">
+                                            <param id="0" name="Key">65 (A)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="740147303209708" type="PlayerBox">
+                                            <param id="0" name="Control">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="504941041290682" type="Protagonista">
+                                            <param id="0" name="Instance variable">Direzione</param>
+                                            <param id="1" name="Value">&quot;Left&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="819951492687703">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="817045197639042" type="Keyboard">
+                                            <param id="0" name="Key">87 (W)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="327005670546519" type="PlayerBox">
+                                            <param id="0" name="Control">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="702355441144605">
+                                    <conditions>
+                                        <condition behavior="Platform" id="2" name="Is on floor" sid="485846985673262" type="PlayerBox" />
+                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="924710025834396" type="PlayerBox" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="253961916090131" type="Text">
+                                            <param id="0" name="Text">&quot;Stop &quot;&amp;Protagonista.Direzione</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="739758046187782" type="Function">
+                                            <param id="0" name="Name">&quot;setStopAnimations&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="450464670723705">
+                                            <conditions>
+                                                <condition id="4" name="On finished" sid="914690217384960" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;Shoot&quot;&amp;Protagonista.Direzione&amp;ArmaUtilizzata</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="165793429618221" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;Idle&quot;&amp;Protagonista.Direzione&amp;ArmaUtilizzata</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="376652837832180" type="Protagonista">
+                                                    <param id="0" name="Instance variable">Sparando</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="762243114952707">
+                                            <conditions>
+                                                <condition id="4" name="On finished" sid="136601235878651" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;Bomb&quot;&amp;Protagonista.Direzione&amp;ArmaUtilizzata</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="629138627554155" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;Idle&quot;&amp;Protagonista.Direzione&amp;ArmaUtilizzata</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="898642869244617" type="Protagonista">
+                                                    <param id="0" name="Instance variable">LanciandoBombe</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="761920912061878">
+                                            <conditions>
+                                                <condition id="4" name="On finished" sid="778622142469036" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;Body&quot;&amp;Protagonista.Direzione&amp;ArmaUtilizzata</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="556001974833973" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;Idle&quot;&amp;Protagonista.Direzione&amp;ArmaUtilizzata</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="376934092893405" type="Protagonista">
+                                                    <param id="0" name="Instance variable">CorpoACorpo</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="826320665725324">
+                                    <conditions>
+                                        <condition behavior="Platform" id="2" name="Is on floor" sid="746221314779916" type="PlayerBox" />
+                                        <condition behavior="Platform" id="0" name="Is moving" sid="434168485425361" type="PlayerBox" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="575472845393291" type="Text">
+                                            <param id="0" name="Text">&quot;Move &quot;&amp;Protagonista.Direzione</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block any="1" sid="341734490630403">
+                                    <conditions>
+                                        <condition behavior="Platform" id="5" name="On jump" sid="287819678828830" type="PlayerBox" />
+                                        <condition behavior="Platform" id="6" name="On fall" sid="380707448115030" type="PlayerBox" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="497040687623059" type="Text">
+                                            <param id="0" name="Text">&quot;Jump &quot;&amp;Protagonista.Direzione</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" sid="965458123990494" title="Funzioni Movimento Protagonista">
+                            <sub-events>
+                                <event-block sid="482027158038375">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="738169323650709" type="Function">
+                                            <param id="0" name="Name">&quot;setStopAnimations&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="956645690794046">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="799774822421690" type="Protagonista">
+                                                    <param id="0" name="Instance variable">Sparando</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="393537469795601" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;Shoot&quot;&amp;Protagonista.Direzione&amp;ArmaUtilizzata</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="950135829330188">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="913400655903608" type="System" />
+                                                <condition id="-8" name="Is boolean instance variable set" sid="425924867928443" type="Protagonista">
+                                                    <param id="0" name="Instance variable">CorpoACorpo</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="729200459414325" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;Body&quot;&amp;Protagonista.Direzione&amp;ArmaUtilizzata</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="494640345903313">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="560411060271472" type="System" />
+                                                <condition id="-8" name="Is boolean instance variable set" sid="161774970995568" type="Protagonista">
+                                                    <param id="0" name="Instance variable">Morendo</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="702371085934419" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;Death&quot;&amp;Protagonista.Direzione&amp;ArmaUtilizzata</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="157720036192496">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="819553403321525" type="System" />
+                                                <condition id="-8" name="Is boolean instance variable set" sid="122327720288495" type="Protagonista">
+                                                    <param id="0" name="Instance variable">LanciandoBombe</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="107887608279588" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;Bomb&quot;&amp;Protagonista.Direzione&amp;ArmaUtilizzata</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="971617141307951">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="786161307050313" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="518738064244689" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;Idle&quot;&amp;Protagonista.Direzione&amp;ArmaUtilizzata</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="281031359623334" title="Attacco">
+                    <sub-events>
+                        <event-group description="" sid="561200014603871" title="Tastiera Attacco Protagonista">
+                            <sub-events>
+                                <event-block sid="281076621914364">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="810677347386426" type="Keyboard">
+                                            <param id="0" name="Key">32 (Space)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="982471074236115" type="Protagonista">
+                                            <param id="0" name="Instance variable">Sparando</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="337219587948431">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="709972203031714" type="Keyboard">
+                                            <param id="0" name="Key">69 (E)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="493712244041937" type="Protagonista">
+                                            <param id="0" name="Instance variable">LanciandoBombe</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="491387968132170">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="321077747270561" type="Keyboard">
+                                            <param id="0" name="Key">70 (F)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="643126445939841" type="Protagonista">
+                                            <param id="0" name="Instance variable">CorpoACorpo</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="500049800736933" title="Morte" />
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
