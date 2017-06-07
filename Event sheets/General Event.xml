@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>General Event</name>
     <events>
+        <variable constant="0" name="WithWeapon" sid="837656086603762" static="0" type="number">0</variable>
         <variable constant="1" name="COMBO_MAX" sid="969684154536394" static="0" type="number">5</variable>
         <variable constant="0" name="ComboCount" sid="424798668338193" static="0" type="number">0</variable>
         <variable constant="0" name="BombImpulseY" sid="257949413262742" static="0" type="number">0.6</variable>
@@ -41,11 +42,89 @@
                         <action id="-9" name="Destroy" sid="751111760886977" type="FamigliaProiettile" />
                     </actions>
                 </event-block>
+                <event-block sid="896128788275750">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="653807817371808" type="System">
+                            <param id="0" name="Variable">WithWeapon</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="529275499818981" type="System">
+                            <param id="0" name="Group name">&quot;Movimento Protagonista Con Arma&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="756741442750256" type="System">
+                            <param id="0" name="Group name">&quot;Movimento Protagonista Senza Arma&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="470593674430062">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="662838749691710" type="System" />
+                        <condition id="-14" name="Compare variable" sid="122798943305789" type="System">
+                            <param id="0" name="Variable">WithWeapon</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="875894316517364" type="System">
+                            <param id="0" name="Group name">&quot;Movimento Protagonista Con Arma&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="837569749401095" type="System">
+                            <param id="0" name="Group name">&quot;Movimento Protagonista Senza Arma&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="304037843220111">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="442665072864756" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="337702862519504">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="867510428081657" type="System">
+                                    <param id="0" name="Variable">WithWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="448063036821206" type="Protagonista">
+                                    <param id="0" name="Animation">&quot;IdleSimpleRight&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="562653155692782">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="278046965454348" type="System" />
+                                <condition id="-14" name="Compare variable" sid="128968243622172" type="System">
+                                    <param id="0" name="Variable">WithWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="873049113592110" type="Protagonista">
+                                    <param id="0" name="Animation">&quot;IdleRight&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="320478729035451" title="Gestione Protagonista">
             <sub-events>
-                <event-group description="" sid="786386185183267" title="Movimento Protagonista">
+                <event-group description="" sid="791523133606018" title="Movimento Protagonista Generale">
                     <sub-events>
                         <event-block sid="645367690145675">
                             <conditions>
@@ -91,6 +170,102 @@
                                 </action>
                             </actions>
                         </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="151865225168588" title="Movimento Protagonista Senza Arma">
+                    <sub-events>
+                        <event-block sid="904767252861644">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="907654125769237" type="PlayerBox" />
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="835468343113010" type="PlayerBox" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="141044891723757">
+                                    <conditions>
+                                        <condition id="4" name="On finished" sid="353346106328550" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootBodySimple&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="102481998150768" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootBodySimple&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="867089149820682" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;IdleSimple&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="102892706493079">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="355484575438080" type="PlayerBox" />
+                                <condition behavior="Platform" id="0" name="Is moving" sid="401349111239643" type="PlayerBox" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="790358615659537">
+                                    <conditions>
+                                        <condition id="4" name="On finished" sid="869209213907353" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootBodySimple&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="908792155202619" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootBodySimple&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="419457180389367" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;Simple&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block any="1" sid="817196066372340">
+                            <conditions>
+                                <condition behavior="Platform" id="3" name="Is jumping" sid="890446914943820" type="PlayerBox" />
+                                <condition behavior="Platform" id="4" name="Is falling" sid="869866430400856" type="PlayerBox" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="641608458482131">
+                                    <conditions>
+                                        <condition id="4" name="On finished" sid="184858627524117" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootBodySimple&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="213083735982674" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootBodySimple&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="120692751615072" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;JumpSimple&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="686731845620233">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="601233742697327" type="Keyboard">
+                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="452927933036417" type="Function">
+                                    <param id="0" name="Name">&quot;setAttaccoSenzaArma&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="786386185183267" title="Movimento Protagonista Con Arma">
+                    <sub-events>
                         <event-block sid="782993614589637">
                             <conditions>
                                 <condition behavior="Platform" id="2" name="Is on floor" sid="334016034454161" type="PlayerBox" />
@@ -764,6 +939,81 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
+                        <event-block sid="294052355201388">
+                            <conditions>
+                                <condition id="0" name="On function" sid="107259916365212" type="Function">
+                                    <param id="0" name="Name">&quot;setAttaccoSenzaArma&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="973307566593011">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="797201049890043" type="Protagonista">
+                                            <param id="0" name="Object">FamigliaNemiciUmani</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="209024215890048" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootBodySimple&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="571894770564394">
+                                            <conditions>
+                                                <condition id="1" name="Is overlapping another object" sid="715773822050623" type="Protagonista">
+                                                    <param id="0" name="Object">SoldatoSemplice</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="821371379129242" type="SoldatoSemplice">
+                                                    <param id="0" name="Instance variable">isDead</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="636700493898335" type="Function">
+                                                    <param id="0" name="Name">&quot;setMorteNemici&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;Semplice&quot;{###}SoldatoSemplice.UID</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="627076901265288">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="436614448232321" type="System" />
+                                                <condition id="1" name="Is overlapping another object" sid="397326430414061" type="Protagonista">
+                                                    <param id="0" name="Object">Kamikaze</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="295406849539493" type="Kamikaze">
+                                                    <param id="0" name="Instance variable">isDead</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="423557144033802" type="Function">
+                                                    <param id="0" name="Name">&quot;setMorteNemici&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;Kamikaze&quot;{###}Kamikaze.UID</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="237516586923676">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="924488022349477" type="System" />
+                                                <condition id="1" name="Is overlapping another object" sid="924810606375570" type="Protagonista">
+                                                    <param id="0" name="Object">Corazzato</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="156697841528652" type="Corazzato">
+                                                    <param id="0" name="Instance variable">isDead</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="478334023085766" type="Function">
+                                                    <param id="0" name="Name">&quot;setMorteNemici&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;Corazzato&quot;{###}Corazzato.UID</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
                         <event-block sid="823126162003458">
                             <conditions>
                                 <condition id="0" name="On function" sid="822034331582728" type="Function">
@@ -912,6 +1162,24 @@
                         </event-block>
                     </sub-events>
                 </event-group>
+                <event-group description="" sid="322799298393096" title="Acquisizione PowerUp">
+                    <sub-events>
+                        <event-block sid="830889563197123">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="995592690029902" type="Protagonista">
+                                    <param id="0" name="Object">ArmaIniziale</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="410524451436116" type="System">
+                                    <param id="0" name="Variable">WithWeapon</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="721775400536883" type="ArmaIniziale" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
             </sub-events>
         </event-group>
         <event-group description="" sid="884785567602816" title="Gestione Generale Nemici">
@@ -1036,6 +1304,24 @@
                     <actions>
                         <action id="-9" name="Destroy" sid="491785177350834" type="SoldatoSemplice" />
                     </actions>
+                    <sub-events>
+                        <event-block sid="258876073730679">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="176889022791576" type="System">
+                                    <param id="0" name="Variable">WithWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="279447556893466" type="SoldatoSemplice">
+                                    <param id="0" name="Object">ArmaIniziale</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="132870643794419">
                     <conditions>
