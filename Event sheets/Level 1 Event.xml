@@ -29,7 +29,6 @@
                         <condition id="-11" name="For Each" sid="271220611331063" type="System">
                             <param id="0" name="Object">SoldatoSemplice</param>
                         </condition>
-                        <condition id="-3" name="Is on-screen" sid="889667156992420" type="SoldatoSemplice" />
                         <condition id="2" inverted="1" name="Is playing" sid="258644469047844" type="SoldatoSemplice">
                             <param id="0" name="Animation">&quot;Sleeping&quot;</param>
                         </condition>
@@ -90,9 +89,14 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="0" name="Call function" sid="440419388030860" type="Function">
-                                                    <param id="0" name="Name">&quot;setAttaccoMoschetto&quot;</param>
-                                                    <param id="1" name="Parameter {n}">SoldatoSemplice.UID{###}0</param>
+                                                <action id="4" name="Set animation" sid="239202595754364" type="SoldatoSemplice">
+                                                    <param id="0" name="Animation">&quot;ShootRight&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="0" name="Spawn another object" sid="150129630149844" type="SoldatoSemplice">
+                                                    <param id="0" name="Object">ProiettileSoldatoSemplice</param>
+                                                    <param id="1" name="Layer">1</param>
+                                                    <param id="2" name="Image point">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -148,58 +152,14 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="0" name="Call function" sid="651504486745228" type="Function">
-                                                    <param id="0" name="Name">&quot;setAttaccoMoschetto&quot;</param>
-                                                    <param id="1" name="Parameter {n}">SoldatoSemplice.UID{###}1</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-group description="" sid="972820777945869" title="Attacco Soldato Semplice">
-                    <sub-events>
-                        <event-block sid="537363050353132">
-                            <conditions>
-                                <condition id="0" name="On function" sid="932436384823045" type="Function">
-                                    <param id="0" name="Name">&quot;setAttaccoMoschetto&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="939385386327671">
-                                    <conditions>
-                                        <condition id="-14" name="Pick by unique ID" sid="950002149331081" type="SoldatoSemplice">
-                                            <param id="0" name="Unique ID">Function.Param(0)</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="239202595754364" type="SoldatoSemplice">
-                                            <param id="0" name="Animation">&quot;ShootRight&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                        <action id="0" name="Spawn another object" sid="201761608766034" type="SoldatoSemplice">
-                                            <param id="0" name="Object">ProiettileSoldatoSemplice</param>
-                                            <param id="1" name="Layer">1</param>
-                                            <param id="2" name="Image point">1</param>
-                                        </action>
-                                    </actions>
-                                    <sub-events>
-                                        <event-block sid="611366446196607">
-                                            <conditions>
-                                                <condition id="1" name="Compare parameter" sid="133772919895646" type="Function">
-                                                    <param id="0" name="Index">Function.Param(1)</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">1</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
                                                 <action id="4" name="Set animation" sid="175178052516382" type="SoldatoSemplice">
                                                     <param id="0" name="Animation">&quot;ShootLeft&quot;</param>
                                                     <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="0" name="Spawn another object" sid="201761608766034" type="SoldatoSemplice">
+                                                    <param id="0" name="Object">ProiettileSoldatoSemplice</param>
+                                                    <param id="1" name="Layer">1</param>
+                                                    <param id="2" name="Image point">1</param>
                                                 </action>
                                                 <action id="-8" name="Set angle" sid="813389036785627" type="ProiettileSoldatoSemplice">
                                                     <param id="0" name="Angle">-180</param>
@@ -211,7 +171,8 @@
                             </sub-events>
                         </event-block>
                     </sub-events>
-                </event-group>
+                </event-block>
+                <event-group description="" sid="972820777945869" title="Attacco Soldato Semplice" />
             </sub-events>
         </event-group>
         <event-group description="" sid="225387340351996" title="Kamikaze" />

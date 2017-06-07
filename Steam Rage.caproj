@@ -14,6 +14,7 @@
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
@@ -753,22 +754,22 @@
                         <behavior id="solid" />
                     </behavior-type>
                 </behaviors>
-                <texture original-source="C:\Users\dbga_45\Desktop\Piattaforme.png" />
+                <texture original-source="C:\Users\dbga_45\Downloads\Tilemaps1.0-20170607T141149Z-001\Tilemaps1.0\Livello1 Parte1\Piattaforme.png" />
                 <tiles />
             </object-type>
             <object-type name="TilemapSfondo" sid="674636549077051">
                 <plugin id="Tilemap" />
-                <texture original-source="C:\Users\dbga_45\Downloads\Environment Layers-20170606T075146Z-001\Environment Layers\64 x 64 Sfondo.png" />
+                <texture original-source="C:\Users\dbga_45\Downloads\Tilemaps1.0-20170607T141149Z-001\Tilemaps1.0\Livello1 Parte1\TilemapSfondo.png" />
                 <tiles />
             </object-type>
             <object-type name="ArcadeDistruttoAvanti" sid="762538543010891">
                 <plugin id="Tilemap" />
-                <texture original-source="C:\Users\dbga_45\Downloads\Environment Layers-20170606T075146Z-001\Environment Layers\64x64 Arcade Distrutto Tutorial.png" />
+                <texture original-source="C:\Users\dbga_45\Downloads\Tilemaps1.0-20170607T141149Z-001\Tilemaps1.0\Livello1 Parte1\ArcadeDistruttoAvanti.png" />
                 <tiles />
             </object-type>
             <object-type name="TilemapProps" sid="356668303928306">
                 <plugin id="Tilemap" />
-                <texture original-source="C:\Users\dbga_45\Desktop\TilemapProps.png" />
+                <texture original-source="C:\Users\dbga_45\Downloads\Tilemaps1.0-20170607T141149Z-001\Tilemaps1.0\Livello1 Parte1\TilemapProps.png" />
                 <tiles />
             </object-type>
             <object-type name="TilemapSolidi" sid="947254710462065">
@@ -781,7 +782,7 @@
                         <behavior id="Physics" />
                     </behavior-type>
                 </behaviors>
-                <texture original-source="C:\Users\dbga_45\Desktop\TilemapSolidi.png" />
+                <texture original-source="C:\Users\dbga_45\Downloads\Tilemaps1.0-20170607T141149Z-001\Tilemaps1.0\Livello1 Parte1\TilemapSolidi.png" />
                 <tiles />
             </object-type>
             <object-type name="ArcadeDistruttoAvanti2" sid="729560048891280">
@@ -791,7 +792,7 @@
             </object-type>
             <object-type name="ArcadeDistruttoDietro" sid="702537366487107">
                 <plugin id="Tilemap" />
-                <texture original-source="C:\Users\dbga_45\Downloads\Environment Layers-20170606T075146Z-001\Environment Layers\64x64 Arcade Distrutto Tutorial.png" />
+                <texture original-source="C:\Users\dbga_45\Downloads\Tilemaps1.0-20170607T141149Z-001\Tilemaps1.0\Livello1 Parte1\ArcadeDistruttoDietro.png" />
                 <tiles />
             </object-type>
             <object-type name="TilemapJumpTrue" sid="934311966236178">
@@ -806,8 +807,12 @@
             </object-type>
             <object-type name="TilemapMorte" sid="634867917598656">
                 <plugin id="Tilemap" />
-                <texture original-source="C:\Users\dbga_45\Downloads\64x64 Tiles Morte.png" />
+                <texture original-source="C:\Users\dbga_45\Downloads\Tilemaps1.0-20170607T141149Z-001\Tilemaps1.0\Livello1 Parte1\TilemapMorte.png" />
                 <tiles />
+            </object-type>
+            <object-type name="TiledBackground" sid="446987245922176">
+                <plugin id="TiledBg" />
+                <texture original-source="C:\Users\dbga_45\Downloads\Sfondo Città Intera.jpg" />
             </object-type>
         </object-folder>
         <object-folder name="Nemici">
@@ -1056,6 +1061,10 @@
             </object-type>
             <object-type name="Kamikaze" sid="998683874340369">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Attacco" sid="436842469496669" type="boolean" />
+                    <instance-variable name="Direzione" sid="488484204699527" type="string" />
+                </instance-variables>
                 <animation-folder>
                     <animation framecount="5" loop="1" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="649430639070382" speed="8">
                         <frame duration="1" hotspotX="0.5" hotspotY="1">
