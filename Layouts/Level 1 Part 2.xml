@@ -51,7 +51,7 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -101,7 +101,7 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -139,11 +139,13 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
+                        <Movable>false</Movable>
+                        <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>60</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -151,14 +153,14 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>100</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>

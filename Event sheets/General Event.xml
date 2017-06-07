@@ -3,6 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>General Event</name>
     <events>
+        <variable constant="0" name="CameraScrollX" sid="987848811541454" static="0" type="number">200</variable>
+        <variable constant="0" name="CameraMoveX" sid="975195414662300" static="0" type="number">1</variable>
+        <variable constant="0" name="CameraMoveY" sid="751976523677711" static="0" type="number">0</variable>
         <variable constant="0" name="WithWeapon" sid="837656086603762" static="0" type="number">0</variable>
         <variable constant="1" name="COMBO_MAX" sid="969684154536394" static="0" type="number">5</variable>
         <variable constant="0" name="ComboCount" sid="424798668338193" static="0" type="number">0</variable>
@@ -119,6 +122,92 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="546391631264130" title="Gestione Telecamera">
+            <sub-events>
+                <event-block sid="255478497705399">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="695725498450864" type="Protagonista">
+                            <param id="0" name="Object">CameraTrigger</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="781611677509338" type="System">
+                            <param id="0" name="Variable">CameraMoveX</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="330963455534579" type="CameraTrigger" />
+                    </actions>
+                </event-block>
+                <event-block sid="915541481392744">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="478568871499413" type="System">
+                            <param id="0" name="Variable">CameraMoveX</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="691368970648655">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="680049943954239" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Scroll to X" sid="799059659614214" type="System">
+                                    <param id="0" name="X">PlayerBox.X+CameraScrollX</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="217960769556441">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="605392285531358" type="System" />
+                        <condition id="-14" name="Compare variable" sid="494355864775111" type="System">
+                            <param id="0" name="Variable">CameraMoveX</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Scroll to X" sid="476160146067852" type="System">
+                            <param id="0" name="X">scrollx</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="731982181744539" type="System">
+                            <param id="0" name="Object to create">CameraTrigger</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">ViewportLeft(0)</param>
+                            <param id="3" name="Y">scrolly</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="898508275875492" type="CameraTrigger">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="928858159413793" type="System">
+                            <param id="0" name="Object to create">CameraTrigger</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">ViewportRight(0)</param>
+                            <param id="3" name="Y">scrolly</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="248901664026013" type="CameraTrigger">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="103695413418656">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="587510714817005" type="CameraTrigger">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="594117630477563" type="CameraTrigger">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
@@ -1176,7 +1265,24 @@
                                     <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="-9" name="Destroy" sid="721775400536883" type="ArmaIniziale" />
+                                <action id="-9" name="Set value" sid="595768229652403" type="System">
+                                    <param id="0" name="Variable">CameraMoveX</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="261649630669626">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="936428402180853" type="CameraTrigger">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="471650036249120" type="CameraTrigger" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-group>

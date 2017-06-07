@@ -449,11 +449,13 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
+                        <Movable>false</Movable>
+                        <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>60</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -461,14 +463,14 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>100</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -499,11 +501,13 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
+                        <Movable>false</Movable>
+                        <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>60</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -511,14 +515,14 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>100</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -605,6 +609,139 @@
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="CameraTrigger" uid="16">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1346</x>
+                        <y>1745</y>
+                        <z>0</z>
+                        <width>5</width>
+                        <height>350</height>
+                        <depth>0</depth>
+                        <hotspotX>0.600000024</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SoldatoSemplice" uid="17">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Point>100</Point>
+                        <isDead>false</isDead>
+                        <Movable>true</Movable>
+                        <OffsetFuoco>0</OffsetFuoco>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Platform">
+                            <properties>
+                                <max-speed>60</max-speed>
+                                <acceleration>1500</acceleration>
+                                <deceleration>1500</deceleration>
+                                <jump-strength>650</jump-strength>
+                                <gravity>1500</gravity>
+                                <max-fall-speed>1000</max-fall-speed>
+                                <double-jump>Disabled</double-jump>
+                                <jump-sustain>0</jump-sustain>
+                                <default-controls>No</default-controls>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="LineOfSight">
+                            <properties>
+                                <obstacles>Solids</obstacles>
+                                <range>100</range>
+                                <cone-of-view>360</cone-of-view>
+                                <use-collision-cells>Yes</use-collision-cells>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>768</x>
+                        <y>1920</y>
+                        <z>0</z>
+                        <width>64</width>
+                        <height>64</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>1</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SoldatoSemplice" uid="18">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Point>100</Point>
+                        <isDead>false</isDead>
+                        <Movable>true</Movable>
+                        <OffsetFuoco>0</OffsetFuoco>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Platform">
+                            <properties>
+                                <max-speed>60</max-speed>
+                                <acceleration>1500</acceleration>
+                                <deceleration>1500</deceleration>
+                                <jump-strength>650</jump-strength>
+                                <gravity>1500</gravity>
+                                <max-fall-speed>1000</max-fall-speed>
+                                <double-jump>Disabled</double-jump>
+                                <jump-sustain>0</jump-sustain>
+                                <default-controls>No</default-controls>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="LineOfSight">
+                            <properties>
+                                <obstacles>Solids</obstacles>
+                                <range>100</range>
+                                <cone-of-view>360</cone-of-view>
+                                <use-collision-cells>Yes</use-collision-cells>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>352</x>
+                        <y>1920</y>
+                        <z>0</z>
+                        <width>64</width>
+                        <height>64</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>1</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -782,7 +919,7 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -832,7 +969,7 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -882,7 +1019,7 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -932,7 +1069,7 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -970,11 +1107,13 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
+                        <Movable>false</Movable>
+                        <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>60</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -982,14 +1121,14 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>100</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -1538,7 +1677,7 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -1588,7 +1727,7 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -1626,11 +1765,13 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
+                        <Movable>false</Movable>
+                        <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>60</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -1638,14 +1779,14 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>100</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -1676,11 +1817,13 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
+                        <Movable>false</Movable>
+                        <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>60</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -1688,14 +1831,14 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>100</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -1738,7 +1881,7 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -1788,7 +1931,7 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -2200,11 +2343,13 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
+                        <Movable>false</Movable>
+                        <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>60</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -2212,14 +2357,14 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>100</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -2250,11 +2395,13 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
+                        <Movable>false</Movable>
+                        <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>60</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -2262,14 +2409,14 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>100</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -2300,11 +2447,13 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
+                        <Movable>false</Movable>
+                        <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>60</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -2312,14 +2461,14 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>100</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -2362,7 +2511,7 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -2412,7 +2561,7 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -2462,7 +2611,7 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -2512,7 +2661,7 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -2562,7 +2711,7 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -2600,11 +2749,13 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
+                        <Movable>false</Movable>
+                        <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>60</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -2612,14 +2763,14 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>100</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -2650,11 +2801,13 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
+                        <Movable>false</Movable>
+                        <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>60</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -2662,14 +2815,14 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>100</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -2700,11 +2853,13 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
+                        <Movable>false</Movable>
+                        <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>60</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -2712,14 +2867,14 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>100</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -2762,7 +2917,7 @@
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>0</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
