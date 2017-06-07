@@ -1,0 +1,1535 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Steam Rage</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>2lbnaotig5h8b</unique-id>
+    <saved-with-version>24400</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
+        <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
+        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>768</width>
+        <height>608</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="Personaggio">
+            <object-type name="Protagonista" sid="989385103680539">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Direction" sid="922863674564946" type="string" />
+                    <instance-variable name="IsShooting" sid="812630102244671" type="boolean" />
+                    <instance-variable name="isShootBody" sid="768711243802552" type="boolean" />
+                    <instance-variable name="IsDeading" sid="569057715072580" type="boolean" />
+                    <instance-variable name="isBombing" sid="790354350079622" type="boolean" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="6" loop="1" name="IdleRight" pingpong="0" repeatcount="1" repeatto="0" sid="686402486170109" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="6" loop="1" name="IdleLeft" pingpong="0" repeatcount="1" repeatto="0" sid="169297837033321" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="8" loop="1" name="Right" pingpong="0" repeatcount="1" repeatto="0" sid="460028287588644" speed="14">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="8" loop="1" name="Left" pingpong="0" repeatcount="1" repeatto="0" sid="659420717879550" speed="14">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="JumpRight" pingpong="0" repeatcount="1" repeatto="0" sid="438901477384041" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="JumpLeft" pingpong="0" repeatcount="1" repeatto="0" sid="229656549050864" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="5" loop="0" name="ShootRight" pingpong="0" repeatcount="1" repeatto="0" sid="942006352970610" speed="12">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="1.03125" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="ShootR" x="1" y="0.296875" />
+                            <image-point name="Imagepoint 1" x="1.03125" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="1.03125" y="0.296875" />
+                            <image-point name="ShootR" x="1" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="ShootR" x="1" y="0.296875" />
+                            <image-point name="Imagepoint 1" x="1.03125" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="ShootR" x="1" y="0.296875" />
+                            <image-point name="Imagepoint 1" x="1.03125" y="0.296875" />
+                        </frame>
+                    </animation>
+                    <animation framecount="6" loop="0" name="ShootLeft" pingpong="0" repeatcount="1" repeatto="0" sid="929099242621176" speed="12">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="-0.015625" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="-0.03125" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="-0.03125" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="-0.03125" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="-0.03125" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="-0.03125" y="0.296875" />
+                        </frame>
+                    </animation>
+                    <animation framecount="6" loop="0" name="ShootRunRight" pingpong="0" repeatcount="1" repeatto="0" sid="469898171136965" speed="30">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="1.04688" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="1.04688" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="1.04688" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="1.04688" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="1.04688" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="1.04688" y="0.296875" />
+                        </frame>
+                    </animation>
+                    <animation framecount="6" loop="0" name="ShootRunLeft" pingpong="0" repeatcount="1" repeatto="0" sid="280036611781175" speed="30">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="-0.03125" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="-0.03125" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="-0.03125" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="-0.03125" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="-0.03125" y="0.296875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="-0.03125" y="0.296875" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="ShootUpRight" pingpong="0" repeatcount="1" repeatto="0" sid="619643381513853" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Vincenzo\Downloads\drive-download-20170529T215833Z-001\Shoot_Up_Right.png">
+                            <image-point name="Imagepoint 1" x="0.625" y="-0.046875" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="ShootUpLeft" pingpong="0" repeatcount="1" repeatto="0" sid="254085825131128" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Vincenzo\Downloads\drive-download-20170529T215833Z-001\Shoot_Up_Left.png">
+                            <image-point name="Imagepoint 1" x="0.375" y="-0.046875" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="ShootDownRight" pingpong="0" repeatcount="1" repeatto="0" sid="566289033858926" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Vincenzo\Downloads\Shoot_Down_Right.png">
+                            <image-point name="Imagepoint 1" x="0.53125" y="0.90625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="ShootDownLeft" pingpong="0" repeatcount="1" repeatto="0" sid="934589420169260" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Vincenzo\Downloads\Shoot_Down_Left.png">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.90625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="ShootJumpRight" pingpong="0" repeatcount="1" repeatto="0" sid="797263353435943" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="1.03125" y="0.296875" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="ShootJumpLeft" pingpong="0" repeatcount="1" repeatto="0" sid="285082398383291" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Vincenzo\Desktop\Sprite sheet Protagonista\Shoot_Jump_Left.png">
+                            <image-point name="Imagepoint 1" x="-0.015625" y="0.296875" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="ShootJumpUpRight" pingpong="0" repeatcount="1" repeatto="0" sid="155019649489639" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Vincenzo\Desktop\Sprite sheet Protagonista\Shoot_Jump_Up_Right.png">
+                            <image-point name="Imagepoint 1" x="0.625" y="-0.046875" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="ShootJumpUpLeft" pingpong="0" repeatcount="1" repeatto="0" sid="228032174149792" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Vincenzo\Desktop\Sprite sheet Protagonista\Shoot_Jump_Up_Left.png">
+                            <image-point name="Imagepoint 1" x="0.375" y="-0.046875" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="ShootJumpDownRight" pingpong="0" repeatcount="1" repeatto="0" sid="459473534454678" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Vincenzo\Desktop\Sprite sheet Protagonista\Shoot_Jump_Down_Right.png">
+                            <image-point name="Imagepoint 1" x="0.53125" y="0.90625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="ShootJumpDownLeft" pingpong="0" repeatcount="1" repeatto="0" sid="928770925038364" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Vincenzo\Desktop\Sprite sheet Protagonista\Shoot_Jump_Down_Left.png">
+                            <image-point name="Imagepoint 1" x="0.484375" y="0.90625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="6" loop="0" name="ShootMoveUpRight" pingpong="0" repeatcount="1" repeatto="0" sid="794328632862354" speed="18">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.625" y="-0.046875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.625" y="-0.046875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.625" y="-0.046875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.625" y="-0.046875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.625" y="-0.046875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.625" y="-0.046875" />
+                        </frame>
+                    </animation>
+                    <animation framecount="6" loop="0" name="ShootMoveUpLeft" pingpong="0" repeatcount="1" repeatto="0" sid="659639067851876" speed="18">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.390625" y="-0.046875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.390625" y="-0.046875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.390625" y="-0.046875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.390625" y="-0.046875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.390625" y="-0.046875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.390625" y="-0.046875" />
+                        </frame>
+                    </animation>
+                    <animation framecount="6" loop="0" name="ShootMoveDownRight" pingpong="0" repeatcount="1" repeatto="0" sid="999244479174422" speed="18">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.53125" y="0.90625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.53125" y="0.90625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.53125" y="0.90625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.53125" y="0.90625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.53125" y="0.90625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.53125" y="0.90625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="6" loop="0" name="ShootMoveDownLeft" pingpong="0" repeatcount="1" repeatto="0" sid="655805866342934" speed="18">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.90625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.90625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.90625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.90625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.90625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.90625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="3" loop="0" name="LaunchBombRight" pingpong="0" repeatcount="1" repeatto="0" sid="911193943726875" speed="12">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.6875" y="0.140625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.6875" y="0.140625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.6875" y="0.140625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="3" loop="0" name="LaunchBombLeft" pingpong="0" repeatcount="1" repeatto="0" sid="849227964397890" speed="12">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.34375" y="0.140625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.34375" y="0.140625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.34375" y="0.140625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="3" loop="0" name="LaunchBombJumpRight" pingpong="0" repeatcount="1" repeatto="0" sid="663062394368719" speed="12">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.6875" y="0.140625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.6875" y="0.140625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.6875" y="0.140625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="3" loop="0" name="LaunchBombJumpLeft" pingpong="0" repeatcount="1" repeatto="0" sid="877605235769670" speed="12">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.34375" y="0.140625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.34375" y="0.140625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.34375" y="0.140625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="0" name="ShootBodyRight" pingpong="0" repeatcount="1" repeatto="0" sid="522142049770121" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="4" loop="0" name="ShootBodyLeft" pingpong="0" repeatcount="1" repeatto="0" sid="499153459878806" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="6" loop="0" name="DeathRight" pingpong="0" repeatcount="1" repeatto="0" sid="578915732460064" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="6" loop="0" name="DeathLeft" pingpong="0" repeatcount="1" repeatto="0" sid="730038753746795" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Arma" sid="218330212944711">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="BoundToLayout" sid="851805167891886">
+                        <behavior id="bound" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="895873480499764" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="1" y="0.5" />
+                            <image-point name="Imagepoint 2" x="0.5" y="0" />
+                            <image-point name="Imagepoint 3" x="0.5" y="1" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Proiettile" sid="470482252998668">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="502256196881465" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Bomba" sid="226313023081955">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Physics" sid="633008051455349">
+                        <behavior id="Physics" />
+                    </behavior-type>
+                    <behavior-type name="Timer" sid="205551370564385">
+                        <behavior id="Timer" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="3" loop="0" name="Right" pingpong="0" repeatcount="1" repeatto="0" sid="722447248660288" speed="3">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="3" loop="0" name="Left" pingpong="0" repeatcount="1" repeatto="0" sid="369455800437270" speed="3">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Esplosione" sid="634937416744996">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="10" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="630141463212830" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.9375" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.9375" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.9375" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.9375" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.9375" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.9375" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.9375" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.9375" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.9375" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.9375" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="PlayerBox" sid="400093492794942">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Platform" sid="581151657005077">
+                        <behavior id="Platform" />
+                    </behavior-type>
+                    <behavior-type name="BoundToLayout" sid="842089432119098">
+                        <behavior id="bound" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="438188895024973" speed="5">
+                        <frame duration="1" hotspotX="0.52" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Pagina iniziale">
+            <object-type name="Steam" sid="505939014682495">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="226033532844649">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+            <object-type name="Rage" sid="926776009125675">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="436966006729053">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+        </object-folder>
+        <object-folder name="Ambiente">
+            <object-type name="Piattaforme" sid="676960588966685">
+                <plugin id="Tilemap" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="415357703263468">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\Public\Documents\Steam Rage\Graphics\Tilesets\Tilesets\Platforms32x32.png" />
+                <tiles />
+            </object-type>
+            <object-type name="TilemapSfondo" sid="674636549077051">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\dbga_45\Downloads\Environment Layers-20170606T075146Z-001\Environment Layers\64 x 64 Sfondo.png" />
+                <tiles />
+            </object-type>
+            <object-type name="ArcadeDistruttoAvanti" sid="762538543010891">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\dbga_45\Downloads\Environment Layers-20170606T075146Z-001\Environment Layers\64x64 Arcade Distrutto Tutorial.png" />
+                <tiles />
+            </object-type>
+            <object-type name="TilemapProps" sid="356668303928306">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\dbga_45\Downloads\Environment Layers-20170606T075146Z-001\Environment Layers\64x64 Props in Secondo Piano.png" />
+                <tiles />
+            </object-type>
+            <object-type name="TilemapSolidi" sid="947254710462065">
+                <plugin id="Tilemap" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="530549315520588">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="Physics" sid="536326258063503">
+                        <behavior id="Physics" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\dbga_45\Downloads\Environment Layers-20170606T075146Z-001\Environment Layers\64x64 Solidi.png" />
+                <tiles />
+            </object-type>
+            <object-type name="ArcadeDistruttoAvanti2" sid="729560048891280">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\dbga_45\Downloads\Environment Layers-20170606T075146Z-001\Environment Layers\64x64 Arcade Distrutto Tutorial.png" />
+                <tiles />
+            </object-type>
+            <object-type name="ArcadeDistruttoDietro" sid="702537366487107">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\dbga_45\Downloads\Environment Layers-20170606T075146Z-001\Environment Layers\64x64 Arcade Distrutto Tutorial.png" />
+                <tiles />
+            </object-type>
+            <object-type name="TilemapJumpTrue" sid="934311966236178">
+                <plugin id="Tilemap" />
+                <behaviors>
+                    <behavior-type name="Jumpthru" sid="242441020641890">
+                        <behavior id="jumpthru" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\dbga_45\Downloads\Environment Layers-20170606T075146Z-001\Environment Layers\64x64 Solidi.png" />
+                <tiles />
+            </object-type>
+            <object-type name="TilemapMorte" sid="634867917598656">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\dbga_45\Downloads\64x64 Tiles Morte.png" />
+                <tiles />
+            </object-type>
+        </object-folder>
+        <object-folder name="Nemici">
+            <object-type name="SoldatoSemplice" sid="130289104068663">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="isDead" sid="814483211424697" type="boolean" />
+                    <instance-variable name="Point" sid="736086204774637" type="number" />
+                    <instance-variable name="Attacca" sid="252490917497594" type="boolean" />
+                    <instance-variable name="Cadenza_Fuoco" sid="683542289391217" type="number" />
+                    <instance-variable name="Pattern" sid="836502417308614" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Platform" sid="890287654245783">
+                        <behavior id="Platform" />
+                    </behavior-type>
+                    <behavior-type name="LineOfSight" sid="495216914832475">
+                        <behavior id="LOS" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="5" loop="1" name="IdleLeft" pingpong="0" repeatcount="1" repeatto="0" sid="801311276166627" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                    </animation>
+                    <animation framecount="5" loop="1" name="IdleRight" pingpong="0" repeatcount="1" repeatto="0" sid="955173148903948" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="6" loop="1" name="WalkLeft" pingpong="0" repeatcount="1" repeatto="0" sid="611608847965138" speed="12">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="6" loop="1" name="WalkRight" pingpong="0" repeatcount="1" repeatto="0" sid="641723375251965" speed="12">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="JumpRight" pingpong="0" repeatcount="1" repeatto="0" sid="845822172787203" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="1.01563" y="0.40625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="JumpLeft" pingpong="0" repeatcount="1" repeatto="0" sid="668378615440184" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0" y="0.40625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="9" loop="0" name="Death" pingpong="0" repeatcount="1" repeatto="0" sid="925851086682605" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="3" loop="0" name="ShootLeft" pingpong="0" repeatcount="1" repeatto="0" sid="211144214893170" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0" y="0.390625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0" y="0.390625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0" y="0.390625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="3" loop="0" name="ShootRight" pingpong="0" repeatcount="1" repeatto="0" sid="878022151217962" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="1.01563" y="0.390625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="1.01563" y="0.390625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="1.01563" y="0.390625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="3" loop="0" name="ShootUpRight" pingpong="0" repeatcount="1" repeatto="0" sid="146721694243549" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.546875" y="-0.03125" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.546875" y="-0.03125" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.546875" y="-0.03125" />
+                        </frame>
+                    </animation>
+                    <animation framecount="3" loop="0" name="ShootUpLeft" pingpong="0" repeatcount="1" repeatto="0" sid="898548055955400" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.46875" y="-0.03125" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.46875" y="-0.03125" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.46875" y="-0.03125" />
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="0" name="ShootDownRight" pingpong="0" repeatcount="1" repeatto="0" sid="804641752460544" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="0" name="ShootDownLeft" pingpong="0" repeatcount="1" repeatto="0" sid="913251356973002" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.515625" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.515625" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.515625" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.515625" y="1" />
+                        </frame>
+                    </animation>
+                    <animation framecount="3" loop="0" name="Shoot45UpRight" pingpong="0" repeatcount="1" repeatto="0" sid="842988581589607" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.828125" y="0.140625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.828125" y="0.140625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.828125" y="0.140625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="3" loop="0" name="Shoot45UpLeft" pingpong="0" repeatcount="1" repeatto="0" sid="915704154537086" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.171875" y="0.140625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.171875" y="0.140625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.171875" y="0.140625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="3" loop="0" name="Shoot45DownRight" pingpong="0" repeatcount="1" repeatto="0" sid="433232108974630" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.984375" y="0.640625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.984375" y="0.640625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.984375" y="0.640625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="3" loop="0" name="Shoot45DownLeft" pingpong="0" repeatcount="1" repeatto="0" sid="663731232695369" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.03125" y="0.640625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.03125" y="0.640625" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.03125" y="0.640625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="20" loop="1" name="Sleeping" pingpong="0" repeatcount="1" repeatto="0" sid="304685155014420" speed="12">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ProiettileSoldatoSemplice" sid="965927547698615">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="398653616403531" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Kamikaze" sid="998683874340369">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="isDead" sid="414325732002511" type="boolean" />
+                    <instance-variable name="Point" sid="405216503583573" type="number" />
+                    <instance-variable name="isRunning" sid="659265376687219" type="boolean" />
+                    <instance-variable name="Attacco" sid="587195081249449" type="boolean" />
+                    <instance-variable name="Cadenza_Attacco" sid="503241569565084" type="number" />
+                    <instance-variable name="Direzione" sid="633037535091081" type="string" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Platform" sid="719024329995170">
+                        <behavior id="Platform" />
+                    </behavior-type>
+                    <behavior-type name="LineOfSight" sid="258476464277982">
+                        <behavior id="LOS" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="5" loop="1" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="649430639070382" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="1" name="Run" pingpong="0" repeatcount="1" repeatto="0" sid="903468501529199" speed="12">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                    </animation>
+                    <animation framecount="10" loop="0" name="Death" pingpong="0" repeatcount="1" repeatto="0" sid="830800254725957" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="0" name="Attack" pingpong="0" repeatcount="1" repeatto="0" sid="883005834894983" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="Jump" pingpong="0" repeatcount="1" repeatto="0" sid="670919175534669" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="1" name="RunMirror" pingpong="0" repeatcount="1" repeatto="0" sid="133636433403442" speed="12">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="0" name="AttackMirror" pingpong="0" repeatcount="1" repeatto="0" sid="542791714613518" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="JumpMirror" pingpong="0" repeatcount="1" repeatto="0" sid="494926438699982" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="10" loop="0" name="DeathMirror" pingpong="0" repeatcount="1" repeatto="0" sid="955980123541552" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="5" loop="1" name="IdleMirror" pingpong="0" repeatcount="1" repeatto="0" sid="235766060223798" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Torretta" sid="413331051571016">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Energia" sid="170951362739429" type="number" />
+                    <instance-variable name="Vulnerable" sid="150227760737333" type="boolean" />
+                    <instance-variable name="Point" sid="153822432357388" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Turret" sid="137217172195264">
+                        <behavior id="Turret" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="4" loop="1" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="720998215111568" speed="12">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="0" name="Shoot" pingpong="0" repeatcount="1" repeatto="0" sid="801082020414380" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                            <image-point name="Imagepoint 2" x="-0.03125" y="0.453125" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                            <image-point name="Imagepoint 2" x="-0.03125" y="0.453125" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                            <image-point name="Imagepoint 2" x="-0.03125" y="0.453125" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                            <image-point name="Imagepoint 2" x="-0.03125" y="0.453125" />
+                        </frame>
+                    </animation>
+                    <animation framecount="15" loop="0" name="Vulnerable" pingpong="0" repeatcount="1" repeatto="0" sid="494781002711493" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ProiettileTorretta" sid="316993386188529">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="165052759520427" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Corazzato" sid="995324800376877">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Point" sid="980968851832571" type="number" />
+                    <instance-variable name="isDead" sid="542293551035919" type="boolean" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="6" loop="1" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="197515786113285" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="5" loop="1" name="Walk" pingpong="0" repeatcount="1" repeatto="0" sid="522382457801541" speed="12">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="4" loop="0" name="Shoot" pingpong="0" repeatcount="1" repeatto="0" sid="558137778165586" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.328125" y="0.46875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.328125" y="0.46875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.328125" y="0.46875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.328125" y="0.46875" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="Jump" pingpong="0" repeatcount="1" repeatto="0" sid="211128811576947" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="10" loop="0" name="Death" pingpong="0" repeatcount="1" repeatto="0" sid="538141469063255" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ProiettileCorazzato" sid="208737008431595">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="635472734245876" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Trappole">
+            <object-type name="Elettricità" sid="901696938919980">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="6" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="296469174302174" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="TrappolaElettrica" sid="912060306585807">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="5" loop="1" name="Inactive" pingpong="0" repeatcount="1" repeatto="0" sid="533882772194444" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                    <animation framecount="4" loop="1" name="Active" pingpong="0" repeatcount="1" repeatto="0" sid="415561895038728" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-type name="Terreno" sid="703477539277549">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="481891607001892">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="618410840689762">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="231736251767489" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite3" sid="387084346515808">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Next_X" sid="185937015497192" type="number" />
+                <instance-variable name="Next_Y" sid="241689358002861" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Solid" sid="146789933317027">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="746919669135582" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Function" sid="842594730077299">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="Sprite4" sid="158938046366321">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="922082501458511" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite5" sid="603814824928113">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="195225102566974" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.08" y="0.08" />
+                            <point x="0.92" y="0.08" />
+                            <point x="0.92" y="0.92" />
+                            <point x="0.08" y="0.92" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite6" sid="463647876879257">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="296493207980264" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="460470850166151">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Vite" sid="200012814793872">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Sprite7" sid="510223906113236">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="532226147096112" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Score" sid="320998342375648">
+            <plugin id="Text" />
+        </object-type>
+        <object-type global="1" name="Array" sid="764520660293905">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="Coins" sid="698517585378057">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Sprite8" sid="409356366110445">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="485000497931136" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite9" sid="309611160628727">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="404798218293869" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Debug" sid="112374920798121">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Sprite10" sid="175047443004268">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="386733719712770" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Gamepad" sid="254508637312624">
+            <plugin id="gamepad" />
+        </object-type>
+        <object-type name="EnemyPoints" sid="153314115508225">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Sine" sid="774209989842587">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="772432266274242">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Sprite" sid="207502649605397">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="330413842756316" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Riferimento" sid="925981969510388">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="824649024754844" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Text" sid="259869444226388">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Riferimentoschermo" sid="215215212004928">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="629488510475654" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="FamigliaProiettile" plugin-id="Sprite" sid="472427384272053">
+            <members>
+                <member>Proiettile</member>
+                <member>ProiettileCorazzato</member>
+                <member>ProiettileSoldatoSemplice</member>
+                <member>ProiettileTorretta</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Bullet" sid="745441846622545">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="259636992078419">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="FamigliaNemici" plugin-id="Sprite" sid="734971532940786">
+            <members>
+                <member>Corazzato</member>
+                <member>Kamikaze</member>
+                <member>SoldatoSemplice</member>
+            </members>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>Start.xml</layout>
+        <layout>Level 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Start Event.xml</event-sheet>
+        <event-sheet>Level 1 Event.xml</event-sheet>
+        <event-sheet>General Event.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Function" uid="6" />
+        <global-instance type="Keyboard" uid="11" />
+        <global-instance type="Gamepad" uid="26">
+            <properties>
+                <analog-deadzone>25</analog-deadzone>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

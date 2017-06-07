@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Start Event</name>
+    <events>
+        <event-group description="" sid="351805044328176" title="Start configuration" />
+        <event-block sid="675841165596309">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="357347989114022" type="Steam">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="X co-ordinate">250</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Sine" id="0" name="Set active" sid="150049389440285" type="Steam">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Sine" id="0" name="Set active" sid="808108489358045" type="Rage">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="314581593695124">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="293097244015608" type="Rage">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">284</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Sine" id="0" name="Set active" sid="219555331137655" type="Rage">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

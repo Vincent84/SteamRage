@@ -1,0 +1,1327 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>General Event</name>
+    <events>
+        <variable constant="1" name="COMBO_MAX" sid="969684154536394" static="0" type="number">5</variable>
+        <variable constant="0" name="ComboCount" sid="424798668338193" static="0" type="number">0</variable>
+        <variable constant="0" name="BombImpulseY" sid="257949413262742" static="0" type="number">0.6</variable>
+        <variable constant="0" name="BombImpulseX" sid="789822567067255" static="0" type="number">0.4</variable>
+        <variable constant="0" name="TimerBomb" sid="240951084070759" static="0" type="number">3</variable>
+        <variable constant="0" name="Colpi_PowerUp" sid="118386283238902" static="0" type="number">0</variable>
+        <variable constant="0" name="isPowerUp" sid="645600572256876" static="0" type="number">0</variable>
+        <variable constant="0" name="Numero_Estratto_PowerUp" sid="690178536276781" static="0" type="number">0</variable>
+        <variable constant="0" name="Range_MAX_PowerUp" sid="479465831131317" static="0" type="number">4</variable>
+        <variable constant="0" name="Range_PowerUp" sid="466729843898644" static="0" type="number">1</variable>
+        <variable constant="0" name="Count_Down" sid="756147766828772" static="0" type="number">10</variable>
+        <variable constant="0" name="Traguardo_Score" sid="603261923379794" static="0" type="number">100</variable>
+        <variable constant="0" name="Score" sid="531643037558724" static="0" type="number">0</variable>
+        <variable constant="0" name="Vite" sid="397504901047189" static="0" type="number">1</variable>
+        <variable constant="0" name="Pos_X_Camera" sid="872501831782087" static="0" type="number">230</variable>
+        <variable constant="0" name="Pos_Y_Camera" sid="727945824942145" static="0" type="number">210</variable>
+        <variable constant="0" name="Do_ScrollTo" sid="243997646346907" static="0" type="number">1</variable>
+        <variable constant="0" name="Next_X_Camera" sid="319875681312959" static="0" type="number">200</variable>
+        <variable constant="0" name="Next_Y_Camera" sid="946876928277662" static="0" type="number">600</variable>
+        <event-group description="" sid="803465168503799" title="Initial Configuration">
+            <sub-events>
+                <event-block sid="630910817755960">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="764421679577966" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="144708581072934" type="Protagonista">
+                            <param id="0" name="Object">PlayerBox</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="355410428713370">
+                    <conditions>
+                        <condition id="-3" inverted="1" name="Is on-screen" sid="831745446931514" type="FamigliaProiettile" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="237713654171083" type="FamigliaProiettile" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="320478729035451" title="Gestione Protagonista">
+            <sub-events>
+                <event-group description="" sid="786386185183267" title="Movimento Protagonista">
+                    <sub-events>
+                        <event-block sid="645367690145675">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="766473066561678" type="Keyboard">
+                                    <param id="0" name="Key">68 (D)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="904620200172258" type="PlayerBox">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="369410784134573" type="Protagonista">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">&quot;Right&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="488266627512124">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="450505972269640" type="Keyboard">
+                                    <param id="0" name="Key">65 (A)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="332646140545798" type="PlayerBox">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="279573459786411" type="Protagonista">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">&quot;Left&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="127971020003511">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="687532428782833" type="Keyboard">
+                                    <param id="0" name="Key">87 (W)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="100701818691844" type="PlayerBox">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="782993614589637">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="334016034454161" type="PlayerBox" />
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="441040742923513" type="PlayerBox" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="751058685296600" type="Text">
+                                    <param id="0" name="Text">&quot;Stopped&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="531452908445165">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="758314847894103" type="Keyboard">
+                                            <param id="0" name="Key">32 (Space)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="590952483655717" type="Function">
+                                            <param id="0" name="Name">&quot;setAttaccoProtagonista&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Floor&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="567515431831654">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="723184223337244" type="Keyboard">
+                                            <param id="0" name="Key">69 (E)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="654859476732772" type="Function">
+                                            <param id="0" name="Name">&quot;setBombProtagonista&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Floor&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="527240321047563">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="534017331760107" type="Keyboard">
+                                            <param id="0" name="Key">38 (Up arrow)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="712138391642652" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootUp&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="498311441607185">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="317325170919006" type="System" />
+                                        <condition id="2" name="Key is down" sid="696841363909700" type="Keyboard">
+                                            <param id="0" name="Key">40 (Down arrow)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="885552830888942" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootDown&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="654575446191334">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="732824385483891" type="System" />
+                                        <condition id="2" inverted="1" name="Is playing" sid="492568494857295" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;Shoot&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="431950681606976" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootUp&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="866292431549674" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootDown&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="587907172289021" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootBody&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="778521552000667" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;LaunchBomb&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="629714918238730" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;Idle&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="655932295196059">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="933461045883630" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="397178676576464">
+                                            <conditions>
+                                                <condition id="4" name="On finished" sid="718373968998349" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;Shoot&quot;&amp;Protagonista.Direction</param>
+                                                </condition>
+                                                <condition id="4" name="On finished" sid="767047361809463" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;ShootUp&quot;&amp;Protagonista.Direction</param>
+                                                </condition>
+                                                <condition id="4" name="On finished" sid="907721098218028" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;ShootDown&quot;&amp;Protagonista.Direction</param>
+                                                </condition>
+                                                <condition id="4" name="On finished" sid="617084621037754" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;ShootBody&quot;&amp;Protagonista.Direction</param>
+                                                </condition>
+                                                <condition id="4" name="On finished" sid="531998327302106" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;LaunchBomb&quot;&amp;Protagonista.Direction</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="369372091311977" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;Idle&quot;&amp;Protagonista.Direction</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="616940355647577">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="580748322194418" type="PlayerBox" />
+                                <condition behavior="Platform" id="0" name="Is moving" sid="465566273344515" type="PlayerBox" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="580934297894726" type="Text">
+                                    <param id="0" name="Text">&quot;Moving&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="287713613473596">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="643436026980815" type="Keyboard">
+                                            <param id="0" name="Key">32 (Space)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="227871036565821" type="Function">
+                                            <param id="0" name="Name">&quot;setAttaccoProtagonista&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Move&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="800275849272601">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="957932834854234" type="Keyboard">
+                                            <param id="0" name="Key">69 (E)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="949972466098164" type="Function">
+                                            <param id="0" name="Name">&quot;setBombProtagonista&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Floor&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="764562163020663">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="703631503560673" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootRun&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="326975389549579" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootMoveUp&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="781089249289868" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootMoveDown&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="941731478531186" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootBody&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="543824530413013" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;LaunchBomb&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="416512641333288" type="Protagonista">
+                                            <param id="0" name="Animation">Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block any="1" sid="224054489888902">
+                                    <conditions>
+                                        <condition id="4" name="On finished" sid="590293405226480" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootRun&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="4" name="On finished" sid="468105217720639" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootMoveUp&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="4" name="On finished" sid="654848523202867" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootMoveDown&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="4" name="On finished" sid="536681873928936" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootBody&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="4" name="On finished" sid="824482913120626" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;LaunchBomb&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="640925182640494" type="Protagonista">
+                                            <param id="0" name="Animation">Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block any="1" sid="528642556973375">
+                            <conditions>
+                                <condition behavior="Platform" id="3" name="Is jumping" sid="617578721071456" type="PlayerBox" />
+                                <condition behavior="Platform" id="4" name="Is falling" sid="332427191024751" type="PlayerBox" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="358314491235809" type="Text">
+                                    <param id="0" name="Text">&quot;Jumping&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="332319277902081">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="624674554196799" type="Keyboard">
+                                            <param id="0" name="Key">32 (Space)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="904803021307070" type="Function">
+                                            <param id="0" name="Name">&quot;setAttaccoProtagonista&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Jump&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="124643996240949">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="813521112094007" type="Keyboard">
+                                            <param id="0" name="Key">69 (E)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="313377405074139" type="Function">
+                                            <param id="0" name="Name">&quot;setBombProtagonista&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Jump&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="948084969235860">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="149130955963531" type="Keyboard">
+                                            <param id="0" name="Key">38 (Up arrow)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="449669905486640" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootJumpUp&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="102642616556318">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="770958943327655" type="System" />
+                                        <condition id="2" name="Key is down" sid="820662589872098" type="Keyboard">
+                                            <param id="0" name="Key">40 (Down arrow)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="414745434480698" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootJumpDown&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="826709129713351">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="878554848152748" type="System" />
+                                        <condition id="2" inverted="1" name="Is playing" sid="509364608918802" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootJumpUp&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="985361699908089" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootJumpDown&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="546611104462467" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootJump&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="669030722809599" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootBody&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="713916984848652" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;LaunchBombJump&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="448589165462320" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;Jump&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="927586584679322">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="611779063564707" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="848911529798079">
+                                            <conditions>
+                                                <condition id="4" name="On finished" sid="447504217517690" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;ShootJump&quot;&amp;Protagonista.Direction</param>
+                                                </condition>
+                                                <condition id="4" name="On finished" sid="643418780652808" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;ShootJumpUp&quot;&amp;Protagonista.Direction</param>
+                                                </condition>
+                                                <condition id="4" name="On finished" sid="527639312196424" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;ShootJumpDown&quot;&amp;Protagonista.Direction</param>
+                                                </condition>
+                                                <condition id="4" name="On finished" sid="156066334679022" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;ShootBody&quot;&amp;Protagonista.Direction</param>
+                                                </condition>
+                                                <condition id="4" name="On finished" sid="130123276494405" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;LaunchBombJump&quot;&amp;Protagonista.Direction</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="472665347754914" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;Jump&quot;&amp;Protagonista.Direction</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="158515999186039" title="Attacco Protagonista">
+                    <sub-events>
+                        <event-block sid="606692803932493">
+                            <conditions>
+                                <condition id="0" name="On function" sid="698553010378330" type="Function">
+                                    <param id="0" name="Name">&quot;setAttaccoProtagonista&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="979851808759818">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="345951819638300" type="Protagonista">
+                                            <param id="0" name="Object">FamigliaNemici</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="890092506823541" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootBody&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block any="1" sid="220192487701713">
+                                            <conditions>
+                                                <condition id="1" name="Is overlapping another object" sid="243291889044148" type="Protagonista">
+                                                    <param id="0" name="Object">SoldatoSemplice</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="217791344606002" type="SoldatoSemplice">
+                                                    <param id="0" name="Instance variable">isDead</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="155860730510148" type="Function">
+                                                    <param id="0" name="Name">&quot;setMorteNemici&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;Semplice&quot;{###}SoldatoSemplice.UID</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="775097685589704">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="975969693238168" type="System" />
+                                                <condition id="1" name="Is overlapping another object" sid="901214933851865" type="Protagonista">
+                                                    <param id="0" name="Object">Kamikaze</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="874049916404502" type="Kamikaze">
+                                                    <param id="0" name="Instance variable">isDead</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="262707122457720" type="Function">
+                                                    <param id="0" name="Name">&quot;setMorteNemici&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;Kamikaze&quot;{###}Kamikaze.UID</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="623142728633289">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="906046651085287" type="System" />
+                                                <condition id="1" name="Is overlapping another object" sid="906601782866441" type="Protagonista">
+                                                    <param id="0" name="Object">Corazzato</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="732994035066688" type="Corazzato">
+                                                    <param id="0" name="Instance variable">isDead</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="297229183580175" type="Function">
+                                                    <param id="0" name="Name">&quot;setMorteNemici&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;Corazzato&quot;{###}Corazzato.UID</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="392821768310358">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="470055301527995" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="369545474162130">
+                                            <conditions>
+                                                <condition id="1" name="Compare parameter" sid="234910001080577" type="Function">
+                                                    <param id="0" name="Index">0</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;Floor&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="897559242837606">
+                                                    <conditions>
+                                                        <condition id="2" name="Key is down" sid="620371687990022" type="Keyboard">
+                                                            <param id="0" name="Key">38 (Up arrow)</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Spawn another object" sid="277411486268935" type="Protagonista">
+                                                            <param id="0" name="Object">Proiettile</param>
+                                                            <param id="1" name="Layer">1</param>
+                                                            <param id="2" name="Image point">1</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="744658272426945" type="Proiettile">
+                                                            <param id="0" name="Angle">-90</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="972522682484479">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="556871465192283" type="System" />
+                                                        <condition id="2" name="Key is down" sid="977715821665759" type="Keyboard">
+                                                            <param id="0" name="Key">40 (Down arrow)</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Spawn another object" sid="752861356048741" type="Protagonista">
+                                                            <param id="0" name="Object">Proiettile</param>
+                                                            <param id="1" name="Layer">1</param>
+                                                            <param id="2" name="Image point">1</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="455622039412246" type="Proiettile">
+                                                            <param id="0" name="Angle">90</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="336290524767396">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="296871308425253" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="619535651375974" type="Protagonista">
+                                                            <param id="0" name="Animation">&quot;Shoot&quot;&amp;Protagonista.Direction</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="0" name="Spawn another object" sid="994031897030866" type="Protagonista">
+                                                            <param id="0" name="Object">Proiettile</param>
+                                                            <param id="1" name="Layer">1</param>
+                                                            <param id="2" name="Image point">1</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="313388689455197">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="485002392793317" type="Protagonista">
+                                                                    <param id="0" name="Instance variable">Direction</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">&quot;Left&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="907670255114217" type="Proiettile">
+                                                                    <param id="0" name="Angle">180</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="451407632883680">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="799705926220523" type="System" />
+                                                <condition id="1" name="Compare parameter" sid="896573770315043" type="Function">
+                                                    <param id="0" name="Index">0</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;Jump&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="347868916761695">
+                                                    <conditions>
+                                                        <condition id="2" name="Key is down" sid="359354139594543" type="Keyboard">
+                                                            <param id="0" name="Key">38 (Up arrow)</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Spawn another object" sid="668936119156154" type="Protagonista">
+                                                            <param id="0" name="Object">Proiettile</param>
+                                                            <param id="1" name="Layer">1</param>
+                                                            <param id="2" name="Image point">1</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="133902601467239" type="Proiettile">
+                                                            <param id="0" name="Angle">-90</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="740074621038549">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="741231185051651" type="System" />
+                                                        <condition id="2" name="Key is down" sid="112118283295494" type="Keyboard">
+                                                            <param id="0" name="Key">40 (Down arrow)</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Spawn another object" sid="558484159079256" type="Protagonista">
+                                                            <param id="0" name="Object">Proiettile</param>
+                                                            <param id="1" name="Layer">1</param>
+                                                            <param id="2" name="Image point">1</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="202975552920390" type="Proiettile">
+                                                            <param id="0" name="Angle">90</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="910706181267296">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="657486114932235" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="700152215459077" type="Protagonista">
+                                                            <param id="0" name="Animation">&quot;ShootJump&quot;&amp;Protagonista.Direction</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="0" name="Spawn another object" sid="826792797725677" type="Protagonista">
+                                                            <param id="0" name="Object">Proiettile</param>
+                                                            <param id="1" name="Layer">1</param>
+                                                            <param id="2" name="Image point">1</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="904197338285473">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="100379973780642" type="Protagonista">
+                                                                    <param id="0" name="Instance variable">Direction</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">&quot;Left&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="738768614502696" type="Proiettile">
+                                                                    <param id="0" name="Angle">180</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="416786731368148">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="622442197110952" type="System" />
+                                                <condition id="1" name="Compare parameter" sid="327189791531786" type="Function">
+                                                    <param id="0" name="Index">0</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;Move&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="521782275380558">
+                                                    <conditions>
+                                                        <condition id="2" name="Key is down" sid="176756768830254" type="Keyboard">
+                                                            <param id="0" name="Key">38 (Up arrow)</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="143483157692471" type="Protagonista">
+                                                            <param id="0" name="Animation">&quot;ShootMoveUp&quot;&amp;Protagonista.Direction</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="0" name="Spawn another object" sid="445799180219289" type="Protagonista">
+                                                            <param id="0" name="Object">Proiettile</param>
+                                                            <param id="1" name="Layer">1</param>
+                                                            <param id="2" name="Image point">1</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="709383749906539" type="Proiettile">
+                                                            <param id="0" name="Angle">-90</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="238068486823727">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="735449740977657" type="System" />
+                                                        <condition id="2" name="Key is down" sid="332264902939919" type="Keyboard">
+                                                            <param id="0" name="Key">40 (Down arrow)</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="559535379869850" type="Protagonista">
+                                                            <param id="0" name="Animation">&quot;ShootMoveDown&quot;&amp;Protagonista.Direction</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="0" name="Spawn another object" sid="344869598321625" type="Protagonista">
+                                                            <param id="0" name="Object">Proiettile</param>
+                                                            <param id="1" name="Layer">1</param>
+                                                            <param id="2" name="Image point">1</param>
+                                                        </action>
+                                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="766537817404744" type="Proiettile">
+                                                            <param id="0" name="Angle">90</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="108246706828066">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="785161381553923" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="865501211365077" type="Protagonista">
+                                                            <param id="0" name="Animation">&quot;ShootRun&quot;&amp;Protagonista.Direction</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="0" name="Spawn another object" sid="707322956938839" type="Protagonista">
+                                                            <param id="0" name="Object">Proiettile</param>
+                                                            <param id="1" name="Layer">1</param>
+                                                            <param id="2" name="Image point">1</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="126887118053730">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="312793280760761" type="Protagonista">
+                                                                    <param id="0" name="Instance variable">Direction</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">&quot;Left&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="815564047854304" type="Proiettile">
+                                                                    <param id="0" name="Angle">180</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="823126162003458">
+                            <conditions>
+                                <condition id="0" name="On function" sid="822034331582728" type="Function">
+                                    <param id="0" name="Name">&quot;setBombProtagonista&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="599005866507914">
+                                    <conditions>
+                                        <condition id="1" name="Compare parameter" sid="915670602812236" type="Function">
+                                            <param id="0" name="Index">0</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Floor&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="494343831236041" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;LaunchBomb&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="323826668643160" type="Protagonista">
+                                            <param id="0" name="Object">Bomba</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action behavior="Timer" id="0" name="Start timer" sid="647914205019834" type="Bomba">
+                                            <param id="0" name="Duration">TimerBomb</param>
+                                            <param id="1" name="Type">0</param>
+                                            <param id="2" name="Tag">&quot;Explosion&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="873645691501563">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="768507898529117" type="Protagonista">
+                                                    <param id="0" name="Instance variable">Direction</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;Right&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Physics" id="3" name="Apply impulse" sid="798177692763405" type="Bomba">
+                                                    <param id="0" name="Impulse X">BombImpulseX</param>
+                                                    <param id="1" name="Implulse Y">-BombImpulseY</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="425277418011389">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="239534830962535" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="983509741903969" type="Protagonista">
+                                                    <param id="0" name="Instance variable">Direction</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;Left&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Physics" id="3" name="Apply impulse" sid="427470068654006" type="Bomba">
+                                                    <param id="0" name="Impulse X">-BombImpulseX</param>
+                                                    <param id="1" name="Implulse Y">-BombImpulseY</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="139045020129783">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="341816338778239" type="System" />
+                                        <condition id="1" name="Compare parameter" sid="748927587001794" type="Function">
+                                            <param id="0" name="Index">0</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Jump&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="782113746860821" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;LaunchBombJump&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="521425844226439" type="Protagonista">
+                                            <param id="0" name="Object">Bomba</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action behavior="Timer" id="0" name="Start timer" sid="738078599755162" type="Bomba">
+                                            <param id="0" name="Duration">TimerBomb</param>
+                                            <param id="1" name="Type">0</param>
+                                            <param id="2" name="Tag">&quot;Explosion&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="884496314966337">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="436372473402520" type="Protagonista">
+                                                    <param id="0" name="Instance variable">Direction</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;Right&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Physics" id="3" name="Apply impulse" sid="661802684173804" type="Bomba">
+                                                    <param id="0" name="Impulse X">BombImpulseX</param>
+                                                    <param id="1" name="Implulse Y">-BombImpulseY</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="362936696026835">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="603472039517665" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="692282372533316" type="Protagonista">
+                                                    <param id="0" name="Instance variable">Direction</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;Left&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Physics" id="3" name="Apply impulse" sid="874875800021031" type="Bomba">
+                                                    <param id="0" name="Impulse X">-BombImpulseX</param>
+                                                    <param id="1" name="Implulse Y">-BombImpulseY</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="133063993406614">
+                            <conditions>
+                                <condition behavior="Timer" id="0" name="On timer" sid="570287898937853" type="Bomba">
+                                    <param id="0" name="Tag">&quot;Explosion&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="972927772719857" type="Bomba">
+                                    <param id="0" name="Object">Esplosione</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="719733245210169" type="Bomba" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="884785567602816" title="Gestione Generale Nemici">
+            <sub-events>
+                <event-block sid="304569961518404">
+                    <conditions>
+                        <condition id="0" name="On function" sid="775397158703432" type="Function">
+                            <param id="0" name="Name">&quot;setMorteNemici&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="918564372749488">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="811272842781574" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Semplice&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="678389656803243">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="788211229107861" type="SoldatoSemplice">
+                                            <param id="0" name="Unique ID">Function.Param(1)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="926814629228726" type="SoldatoSemplice">
+                                            <param id="0" name="Animation">&quot;Death&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="246524485138515" type="SoldatoSemplice">
+                                            <param id="0" name="Instance variable">isDead</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="331682857475228" type="Function">
+                                            <param id="0" name="Name">&quot;setEnemyPoint&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Semplice&quot;{###}SoldatoSemplice.UID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="798564154490187">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="762199395528123" type="System" />
+                                <condition id="1" name="Compare parameter" sid="647657440808200" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Kamikaze&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="228593271653050">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="325698059009548" type="Kamikaze">
+                                            <param id="0" name="Unique ID">Function.Param(1)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="717436586848254" type="Kamikaze">
+                                            <param id="0" name="Animation">&quot;Death&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="355205347708568" type="Kamikaze">
+                                            <param id="0" name="Instance variable">isDead</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="480150519079291" type="Function">
+                                            <param id="0" name="Name">&quot;setEnemyPoint&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Kamikaze&quot;{###}Kamikaze.UID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="549838220140861">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="957121362572117" type="System" />
+                                <condition id="1" name="Compare parameter" sid="407577812039659" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Corazzato&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="893975914481377">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="875530735653203" type="Corazzato">
+                                            <param id="0" name="Unique ID">Function.Param(1)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="122102247570022" type="Corazzato">
+                                            <param id="0" name="Animation">&quot;Death&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="257465215492287" type="Corazzato">
+                                            <param id="0" name="Instance variable">isDead</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="558382903856533" type="Function">
+                                            <param id="0" name="Name">&quot;setEnemyPoint&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Corazzato&quot;{###}Corazzato.UID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="397488093209134">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="836060503547223" type="SoldatoSemplice">
+                            <param id="0" name="Animation">&quot;Death&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="491785177350834" type="SoldatoSemplice" />
+                    </actions>
+                </event-block>
+                <event-block sid="132870643794419">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="800487413717439" type="Kamikaze">
+                            <param id="0" name="Animation">&quot;Death&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="766415386304207" type="Kamikaze" />
+                    </actions>
+                </event-block>
+                <event-block sid="662224134565027">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="908319791695741" type="Corazzato">
+                            <param id="0" name="Animation">&quot;Death&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="220305781091633" type="Corazzato" />
+                    </actions>
+                </event-block>
+                <event-block sid="846610109732571">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="668211866043798" type="Proiettile">
+                            <param id="0" name="Object">SoldatoSemplice</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="138213445347093" type="SoldatoSemplice">
+                            <param id="0" name="Instance variable">isDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="246216740138105" type="Proiettile" />
+                        <action id="0" name="Call function" sid="567964800179383" type="Function">
+                            <param id="0" name="Name">&quot;setMorteNemici&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Semplice&quot;{###}SoldatoSemplice.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="162257153179403">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="363917352462164" type="Proiettile">
+                            <param id="0" name="Object">Kamikaze</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="596464632183066" type="Kamikaze">
+                            <param id="0" name="Instance variable">isDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="621792088396527" type="Proiettile" />
+                        <action id="0" name="Call function" sid="489486630281672" type="Function">
+                            <param id="0" name="Name">&quot;setMorteNemici&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Kamikaze&quot;{###}Kamikaze.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="701912675767352">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="662181691027488" type="Proiettile">
+                            <param id="0" name="Object">Corazzato</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="911062680838177" type="Corazzato">
+                            <param id="0" name="Instance variable">isDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="106935926853202" type="Proiettile" />
+                        <action id="0" name="Call function" sid="358026894999215" type="Function">
+                            <param id="0" name="Name">&quot;setMorteNemici&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Corazzato&quot;{###}Corazzato.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="165865407162946">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="792130324409232" type="Esplosione">
+                            <param id="0" name="Object">SoldatoSemplice</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="708222442727135" type="SoldatoSemplice">
+                            <param id="0" name="Instance variable">isDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="603783244645007" type="Function">
+                            <param id="0" name="Name">&quot;setMorteNemici&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Semplice&quot;{###}SoldatoSemplice.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="491533530407769">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="624808891518641" type="Esplosione">
+                            <param id="0" name="Object">Kamikaze</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="804364122619652" type="Kamikaze">
+                            <param id="0" name="Instance variable">isDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="917169147979894" type="Function">
+                            <param id="0" name="Name">&quot;setMorteNemici&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Kamikaze&quot;{###}Kamikaze.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="105777017788657">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="479725091602736" type="Esplosione">
+                            <param id="0" name="Object">Corazzato</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="116867486305909" type="Corazzato">
+                            <param id="0" name="Instance variable">isDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="724092721192850" type="Function">
+                            <param id="0" name="Name">&quot;setMorteNemici&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Corazzato&quot;{###}Corazzato.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="491468555459495" title="Gestione Punteggio">
+            <sub-events>
+                <event-block sid="389201606948253">
+                    <conditions>
+                        <condition id="0" name="On function" sid="764001933324460" type="Function">
+                            <param id="0" name="Name">&quot;setEnemyPoint&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="459126330312156">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="981680660531615" type="System">
+                                    <param id="0" name="Variable">ComboCount</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">COMBO_MAX</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="601072581990878" type="System">
+                                    <param id="0" name="Variable">ComboCount</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="589767627972455">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="900832637391764" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Semplice&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="502848270305227">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="645331953149667" type="SoldatoSemplice">
+                                            <param id="0" name="Unique ID">Function.Param(1)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="666588522767687" type="SoldatoSemplice">
+                                            <param id="0" name="Object">EnemyPoints</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="155796910854083" type="EnemyPoints">
+                                            <param id="0" name="Text">SoldatoSemplice.Point * ComboCount</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="403077173308333">
+                                            <conditions>
+                                                <condition id="2" name="Is playing" sid="366063863629205" type="SoldatoSemplice">
+                                                    <param id="0" name="Animation">&quot;Death&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Sine" id="0" name="Set active" sid="431052652150158" type="EnemyPoints">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                                <action behavior="Fade" id="1" name="Start fade" sid="414177933827934" type="EnemyPoints" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="944862945805701">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="808106569300157" type="System" />
+                                <condition id="1" name="Compare parameter" sid="152216564219352" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Kamikaze&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="522902683034472">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="771009790371428" type="Kamikaze">
+                                            <param id="0" name="Unique ID">Function.Param(1)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="370975361164989" type="Kamikaze">
+                                            <param id="0" name="Object">EnemyPoints</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="323110617223890" type="EnemyPoints">
+                                            <param id="0" name="Text">Kamikaze.Point * ComboCount</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="571476275045131">
+                                            <conditions>
+                                                <condition id="2" name="Is playing" sid="756053089688692" type="Kamikaze">
+                                                    <param id="0" name="Animation">&quot;Death&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Sine" id="0" name="Set active" sid="457152376740039" type="EnemyPoints">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                                <action behavior="Fade" id="1" name="Start fade" sid="125072761946619" type="EnemyPoints" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="785415972339721">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="979965740930131" type="System" />
+                                <condition id="1" name="Compare parameter" sid="640909603261918" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Corazzato&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="257352747780363">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="839934610007825" type="Corazzato">
+                                            <param id="0" name="Unique ID">Function.Param(1)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="803269346479922" type="Corazzato">
+                                            <param id="0" name="Object">EnemyPoints</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="789741420679249" type="EnemyPoints">
+                                            <param id="0" name="Text">Corazzato.Point * ComboCount</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="601385400325853">
+                                            <conditions>
+                                                <condition id="2" name="Is playing" sid="574121679701424" type="Corazzato">
+                                                    <param id="0" name="Animation">&quot;Death&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Sine" id="0" name="Set active" sid="506047254240246" type="EnemyPoints">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                                <action behavior="Fade" id="1" name="Start fade" sid="146291904243655" type="EnemyPoints" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
