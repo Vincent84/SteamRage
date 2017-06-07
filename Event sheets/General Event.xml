@@ -8,20 +8,8 @@
         <variable constant="0" name="BombImpulseY" sid="257949413262742" static="0" type="number">0.6</variable>
         <variable constant="0" name="BombImpulseX" sid="789822567067255" static="0" type="number">0.4</variable>
         <variable constant="0" name="TimerBomb" sid="240951084070759" static="0" type="number">3</variable>
-        <variable constant="0" name="Colpi_PowerUp" sid="118386283238902" static="0" type="number">0</variable>
-        <variable constant="0" name="isPowerUp" sid="645600572256876" static="0" type="number">0</variable>
-        <variable constant="0" name="Numero_Estratto_PowerUp" sid="690178536276781" static="0" type="number">0</variable>
-        <variable constant="0" name="Range_MAX_PowerUp" sid="479465831131317" static="0" type="number">4</variable>
-        <variable constant="0" name="Range_PowerUp" sid="466729843898644" static="0" type="number">1</variable>
-        <variable constant="0" name="Count_Down" sid="756147766828772" static="0" type="number">10</variable>
-        <variable constant="0" name="Traguardo_Score" sid="603261923379794" static="0" type="number">100</variable>
         <variable constant="0" name="Score" sid="531643037558724" static="0" type="number">0</variable>
         <variable constant="0" name="Vite" sid="397504901047189" static="0" type="number">1</variable>
-        <variable constant="0" name="Pos_X_Camera" sid="872501831782087" static="0" type="number">230</variable>
-        <variable constant="0" name="Pos_Y_Camera" sid="727945824942145" static="0" type="number">210</variable>
-        <variable constant="0" name="Do_ScrollTo" sid="243997646346907" static="0" type="number">1</variable>
-        <variable constant="0" name="Next_X_Camera" sid="319875681312959" static="0" type="number">200</variable>
-        <variable constant="0" name="Next_Y_Camera" sid="946876928277662" static="0" type="number">600</variable>
         <event-group description="" sid="803465168503799" title="Initial Configuration">
             <sub-events>
                 <event-block sid="630910817755960">
@@ -41,6 +29,16 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="237713654171083" type="FamigliaProiettile" />
+                    </actions>
+                </event-block>
+                <event-block sid="865891987013509">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="940735681527969" type="FamigliaProiettile">
+                            <param id="0" name="Object">TilemapSolidi</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="751111760886977" type="FamigliaProiettile" />
                     </actions>
                 </event-block>
             </sub-events>
@@ -107,7 +105,7 @@
                                 <event-block sid="531452908445165">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="758314847894103" type="Keyboard">
-                                            <param id="0" name="Key">32 (Space)</param>
+                                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -232,7 +230,7 @@
                                 <event-block sid="287713613473596">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="643436026980815" type="Keyboard">
-                                            <param id="0" name="Key">32 (Space)</param>
+                                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -321,7 +319,7 @@
                                 <event-block sid="332319277902081">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="624674554196799" type="Keyboard">
-                                            <param id="0" name="Key">32 (Space)</param>
+                                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -447,7 +445,7 @@
                                 <event-block sid="979851808759818">
                                     <conditions>
                                         <condition id="1" name="Is overlapping another object" sid="345951819638300" type="Protagonista">
-                                            <param id="0" name="Object">FamigliaNemici</param>
+                                            <param id="0" name="Object">FamigliaNemiciUmani</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -457,12 +455,12 @@
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block any="1" sid="220192487701713">
+                                        <event-block sid="220192487701713">
                                             <conditions>
                                                 <condition id="1" name="Is overlapping another object" sid="243291889044148" type="Protagonista">
                                                     <param id="0" name="Object">SoldatoSemplice</param>
                                                 </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="217791344606002" type="SoldatoSemplice">
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="314451898369538" type="SoldatoSemplice">
                                                     <param id="0" name="Instance variable">isDead</param>
                                                 </condition>
                                             </conditions>
@@ -479,7 +477,7 @@
                                                 <condition id="1" name="Is overlapping another object" sid="901214933851865" type="Protagonista">
                                                     <param id="0" name="Object">Kamikaze</param>
                                                 </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="874049916404502" type="Kamikaze">
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="617010608408588" type="Kamikaze">
                                                     <param id="0" name="Instance variable">isDead</param>
                                                 </condition>
                                             </conditions>
@@ -496,7 +494,7 @@
                                                 <condition id="1" name="Is overlapping another object" sid="906601782866441" type="Protagonista">
                                                     <param id="0" name="Object">Corazzato</param>
                                                 </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="732994035066688" type="Corazzato">
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="937396541139156" type="Corazzato">
                                                     <param id="0" name="Instance variable">isDead</param>
                                                 </condition>
                                             </conditions>
@@ -947,7 +945,7 @@
                                             <param id="0" name="Animation">&quot;Death&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
-                                        <action id="-13" name="Set boolean" sid="246524485138515" type="SoldatoSemplice">
+                                        <action id="-13" name="Set boolean" sid="890180894649986" type="SoldatoSemplice">
                                             <param id="0" name="Instance variable">isDead</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
@@ -981,7 +979,7 @@
                                             <param id="0" name="Animation">&quot;Death&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
-                                        <action id="-13" name="Set boolean" sid="355205347708568" type="Kamikaze">
+                                        <action id="-13" name="Set boolean" sid="252785499469337" type="Kamikaze">
                                             <param id="0" name="Instance variable">isDead</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
@@ -1015,7 +1013,7 @@
                                             <param id="0" name="Animation">&quot;Death&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
-                                        <action id="-13" name="Set boolean" sid="257465215492287" type="Corazzato">
+                                        <action id="-13" name="Set boolean" sid="454240156352424" type="Corazzato">
                                             <param id="0" name="Instance variable">isDead</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
@@ -1064,7 +1062,7 @@
                         <condition id="0" name="On collision with another object" sid="668211866043798" type="Proiettile">
                             <param id="0" name="Object">SoldatoSemplice</param>
                         </condition>
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="138213445347093" type="SoldatoSemplice">
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="702213507084735" type="SoldatoSemplice">
                             <param id="0" name="Instance variable">isDead</param>
                         </condition>
                     </conditions>
@@ -1081,7 +1079,7 @@
                         <condition id="0" name="On collision with another object" sid="363917352462164" type="Proiettile">
                             <param id="0" name="Object">Kamikaze</param>
                         </condition>
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="596464632183066" type="Kamikaze">
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="894393919820696" type="Kamikaze">
                             <param id="0" name="Instance variable">isDead</param>
                         </condition>
                     </conditions>
@@ -1098,7 +1096,7 @@
                         <condition id="0" name="On collision with another object" sid="662181691027488" type="Proiettile">
                             <param id="0" name="Object">Corazzato</param>
                         </condition>
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="911062680838177" type="Corazzato">
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="699698070704008" type="Corazzato">
                             <param id="0" name="Instance variable">isDead</param>
                         </condition>
                     </conditions>
@@ -1115,7 +1113,7 @@
                         <condition id="0" name="On collision with another object" sid="792130324409232" type="Esplosione">
                             <param id="0" name="Object">SoldatoSemplice</param>
                         </condition>
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="708222442727135" type="SoldatoSemplice">
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="580191289237653" type="SoldatoSemplice">
                             <param id="0" name="Instance variable">isDead</param>
                         </condition>
                     </conditions>
@@ -1131,7 +1129,7 @@
                         <condition id="0" name="On collision with another object" sid="624808891518641" type="Esplosione">
                             <param id="0" name="Object">Kamikaze</param>
                         </condition>
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="804364122619652" type="Kamikaze">
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="146831519115523" type="Kamikaze">
                             <param id="0" name="Instance variable">isDead</param>
                         </condition>
                     </conditions>
@@ -1147,7 +1145,7 @@
                         <condition id="0" name="On collision with another object" sid="479725091602736" type="Esplosione">
                             <param id="0" name="Object">Corazzato</param>
                         </condition>
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="116867486305909" type="Corazzato">
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="875515612214366" type="Corazzato">
                             <param id="0" name="Instance variable">isDead</param>
                         </condition>
                     </conditions>
@@ -1207,8 +1205,8 @@
                                             <param id="1" name="Layer">1</param>
                                             <param id="2" name="Image point">1</param>
                                         </action>
-                                        <action id="0" name="Set text" sid="155796910854083" type="EnemyPoints">
-                                            <param id="0" name="Text">SoldatoSemplice.Point * ComboCount</param>
+                                        <action id="0" name="Set text" sid="277872723426505" type="EnemyPoints">
+                                            <param id="0" name="Text">SoldatoSemplice.Point*ComboCount</param>
                                         </action>
                                     </actions>
                                     <sub-events>
@@ -1252,8 +1250,8 @@
                                             <param id="1" name="Layer">1</param>
                                             <param id="2" name="Image point">1</param>
                                         </action>
-                                        <action id="0" name="Set text" sid="323110617223890" type="EnemyPoints">
-                                            <param id="0" name="Text">Kamikaze.Point * ComboCount</param>
+                                        <action id="0" name="Set text" sid="639155774658269" type="EnemyPoints">
+                                            <param id="0" name="Text">Kamikaze.Point*ComboCount</param>
                                         </action>
                                     </actions>
                                     <sub-events>
@@ -1297,8 +1295,8 @@
                                             <param id="1" name="Layer">1</param>
                                             <param id="2" name="Image point">1</param>
                                         </action>
-                                        <action id="0" name="Set text" sid="789741420679249" type="EnemyPoints">
-                                            <param id="0" name="Text">Corazzato.Point * ComboCount</param>
+                                        <action id="0" name="Set text" sid="971796186984564" type="EnemyPoints">
+                                            <param id="0" name="Text">Corazzato.Point*ComboCount</param>
                                         </action>
                                     </actions>
                                     <sub-events>
