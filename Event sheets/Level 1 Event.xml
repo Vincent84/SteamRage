@@ -733,5 +733,659 @@
                 </event-group>
             </sub-events>
         </event-group>
+        <event-group description="" sid="568898928986234" title="Mech">
+            <sub-events>
+                <event-group description="Ricordarsi di nmettere variabile globale per dire quanti colpi ha una cartuccera!!!" sid="701370492717313" title="Mitragliatrice tank">
+                    <sub-events>
+                        <event-block sid="622876807741501">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="539538158892435" type="Mech">
+                                    <param id="0" name="Instance variable">Mostra_Debolezza</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="282077028077993">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="669906929387330" type="System">
+                                            <param id="0" name="Interval (seconds)">mech.cadenza_Fuoco</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="348623670100980" type="Mech">
+                                            <param id="0" name="Instance variable">Sparare</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="7" inverted="1" name="Is mirrored" sid="221060812591839" type="Mech" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="521519768716283" type="Mech">
+                                            <param id="0" name="Animation">&quot;Proiettile&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-12" name="Subtract from" sid="453776358403426" type="Mech">
+                                            <param id="0" name="Instance variable">Cartuccera</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="229271825851770" type="Mech">
+                                            <param id="0" name="Object">ProiettileTorretta</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="728923700702565" type="ProiettileTorretta">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="423363470227142">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="256236299342308" type="System">
+                                            <param id="0" name="Interval (seconds)">mech.cadenza_Fuoco</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="538225763095388" type="Mech">
+                                            <param id="0" name="Instance variable">Sparare</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="7" name="Is mirrored" sid="570870523583431" type="Mech" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="717218109797247" type="Mech">
+                                            <param id="0" name="Animation">&quot;Proiettile&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-12" name="Subtract from" sid="144963498655286" type="Mech">
+                                            <param id="0" name="Instance variable">Cartuccera</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="123564575123265" type="Mech">
+                                            <param id="0" name="Object">ProiettileTorretta</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="200023510170281">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="889586240004030" type="System">
+                                            <param id="0" name="Interval (seconds)">2.5</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="991068172623002" type="Mech">
+                                            <param id="0" name="Instance variable">N_Cartuccere</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="704624871140809" type="Mech">
+                                            <param id="0" name="Instance variable">Cartuccera</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="331943895478939" type="Mech">
+                                            <param id="0" name="Instance variable">Cartuccera</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                        <action id="-12" name="Subtract from" sid="814328293048835" type="Mech">
+                                            <param id="0" name="Instance variable">N_Cartuccere</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="530995222841729" type="Mech">
+                                            <param id="0" name="Instance variable">Sparare</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="946804927286684">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="116631511425875" type="Mech">
+                                            <param id="0" name="Instance variable">N_Cartuccere</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="459201877337506" type="Mech">
+                                            <param id="0" name="Instance variable">Sparare</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="146129273480774" type="Mech">
+                                            <param id="0" name="Instance variable">N_Cartuccere</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="820230524653849" type="Mech">
+                                            <param id="0" name="Instance variable">Cartuccera</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="716400608398215" type="Mech">
+                                            <param id="0" name="Instance variable">Lancio_Missile</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="352790436836670">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="359352426277634" type="Mech">
+                                            <param id="0" name="Instance variable">Cartuccera</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="602181881372666" type="Mech">
+                                            <param id="0" name="Instance variable">Sparare</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="491606520620854" title="Vita tank">
+                    <sub-events>
+                        <event-block sid="865208191125741">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="930256599823983" type="Mech">
+                                    <param id="0" name="Object">ProiettileTorretta</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="610545381339468" type="Mech">
+                                    <param id="0" name="Instance variable">Vita</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="216462028054080" type="ProiettileTorretta" />
+                                <action behavior="Flash" id="0" name="Flash" sid="773755561088717" type="Mech">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">0.1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="778784925057956">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="246110091971959" type="Mech">
+                                            <param id="0" name="Instance variable">Mostra_Debolezza</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="7" name="Is mirrored" sid="132354327134055" type="Mech" />
+                                        <condition id="-1" name="Compare X" sid="210340082119917" type="Protagonista">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="X co-ordinate">mech.X </param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="259611013532217" type="Mech">
+                                            <param id="0" name="Instance variable">Vita</param>
+                                            <param id="1" name="Value">10</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="323022716871486">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="408248588389727" type="Mech">
+                                            <param id="0" name="Instance variable">Mostra_Debolezza</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="7" inverted="1" name="Is mirrored" sid="334078654824573" type="Mech" />
+                                        <condition id="-1" name="Compare X" sid="270424390611456" type="Protagonista">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="X co-ordinate">mech.X </param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="241814791529900" type="Mech">
+                                            <param id="0" name="Instance variable">Vita</param>
+                                            <param id="1" name="Value">10</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="872470879852601">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="610024197215830" type="Mech">
+                                    <param id="0" name="Instance variable">Vita</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="225673557632338" type="Mech" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="738982837920311" title="Movimento tank">
+                    <sub-events>
+                        <event-block sid="612210441016967">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="188245129025904" type="Mech">
+                                    <param id="0" name="Instance variable">Mostra_Debolezza</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="424663898591062">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="727022181355077" type="Protagonista">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="X co-ordinate">mech.X </param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="925230657981271" type="Mech">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="774842789618337">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="874523974027675" type="Protagonista">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="X co-ordinate">mech.X </param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="515339640953097" type="Mech">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="709169613766100">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="706438649295880" type="System">
+                                            <param id="0" name="Interval (seconds)">2</param>
+                                        </condition>
+                                        <condition id="-1" name="Compare X" sid="674049221099612" type="Mech">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="X co-ordinate">Protagonista.X</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="494164828065313" type="Mech">
+                                            <param id="0" name="Instance variable">Sparare</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="625454514719250" type="Mech">
+                                            <param id="0" name="Instance variable">Lancio_Missile</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Pathfinding" id="0" name="Find path" sid="805230714510936" type="Mech">
+                                            <param id="0" name="X">Protagonista.X + (mech.Width + random(50,80))</param>
+                                            <param id="1" name="Y">mech.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="611654852197047">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="879062677922808" type="System">
+                                            <param id="0" name="Interval (seconds)">2</param>
+                                        </condition>
+                                        <condition id="-1" name="Compare X" sid="987915046479732" type="Mech">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="X co-ordinate">Protagonista.X</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="649735429660962" type="Mech">
+                                            <param id="0" name="Instance variable">Sparare</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="662008361385911" type="Mech">
+                                            <param id="0" name="Instance variable">Lancio_Missile</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Pathfinding" id="0" name="Find path" sid="199392734369359" type="Mech">
+                                            <param id="0" name="X">Protagonista.X - (mech.Width + random(50,80))</param>
+                                            <param id="1" name="Y">mech.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="238442335292103">
+                                    <conditions>
+                                        <condition behavior="Pathfinding" id="0" name="On path found" sid="150720312731370" type="Mech" />
+                                        <condition id="-7" name="Compare instance variable" sid="935978101927663" type="Mech">
+                                            <param id="0" name="Instance variable">Sparare</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="116305544763252" type="Mech">
+                                            <param id="0" name="Instance variable">Lancio_Missile</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Pathfinding" id="1" name="Move along path" sid="789178010021163" type="Mech" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="349175514286017">
+                                    <conditions>
+                                        <condition behavior="Pathfinding" id="1" name="On failed to find path" sid="249965303608186" type="Mech" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Flash" id="0" name="Flash" sid="826511943168563" type="Mech">
+                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                            <param id="2" name="Duration">1.0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="361728530477676">
+                                    <conditions>
+                                        <condition behavior="Pathfinding" id="4" name="Is moving along path" sid="157854249248597" type="Mech" />
+                                        <condition id="-7" name="Compare instance variable" sid="820314682966981" type="Mech">
+                                            <param id="0" name="Instance variable">Sparare</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="154000719488866" type="Mech">
+                                            <param id="0" name="Instance variable">Lancio_Missile</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="528895345343598" type="Mech">
+                                            <param id="0" name="Animation">&quot;Camminata&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="763841488236788">
+                                    <conditions>
+                                        <condition behavior="Pathfinding" id="5" name="On arrived" sid="920590277991628" type="Mech" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="416800507336743" type="Mech">
+                                            <param id="0" name="Instance variable">Sparare</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="896135949729169">
+                                    <conditions>
+                                        <condition behavior="Pathfinding" id="4" inverted="1" name="Is moving along path" sid="243515264040508" type="Mech" />
+                                        <condition id="2" inverted="1" name="Is playing" sid="994239701067725" type="Mech">
+                                            <param id="0" name="Animation">&quot;Missile&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="582534614925932" type="Mech">
+                                            <param id="0" name="Instance variable">Sparare</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="634387807518919" type="Mech">
+                                            <param id="0" name="Instance variable">Lancio_Missile</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="377204828460934" type="Mech">
+                                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="899958753714968" title="Missile Mech">
+                    <sub-events>
+                        <event-block sid="137317136418436">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="209238039803155" type="Mech">
+                                    <param id="0" name="Instance variable">Lancio_Missile</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="512314392683534" type="Mech">
+                                    <param id="0" name="Animation">&quot;Missile&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="276437343474197" type="Mech">
+                                    <param id="0" name="Instance variable">Lancio_Missile</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="865505228579199" type="Mech">
+                                    <param id="0" name="Object">missile_mech</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="174513900483161" type="missile_mech">
+                                    <param id="0" name="Angle">-90</param>
+                                </action>
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="825966272500271" type="Mech">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="899882339018737" type="Mech">
+                                    <param id="0" name="Instance variable">Mostra_Debolezza</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="272357932027416">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="435661986393379" type="missile_mech">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Y co-ordinate">-600</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="312275866940155" type="missile_mech">
+                                    <param id="0" name="Instance variable">Lanciato</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="212335215312197" type="missile_mech">
+                                    <param id="0" name="Instance variable">Lanciato</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="357417894781599" type="missile_mech">
+                                    <param id="0" name="X">Protagonista.X</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="400565920696696" type="missile_mech">
+                                    <param id="0" name="Y">-600</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="599814647507222" type="missile_mech">
+                                    <param id="0" name="Angle">90</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="663956645679065" type="Protagonista">
+                                    <param id="0" name="Object">proiettile_invisibile</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="285841286413265">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="886980330602178" type="missile_mech">
+                                    <param id="0" name="Object">Caduta_Razzo</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="294560423598966" type="System">
+                                    <param id="0" name="Object to create">Esplosione</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">missile_mech.X</param>
+                                    <param id="3" name="Y">Protagonista.Y-35</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="600793400293267" type="missile_mech" />
+                                <action id="-9" name="Destroy" sid="873980375875087" type="Caduta_Razzo" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="383209803573636" title="Attacco Ravvicinato">
+                    <sub-events>
+                        <event-block sid="379060495859189">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="160462885058195" type="Mech">
+                                    <param id="0" name="Instance variable">Mostra_Debolezza</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="514303723350637">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="667544232062983" type="Protagonista">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="X co-ordinate">mech.X - 100</param>
+                                        </condition>
+                                        <condition id="-6" name="Every X seconds" sid="270351840507658" type="System">
+                                            <param id="0" name="Interval (seconds)">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="806712283645194" type="Mech">
+                                            <param id="0" name="Object">fumo1</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-24" name="Move to top" sid="822101497545163" type="fumo1" />
+                                        <action id="7" name="Set mirrored" sid="504631451485395" type="fumo1">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="405033189168775" type="fumo1">
+                                            <param id="0" name="Angle">-180</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="644855986535551" type="Mech">
+                                            <param id="0" name="Object">fumo3</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-24" name="Move to top" sid="750733319961679" type="fumo3" />
+                                        <action id="7" name="Set mirrored" sid="414780098703428" type="fumo3">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="322359224442202" type="Mech">
+                                            <param id="0" name="Object">fumo2</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-24" name="Move to top" sid="397481932801394" type="fumo2" />
+                                        <action id="-8" name="Set angle" sid="395219595463650" type="fumo2">
+                                            <param id="0" name="Angle">-90</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="204526140935210" title="Debolezza Esposta">
+                    <sub-events>
+                        <event-block sid="823070877463138">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="261542072779453" type="Mech">
+                                    <param id="0" name="Animation">&quot;Missile&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="561311098400518" type="Mech">
+                                    <param id="0" name="Object">fumo1</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-24" name="Move to top" sid="444248767040350" type="fumo1" />
+                                <action id="7" name="Set mirrored" sid="156618178177866" type="fumo1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="309897584064484" type="fumo1">
+                                    <param id="0" name="Angle">-180</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="762531271000759" type="Mech">
+                                    <param id="0" name="Object">fumo3</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-24" name="Move to top" sid="618121270321263" type="fumo3" />
+                                <action id="7" name="Set mirrored" sid="614932088500401" type="fumo3">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="371061644454440" type="Mech">
+                                    <param id="0" name="Object">fumo2</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-24" name="Move to top" sid="763253354196883" type="fumo2" />
+                                <action id="-8" name="Set angle" sid="956708533608731" type="fumo2">
+                                    <param id="0" name="Angle">-90</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="770253558474962">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="146990016736946" type="Mech">
+                                    <param id="0" name="Instance variable">Mostra_Debolezza</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="534979598773625" type="Mech">
+                                    <param id="0" name="Instance variable">Avvia_Timer</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Timer" id="0" name="Start timer" sid="345064229495618" type="Mech">
+                                    <param id="0" name="Duration">9</param>
+                                    <param id="1" name="Type">0</param>
+                                    <param id="2" name="Tag">&quot;Debolezza&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="706259167820003" type="Mech">
+                                    <param id="0" name="Instance variable">Avvia_Timer</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="119269641276344">
+                            <conditions>
+                                <condition behavior="Timer" id="0" name="On timer" sid="103827901278850" type="Mech">
+                                    <param id="0" name="Tag">&quot;Debolezza&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="349679267679401" type="Mech">
+                                    <param id="0" name="Instance variable">Sparare</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="825784169655045" type="Mech">
+                                    <param id="0" name="Instance variable">Lancio_Missile</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="807137460301726" type="Mech">
+                                    <param id="0" name="Instance variable">Mostra_Debolezza</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="773567054990830" type="Mech">
+                                    <param id="0" name="Instance variable">Avvia_Timer</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="513967706275489" type="Mech">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
