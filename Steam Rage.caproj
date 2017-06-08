@@ -1062,8 +1062,7 @@
             <object-type name="Kamikaze" sid="998683874340369">
                 <plugin id="Sprite" />
                 <instance-variables>
-                    <instance-variable name="Attacco" sid="436842469496669" type="boolean" />
-                    <instance-variable name="Direzione" sid="488484204699527" type="string" />
+                    <instance-variable name="Direction" sid="488484204699527" type="string" />
                 </instance-variables>
                 <animation-folder>
                     <animation framecount="5" loop="1" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="649430639070382" speed="8">
@@ -1097,7 +1096,7 @@
                             <image-point name="Imagepoint 1" x="0.5" y="0.5" />
                         </frame>
                     </animation>
-                    <animation framecount="10" loop="0" name="Death" pingpong="0" repeatcount="1" repeatto="0" sid="830800254725957" speed="8">
+                    <animation framecount="10" loop="0" name="DeathLeft" pingpong="0" repeatcount="1" repeatto="0" sid="830800254725957" speed="8">
                         <frame duration="1" hotspotX="0.5" hotspotY="1">
                             <image-point name="Imagepoint 1" x="0.5" y="0.5" />
                         </frame>
@@ -1235,7 +1234,7 @@
                             </collision-poly>
                         </frame>
                     </animation>
-                    <animation framecount="10" loop="0" name="DeathMirror" pingpong="0" repeatcount="1" repeatto="0" sid="955980123541552" speed="8">
+                    <animation framecount="10" loop="0" name="DeathRight" pingpong="0" repeatcount="1" repeatto="0" sid="955980123541552" speed="8">
                         <frame duration="1" hotspotX="0.5" hotspotY="1">
                             <image-point name="Imagepoint 1" x="0.5" y="0.5" />
                             <collision-poly>

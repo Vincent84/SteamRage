@@ -6,7 +6,7 @@
         <variable constant="0" name="CameraScrollX" sid="987848811541454" static="0" type="number">200</variable>
         <variable constant="0" name="CameraMoveX" sid="975195414662300" static="0" type="number">1</variable>
         <variable constant="0" name="CameraMoveY" sid="751976523677711" static="0" type="number">0</variable>
-        <variable constant="0" name="WithWeapon" sid="837656086603762" static="0" type="number">0</variable>
+        <variable constant="0" name="WithWeapon" sid="837656086603762" static="0" type="number">1</variable>
         <variable constant="1" name="COMBO_MAX" sid="969684154536394" static="0" type="number">5</variable>
         <variable constant="0" name="ComboCount" sid="424798668338193" static="0" type="number">0</variable>
         <variable constant="0" name="BombImpulseY" sid="257949413262742" static="0" type="number">0.6</variable>
@@ -341,7 +341,7 @@
                         <event-block sid="686731845620233">
                             <conditions>
                                 <condition id="0" name="On key pressed" sid="601233742697327" type="Keyboard">
-                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                    <param id="0" name="Key">32 (Space)</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -369,7 +369,7 @@
                                 <event-block sid="531452908445165">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="758314847894103" type="Keyboard">
-                                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                            <param id="0" name="Key">32 (Space)</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -437,6 +437,9 @@
                                         <condition id="2" inverted="1" name="Is playing" sid="778521552000667" type="Protagonista">
                                             <param id="0" name="Animation">&quot;LaunchBomb&quot;&amp;Protagonista.Direction</param>
                                         </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="377137943998258" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;Death&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action id="4" name="Set animation" sid="629714918238730" type="Protagonista">
@@ -494,7 +497,7 @@
                                 <event-block sid="287713613473596">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="643436026980815" type="Keyboard">
-                                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                            <param id="0" name="Key">32 (Space)</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -533,6 +536,9 @@
                                         </condition>
                                         <condition id="2" inverted="1" name="Is playing" sid="543824530413013" type="Protagonista">
                                             <param id="0" name="Animation">&quot;LaunchBomb&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="327603352996292" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;Death&quot;&amp;Protagonista.Direction</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -583,7 +589,7 @@
                                 <event-block sid="332319277902081">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="624674554196799" type="Keyboard">
-                                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                            <param id="0" name="Key">32 (Space)</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -650,6 +656,9 @@
                                         </condition>
                                         <condition id="2" inverted="1" name="Is playing" sid="713916984848652" type="Protagonista">
                                             <param id="0" name="Animation">&quot;LaunchBombJump&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="507806896742350" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;DeathJump&quot;&amp;Protagonista.Direction</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -1286,6 +1295,48 @@
                         </event-block>
                     </sub-events>
                 </event-group>
+                <event-group description="" sid="722145519991935" title="Morte protagonista">
+                    <sub-events>
+                        <event-block sid="651414562664085">
+                            <conditions>
+                                <condition id="0" name="On function" sid="493182435325397" type="Function">
+                                    <param id="0" name="Name">&quot;setCharacterDeath&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="479801440157246" type="Protagonista">
+                                    <param id="0" name="Instance variable">IsDeading</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="791504450090300">
+                                    <conditions>
+                                        <condition behavior="Platform" id="2" name="Is on floor" sid="385062980773223" type="PlayerBox" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="721094916769889" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;Death&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="106245137462169">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="703279742851728" type="System" />
+                                        <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="882185499769946" type="PlayerBox" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="496906270008331" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;DeathJump&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
             </sub-events>
         </event-group>
         <event-group description="" sid="884785567602816" title="Gestione Generale Nemici">
@@ -1350,7 +1401,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="4" name="Set animation" sid="717436586848254" type="Kamikaze">
-                                            <param id="0" name="Animation">&quot;Death&quot;</param>
+                                            <param id="0" name="Animation">&quot;Death&quot;&amp;Kamikaze.Direction</param>
                                             <param id="1" name="From">1</param>
                                         </action>
                                         <action id="-13" name="Set boolean" sid="252785499469337" type="Kamikaze">
@@ -1429,10 +1480,10 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="132870643794419">
+                <event-block any="1" sid="132870643794419">
                     <conditions>
                         <condition id="4" name="On finished" sid="800487413717439" type="Kamikaze">
-                            <param id="0" name="Animation">&quot;Death&quot;</param>
+                            <param id="0" name="Animation">&quot;Death&quot;&amp;Kamikaze.Direction</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -1650,7 +1701,7 @@
                                         <event-block sid="571476275045131">
                                             <conditions>
                                                 <condition id="2" name="Is playing" sid="756053089688692" type="Kamikaze">
-                                                    <param id="0" name="Animation">&quot;Death&quot;</param>
+                                                    <param id="0" name="Animation">&quot;Death&quot;&amp;Kamikaze.Direction</param>
                                                 </condition>
                                             </conditions>
                                             <actions>

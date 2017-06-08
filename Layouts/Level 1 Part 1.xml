@@ -560,13 +560,12 @@
                     <instance-variables>
                         <Point>50</Point>
                         <isDead>false</isDead>
-                        <Attacco>false</Attacco>
-                        <Direzione>left</Direzione>
+                        <Direction>Left</Direction>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>250</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -581,7 +580,7 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>928</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -590,7 +589,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>2432</x>
+                        <x>2634</x>
                         <y>1920</y>
                         <z>0</z>
                         <width>64</width>
@@ -612,13 +611,12 @@
                     <instance-variables>
                         <Point>50</Point>
                         <isDead>false</isDead>
-                        <Attacco>false</Attacco>
-                        <Direzione>left</Direzione>
+                        <Direction>Left</Direction>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>250</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -633,7 +631,7 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>928</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -642,7 +640,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>3200</x>
+                        <x>3136</x>
                         <y>1920</y>
                         <z>0</z>
                         <width>64</width>
@@ -664,13 +662,12 @@
                     <instance-variables>
                         <Point>50</Point>
                         <isDead>false</isDead>
-                        <Attacco>false</Attacco>
-                        <Direzione>left</Direzione>
+                        <Direction>Left</Direction>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>250</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -685,7 +682,7 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>928</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -694,7 +691,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>3328</x>
+                        <x>3530</x>
                         <y>1920</y>
                         <z>0</z>
                         <width>64</width>
@@ -716,13 +713,12 @@
                     <instance-variables>
                         <Point>50</Point>
                         <isDead>false</isDead>
-                        <Attacco>false</Attacco>
-                        <Direzione>left</Direzione>
+                        <Direction>Left</Direction>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>250</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -737,7 +733,7 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>928</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -746,7 +742,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>3424</x>
+                        <x>3626</x>
                         <y>1920</y>
                         <z>0</z>
                         <width>64</width>
@@ -768,7 +764,7 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
-                        <Movable>false</Movable>
+                        <Movable>true</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
@@ -788,8 +784,8 @@
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
-                                <obstacles>Custom</obstacles>
-                                <range>100</range>
+                                <obstacles>Solids</obstacles>
+                                <range>1000</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -1228,7 +1224,7 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
-                        <Movable>false</Movable>
+                        <Movable>true</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
@@ -1248,8 +1244,8 @@
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
-                                <obstacles>Custom</obstacles>
-                                <range>100</range>
+                                <obstacles>Solids</obstacles>
+                                <range>1000</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -1280,7 +1276,7 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
-                        <Movable>false</Movable>
+                        <Movable>true</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
@@ -1300,8 +1296,8 @@
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
-                                <obstacles>Custom</obstacles>
-                                <range>100</range>
+                                <obstacles>Solids</obstacles>
+                                <range>1000</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -1332,13 +1328,12 @@
                     <instance-variables>
                         <Point>50</Point>
                         <isDead>false</isDead>
-                        <Attacco>false</Attacco>
-                        <Direzione>left</Direzione>
+                        <Direction>Left</Direction>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>250</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -1353,7 +1348,7 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>928</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -1362,7 +1357,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>7680</x>
+                        <x>7882</x>
                         <y>2368</y>
                         <z>0</z>
                         <width>64</width>
@@ -1384,13 +1379,12 @@
                     <instance-variables>
                         <Point>50</Point>
                         <isDead>false</isDead>
-                        <Attacco>false</Attacco>
-                        <Direzione>left</Direzione>
+                        <Direction>Left</Direction>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>250</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -1405,7 +1399,7 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>928</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -1414,7 +1408,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>7776</x>
+                        <x>7978</x>
                         <y>2368</y>
                         <z>0</z>
                         <width>64</width>
@@ -1766,7 +1760,7 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
-                        <Movable>false</Movable>
+                        <Movable>true</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
@@ -1786,8 +1780,8 @@
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
-                                <obstacles>Custom</obstacles>
-                                <range>100</range>
+                                <obstacles>Solids</obstacles>
+                                <range>1000</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -1818,7 +1812,7 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
-                        <Movable>false</Movable>
+                        <Movable>true</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
@@ -1838,8 +1832,8 @@
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
-                                <obstacles>Custom</obstacles>
-                                <range>100</range>
+                                <obstacles>Solids</obstacles>
+                                <range>1000</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -1870,7 +1864,7 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
-                        <Movable>false</Movable>
+                        <Movable>true</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
@@ -1890,8 +1884,8 @@
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
-                                <obstacles>Custom</obstacles>
-                                <range>100</range>
+                                <obstacles>Solids</obstacles>
+                                <range>1000</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -1922,13 +1916,12 @@
                     <instance-variables>
                         <Point>50</Point>
                         <isDead>false</isDead>
-                        <Attacco>false</Attacco>
-                        <Direzione>left</Direzione>
+                        <Direction>Left</Direction>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>250</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -1943,7 +1936,7 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>928</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -1952,7 +1945,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>10720</x>
+                        <x>10922</x>
                         <y>2912</y>
                         <z>0</z>
                         <width>64</width>
@@ -1974,13 +1967,12 @@
                     <instance-variables>
                         <Point>50</Point>
                         <isDead>false</isDead>
-                        <Attacco>false</Attacco>
-                        <Direzione>left</Direzione>
+                        <Direction>Left</Direction>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>250</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -1995,7 +1987,7 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>928</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -2004,7 +1996,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>10784</x>
+                        <x>10986</x>
                         <y>2912</y>
                         <z>0</z>
                         <width>64</width>
@@ -2026,13 +2018,12 @@
                     <instance-variables>
                         <Point>50</Point>
                         <isDead>false</isDead>
-                        <Attacco>false</Attacco>
-                        <Direzione>left</Direzione>
+                        <Direction>Left</Direction>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>250</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -2047,7 +2038,7 @@
                         <behavior-instance type="LineOfSight">
                             <properties>
                                 <obstacles>Solids</obstacles>
-                                <range>10000</range>
+                                <range>928</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -2056,7 +2047,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>10848</x>
+                        <x>11050</x>
                         <y>2912</y>
                         <z>0</z>
                         <width>64</width>
@@ -2178,7 +2169,7 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
-                        <Movable>false</Movable>
+                        <Movable>true</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
@@ -2198,8 +2189,8 @@
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
-                                <obstacles>Custom</obstacles>
-                                <range>100</range>
+                                <obstacles>Solids</obstacles>
+                                <range>1000</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -2230,7 +2221,7 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
-                        <Movable>false</Movable>
+                        <Movable>true</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
@@ -2250,8 +2241,8 @@
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
-                                <obstacles>Custom</obstacles>
-                                <range>100</range>
+                                <obstacles>Solids</obstacles>
+                                <range>1000</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -2282,7 +2273,7 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
-                        <Movable>false</Movable>
+                        <Movable>true</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
@@ -2302,8 +2293,8 @@
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
-                                <obstacles>Custom</obstacles>
-                                <range>100</range>
+                                <obstacles>Solids</obstacles>
+                                <range>1000</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -2513,7 +2504,7 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
-                        <Movable>false</Movable>
+                        <Movable>true</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
@@ -2533,8 +2524,8 @@
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
-                                <obstacles>Custom</obstacles>
-                                <range>100</range>
+                                <obstacles>Solids</obstacles>
+                                <range>1000</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -2565,7 +2556,7 @@
                     <instance-variables>
                         <Point>100</Point>
                         <isDead>false</isDead>
-                        <Movable>false</Movable>
+                        <Movable>true</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
                     </instance-variables>
                     <behavior-instances>
@@ -2585,8 +2576,8 @@
                         </behavior-instance>
                         <behavior-instance type="LineOfSight">
                             <properties>
-                                <obstacles>Custom</obstacles>
-                                <range>100</range>
+                                <obstacles>Solids</obstacles>
+                                <range>1000</range>
                                 <cone-of-view>360</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
@@ -2692,7 +2683,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>288</x>
+                        <x>2000</x>
                         <y>1920</y>
                         <z>0</z>
                         <width>25</width>
@@ -2849,12 +2840,12 @@
             <effects />
         </layer>
         <layer name="Debug" sid="846929029031101">
-            <initially-visible>0</initially-visible>
+            <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
             <parallax>
-                <x>1</x>
-                <y>1</y>
+                <x>0</x>
+                <y>0</y>
             </parallax>
             <zoom-rate>1</zoom-rate>
             <opacity>1</opacity>

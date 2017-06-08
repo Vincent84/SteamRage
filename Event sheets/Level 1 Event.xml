@@ -24,11 +24,8 @@
         </event-group>
         <event-group description="" sid="821326275561407" title="Soldato semplice">
             <sub-events>
-                <event-block sid="427886026028704">
+                <event-block disabled="1" sid="427886026028704">
                     <conditions>
-                        <condition id="-11" name="For Each" sid="271220611331063" type="System">
-                            <param id="0" name="Object">SoldatoSemplice</param>
-                        </condition>
                         <condition id="2" inverted="1" name="Is playing" sid="258644469047844" type="SoldatoSemplice">
                             <param id="0" name="Animation">&quot;Sleeping&quot;</param>
                         </condition>
@@ -38,7 +35,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="879201825800481">
+                        <event-block disabled="1" sid="879201825800481">
                             <conditions>
                                 <condition id="-1" name="Compare X" sid="278373403402069" type="Protagonista">
                                     <param id="0" name="Comparison">4</param>
@@ -47,7 +44,7 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="532332757004338">
+                                <event-block disabled="1" sid="532332757004338">
                                     <conditions>
                                         <condition id="-8" name="Is boolean instance variable set" sid="785382081092161" type="SoldatoSemplice">
                                             <param id="0" name="Instance variable">Movable</param>
@@ -66,7 +63,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="973702953397556">
+                                <event-block disabled="1" sid="973702953397556">
                                     <conditions>
                                         <condition id="-22" name="Else" sid="717378857061501" type="System" />
                                         <condition id="-8" name="Is boolean instance variable set" sid="234746080585119" type="SoldatoSemplice">
@@ -82,7 +79,7 @@
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="707950867956709">
+                                        <event-block disabled="1" sid="707950867956709">
                                             <conditions>
                                                 <condition id="-6" name="Every X seconds" sid="703626380573869" type="System">
                                                     <param id="0" name="Interval (seconds)">CadenzaMoschetto</param>
@@ -104,9 +101,8 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="870560719625260">
+                        <event-block disabled="1" sid="870560719625260">
                             <conditions>
-                                <condition id="-22" name="Else" sid="749514671431675" type="System" />
                                 <condition id="-1" name="Compare X" sid="138551901401792" type="Protagonista">
                                     <param id="0" name="Comparison">2</param>
                                     <param id="1" name="X co-ordinate">SoldatoSemplice.X</param>
@@ -114,7 +110,7 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="886437829371394">
+                                <event-block disabled="1" sid="886437829371394">
                                     <conditions>
                                         <condition id="-8" name="Is boolean instance variable set" sid="841249136030813" type="SoldatoSemplice">
                                             <param id="0" name="Instance variable">Movable</param>
@@ -133,7 +129,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="537417388883567">
+                                <event-block disabled="1" sid="537417388883567">
                                     <conditions>
                                         <condition id="-22" name="Else" sid="783341894465075" type="System" />
                                         <condition id="-8" name="Is boolean instance variable set" sid="147578399088566" type="SoldatoSemplice">
@@ -145,7 +141,7 @@
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="563868017056324">
+                                        <event-block disabled="1" sid="563868017056324">
                                             <conditions>
                                                 <condition id="-6" name="Every X seconds" sid="474096481542286" type="System">
                                                     <param id="0" name="Interval (seconds)">CadenzaMoschetto</param>
@@ -172,10 +168,187 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-group description="" sid="972820777945869" title="Attacco Soldato Semplice" />
+                <event-block sid="188799740104282">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="699511165765770" type="SoldatoSemplice">
+                            <param id="0" name="Object">Protagonista</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="840273688648117" type="SoldatoSemplice">
+                            <param id="0" name="Instance variable">isDead</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="372296886987419" type="Protagonista">
+                            <param id="0" name="Instance variable">IsDeading</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-group description="" sid="972820777945869" title="Attacco Soldato Semplice">
+                    <sub-events>
+                        <event-block sid="406381855047567">
+                            <conditions>
+                                <condition id="0" name="On function" sid="776139792494566" type="Function">
+                                    <param id="0" name="Name">&quot;setAttackSimpleSoldier&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-group>
             </sub-events>
         </event-group>
-        <event-group description="" sid="225387340351996" title="Kamikaze" />
+        <event-group description="" sid="225387340351996" title="Kamikaze">
+            <sub-events>
+                <event-block sid="943151871012553">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="706390121451208" type="Kamikaze">
+                            <param id="0" name="Object">Protagonista</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="744689171477091" type="Kamikaze">
+                            <param id="0" name="Instance variable">isDead</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="865249918288748" type="Protagonista">
+                            <param id="0" name="Instance variable">IsDeading</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="372483211337629">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="499016085312522" type="Kamikaze">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">Protagonista.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="479045520276912" type="Kamikaze">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">&quot;Left&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="813041949341761">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="483991014372765" type="Kamikaze">
+                                            <param id="0" name="Object">Protagonista</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="368316806333839" type="Kamikaze">
+                                            <param id="0" name="Animation">&quot;Attack&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="327613259553486">
+                                            <conditions>
+                                                <condition id="4" name="On finished" sid="591068812522319" type="Kamikaze">
+                                                    <param id="0" name="Animation">&quot;AttackMirror&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="600235414226745" type="Function">
+                                                    <param id="0" name="Name">&quot;setCharacterDeath&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="203878019692651">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="382670249508208" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="584545583332840" type="Kamikaze">
+                                            <param id="0" name="Control">0</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="516763357136397" type="Kamikaze">
+                                            <param id="0" name="Animation">&quot;Run&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="827563246903316">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="194020875611687" type="Kamikaze">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="X co-ordinate">Protagonista.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="721746044594954" type="Kamikaze">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">&quot;Right&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="170017901802804">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="539233496793768" type="Kamikaze">
+                                            <param id="0" name="Object">Protagonista</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="137426405030744" type="Kamikaze">
+                                            <param id="0" name="Animation">&quot;AttackMirror&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="266427632400637">
+                                            <conditions>
+                                                <condition id="4" name="On finished" sid="302068412201971" type="Kamikaze">
+                                                    <param id="0" name="Animation">&quot;AttackMirror&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="101704505195571" type="Function">
+                                                    <param id="0" name="Name">&quot;setCharacterDeath&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="760207011786368">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="638149866614780" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="581275353326868" type="Kamikaze">
+                                            <param id="0" name="Control">1</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="652927634654165" type="Kamikaze">
+                                            <param id="0" name="Animation">&quot;RunMirror&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="222389527029673">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="789203147915018" type="System" />
+                        <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="774928139612370" type="Kamikaze">
+                            <param id="0" name="Object">Protagonista</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="852752771678557" type="Kamikaze">
+                            <param id="0" name="Instance variable">isDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="320518502379713" type="Kamikaze">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="215277602206277" title="Soldato corazzato" />
         <event-group description="" sid="433507949518571" title="Torretta" />
     </events>
