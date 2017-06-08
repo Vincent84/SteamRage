@@ -398,7 +398,7 @@
                         <event-block sid="686731845620233">
                             <conditions>
                                 <condition id="0" name="On key pressed" sid="601233742697327" type="Keyboard">
-                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                    <param id="0" name="Key">32 (Space)</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -426,7 +426,7 @@
                                 <event-block sid="531452908445165">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="758314847894103" type="Keyboard">
-                                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                            <param id="0" name="Key">32 (Space)</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -551,7 +551,7 @@
                                 <event-block sid="287713613473596">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="643436026980815" type="Keyboard">
-                                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                            <param id="0" name="Key">32 (Space)</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -640,7 +640,7 @@
                                 <event-block sid="332319277902081">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="624674554196799" type="Keyboard">
-                                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                            <param id="0" name="Key">32 (Space)</param>
                                         </condition>
                                     </conditions>
                                     <actions>

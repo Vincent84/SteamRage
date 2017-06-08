@@ -144,6 +144,7 @@
                         <Direction>Left</Direction>
                         <Movable>true</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
+                        <Active>false</Active>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">

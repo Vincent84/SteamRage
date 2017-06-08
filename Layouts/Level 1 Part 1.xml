@@ -817,8 +817,9 @@
                         <Point>100</Point>
                         <isDead>false</isDead>
                         <Direction>Left</Direction>
-                        <Movable>true</Movable>
+                        <Movable>false</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
+                        <Active>false</Active>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -1280,8 +1281,9 @@
                         <Point>100</Point>
                         <isDead>false</isDead>
                         <Direction>Left</Direction>
-                        <Movable>true</Movable>
+                        <Movable>false</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
+                        <Active>false</Active>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -1333,8 +1335,9 @@
                         <Point>100</Point>
                         <isDead>false</isDead>
                         <Direction>Left</Direction>
-                        <Movable>true</Movable>
+                        <Movable>false</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
+                        <Active>false</Active>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -1818,8 +1821,9 @@
                         <Point>100</Point>
                         <isDead>false</isDead>
                         <Direction>Left</Direction>
-                        <Movable>true</Movable>
+                        <Movable>false</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
+                        <Active>false</Active>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -1871,8 +1875,9 @@
                         <Point>100</Point>
                         <isDead>false</isDead>
                         <Direction>Left</Direction>
-                        <Movable>true</Movable>
+                        <Movable>false</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
+                        <Active>false</Active>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -1924,8 +1929,9 @@
                         <Point>100</Point>
                         <isDead>false</isDead>
                         <Direction>Left</Direction>
-                        <Movable>true</Movable>
+                        <Movable>false</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
+                        <Active>false</Active>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -2232,8 +2238,9 @@
                         <Point>100</Point>
                         <isDead>false</isDead>
                         <Direction>Left</Direction>
-                        <Movable>true</Movable>
+                        <Movable>false</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
+                        <Active>false</Active>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -2285,8 +2292,9 @@
                         <Point>100</Point>
                         <isDead>false</isDead>
                         <Direction>Left</Direction>
-                        <Movable>true</Movable>
+                        <Movable>false</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
+                        <Active>false</Active>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -2338,8 +2346,9 @@
                         <Point>100</Point>
                         <isDead>false</isDead>
                         <Direction>Left</Direction>
-                        <Movable>true</Movable>
+                        <Movable>false</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
+                        <Active>false</Active>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -2574,8 +2583,9 @@
                         <Point>100</Point>
                         <isDead>false</isDead>
                         <Direction>Left</Direction>
-                        <Movable>true</Movable>
+                        <Movable>false</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
+                        <Active>false</Active>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -2627,8 +2637,9 @@
                         <Point>100</Point>
                         <isDead>false</isDead>
                         <Direction>Left</Direction>
-                        <Movable>true</Movable>
+                        <Movable>false</Movable>
                         <OffsetFuoco>0</OffsetFuoco>
+                        <Active>false</Active>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -3022,8 +3033,8 @@
                         <width>250</width>
                         <height>250</height>
                         <depth>0</depth>
-                        <hotspotX>-0.796000004</hotspotX>
-                        <hotspotY>-0.328000009</hotspotY>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

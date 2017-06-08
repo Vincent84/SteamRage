@@ -22,9 +22,9 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="821326275561407" title="Soldato semplice">
+        <event-group description="" disabled="1" sid="821326275561407" title="Soldato semplice old">
             <sub-events>
-                <event-block sid="649789722389763">
+                <event-block disabled="1" sid="649789722389763">
                     <conditions>
                         <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="676435240007614" type="SoldatoSemplice">
                             <param id="0" name="Object">Protagonista</param>
@@ -32,7 +32,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="427886026028704">
+                        <event-block disabled="1" sid="427886026028704">
                             <conditions>
                                 <condition id="2" inverted="1" name="Is playing" sid="258644469047844" type="SoldatoSemplice">
                                     <param id="0" name="Animation">&quot;Sleeping&quot;</param>
@@ -43,7 +43,7 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="879201825800481">
+                                <event-block disabled="1" sid="879201825800481">
                                     <conditions>
                                         <condition id="-1" name="Compare X" sid="278373403402069" type="Protagonista">
                                             <param id="0" name="Comparison">4</param>
@@ -52,7 +52,7 @@
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="707950867956709">
+                                        <event-block disabled="1" sid="707950867956709">
                                             <conditions>
                                                 <condition id="-6" name="Every X seconds" sid="703626380573869" type="System">
                                                     <param id="0" name="Interval (seconds)">CadenzaMoschetto</param>
@@ -72,7 +72,7 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block sid="870560719625260">
+                                <event-block disabled="1" sid="870560719625260">
                                     <conditions>
                                         <condition id="-1" name="Compare X" sid="138551901401792" type="Protagonista">
                                             <param id="0" name="Comparison">2</param>
@@ -81,7 +81,7 @@
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="563868017056324">
+                                        <event-block disabled="1" sid="563868017056324">
                                             <conditions>
                                                 <condition id="-6" name="Every X seconds" sid="474096481542286" type="System">
                                                     <param id="0" name="Interval (seconds)">CadenzaMoschetto</param>
@@ -108,7 +108,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="200654044854374">
+                <event-block disabled="1" sid="200654044854374">
                     <conditions>
                         <condition id="-22" name="Else" sid="427361473779626" type="System" />
                         <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="628217035338910" type="SoldatoSemplice">
@@ -117,7 +117,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="603157114859570">
+                        <event-block disabled="1" sid="603157114859570">
                             <conditions>
                                 <condition id="2" inverted="1" name="Is playing" sid="905991640976499" type="SoldatoSemplice">
                                     <param id="0" name="Animation">&quot;Sleeping&quot;</param>
@@ -128,7 +128,7 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="246336089869090">
+                                <event-block disabled="1" sid="246336089869090">
                                     <conditions>
                                         <condition id="-8" name="Is boolean instance variable set" sid="711189772650067" type="SoldatoSemplice">
                                             <param id="0" name="Instance variable">Movable</param>
@@ -136,7 +136,7 @@
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="357317178000337">
+                                        <event-block disabled="1" sid="357317178000337">
                                             <conditions>
                                                 <condition id="-1" name="Compare X" sid="499186865559514" type="Protagonista">
                                                     <param id="0" name="Comparison">4</param>
@@ -153,7 +153,7 @@
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="841440049134190">
+                                        <event-block disabled="1" sid="841440049134190">
                                             <conditions>
                                                 <condition id="-1" name="Compare X" sid="976415444143216" type="Protagonista">
                                                     <param id="0" name="Comparison">2</param>
@@ -215,7 +215,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-group description="" sid="972820777945869" title="Attacco Soldato Semplice">
+                <event-group description="" disabled="1" sid="972820777945869" title="Attacco Soldato Semplice Old">
                     <sub-events>
                         <event-block disabled="1" sid="406381855047567">
                             <conditions>
@@ -251,7 +251,7 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="782972018606457">
+                        <event-block disabled="1" sid="782972018606457">
                             <conditions>
                                 <condition id="0" name="On collision with another object" sid="511422183057895" type="ProiettileSoldatoSemplice">
                                     <param id="0" name="Object">Protagonista</param>
