@@ -754,8 +754,11 @@
             <object-type name="Piattaforme" sid="676960588966685">
                 <plugin id="Tilemap" />
                 <behaviors>
-                    <behavior-type name="Solid" sid="415357703263468">
-                        <behavior id="solid" />
+                    <behavior-type name="Jumpthru" sid="775553756616996">
+                        <behavior id="jumpthru" />
+                    </behavior-type>
+                    <behavior-type name="Physics" sid="707948987431618">
+                        <behavior id="Physics" />
                     </behavior-type>
                 </behaviors>
                 <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps2.0-20170608T014228Z-001\Tilemaps2.0\Tilemaps7giugnoNOTTE\Livello1Parte1\Piattaforme.png" />
@@ -1758,11 +1761,13 @@
         <layout>Start.xml</layout>
         <layout>Level 1 Part 1.xml</layout>
         <layout>Level 1 Part 2.xml</layout>
+        <layout>Stage 1.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Start Event.xml</event-sheet>
         <event-sheet>Level 1 Event.xml</event-sheet>
         <event-sheet>General Event.xml</event-sheet>
+        <event-sheet>Stage 1 Event.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="6" />

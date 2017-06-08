@@ -6,7 +6,7 @@
         <variable constant="0" name="CameraScrollX" sid="987848811541454" static="0" type="number">200</variable>
         <variable constant="0" name="CameraMoveX" sid="975195414662300" static="0" type="number">1</variable>
         <variable constant="0" name="CameraMoveY" sid="751976523677711" static="0" type="number">0</variable>
-        <variable constant="0" name="WithWeapon" sid="837656086603762" static="0" type="number">0</variable>
+        <variable constant="0" name="WithWeapon" sid="837656086603762" static="0" type="number">1</variable>
         <variable constant="1" name="COMBO_MAX" sid="969684154536394" static="0" type="number">5</variable>
         <variable constant="0" name="ComboCount" sid="424798668338193" static="0" type="number">0</variable>
         <variable constant="0" name="BombImpulseY" sid="257949413262742" static="0" type="number">0.6</variable>
@@ -412,359 +412,340 @@
                 </event-group>
                 <event-group description="" sid="786386185183267" title="Movimento Protagonista Con Arma">
                     <sub-events>
-                        <event-block sid="558113495450747">
+                        <event-block sid="782993614589637">
                             <conditions>
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="794723826837541" type="Protagonista">
-                                    <param id="0" name="Instance variable">IsDeading</param>
-                                </condition>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="334016034454161" type="PlayerBox" />
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="441040742923513" type="PlayerBox" />
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="0" name="Set text" sid="751058685296600" type="Text">
+                                    <param id="0" name="Text">&quot;Stopped&quot;</param>
+                                </action>
+                            </actions>
                             <sub-events>
-                                <event-block sid="782993614589637">
+                                <event-block sid="531452908445165">
                                     <conditions>
-                                        <condition behavior="Platform" id="2" name="Is on floor" sid="334016034454161" type="PlayerBox" />
-                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="441040742923513" type="PlayerBox" />
+                                        <condition id="0" name="On key pressed" sid="758314847894103" type="Keyboard">
+                                            <param id="0" name="Key">32 (Space)</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Set text" sid="751058685296600" type="Text">
-                                            <param id="0" name="Text">&quot;Stopped&quot;</param>
+                                        <action id="0" name="Call function" sid="590952483655717" type="Function">
+                                            <param id="0" name="Name">&quot;setAttaccoProtagonista&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Floor&quot;</param>
                                         </action>
                                     </actions>
+                                </event-block>
+                                <event-block sid="567515431831654">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="723184223337244" type="Keyboard">
+                                            <param id="0" name="Key">69 (E)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="654859476732772" type="Function">
+                                            <param id="0" name="Name">&quot;setBombProtagonista&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Floor&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="527240321047563">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="534017331760107" type="Keyboard">
+                                            <param id="0" name="Key">38 (Up arrow)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="712138391642652" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootUp&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="498311441607185">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="317325170919006" type="System" />
+                                        <condition id="2" name="Key is down" sid="696841363909700" type="Keyboard">
+                                            <param id="0" name="Key">40 (Down arrow)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="885552830888942" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootDown&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="654575446191334">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="732824385483891" type="System" />
+                                        <condition id="2" inverted="1" name="Is playing" sid="492568494857295" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;Shoot&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="431950681606976" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootUp&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="866292431549674" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootDown&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="587907172289021" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootBody&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="778521552000667" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;LaunchBomb&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="629714918238730" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;Idle&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="655932295196059">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="933461045883630" type="System" />
+                                    </conditions>
+                                    <actions />
                                     <sub-events>
-                                        <event-block sid="531452908445165">
+                                        <event-block any="1" sid="397178676576464">
                                             <conditions>
-                                                <condition id="0" name="On key pressed" sid="758314847894103" type="Keyboard">
-                                                    <param id="0" name="Key">32 (Space)</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="0" name="Call function" sid="590952483655717" type="Function">
-                                                    <param id="0" name="Name">&quot;setAttaccoProtagonista&quot;</param>
-                                                    <param id="1" name="Parameter {n}">&quot;Floor&quot;</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="567515431831654">
-                                            <conditions>
-                                                <condition id="0" name="On key pressed" sid="723184223337244" type="Keyboard">
-                                                    <param id="0" name="Key">69 (E)</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="0" name="Call function" sid="654859476732772" type="Function">
-                                                    <param id="0" name="Name">&quot;setBombProtagonista&quot;</param>
-                                                    <param id="1" name="Parameter {n}">&quot;Floor&quot;</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="527240321047563">
-                                            <conditions>
-                                                <condition id="2" name="Key is down" sid="534017331760107" type="Keyboard">
-                                                    <param id="0" name="Key">38 (Up arrow)</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="4" name="Set animation" sid="712138391642652" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;ShootUp&quot;&amp;Protagonista.Direction</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="498311441607185">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="317325170919006" type="System" />
-                                                <condition id="2" name="Key is down" sid="696841363909700" type="Keyboard">
-                                                    <param id="0" name="Key">40 (Down arrow)</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="4" name="Set animation" sid="885552830888942" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;ShootDown&quot;&amp;Protagonista.Direction</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="654575446191334">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="732824385483891" type="System" />
-                                                <condition id="2" inverted="1" name="Is playing" sid="492568494857295" type="Protagonista">
+                                                <condition id="4" name="On finished" sid="718373968998349" type="Protagonista">
                                                     <param id="0" name="Animation">&quot;Shoot&quot;&amp;Protagonista.Direction</param>
                                                 </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="431950681606976" type="Protagonista">
+                                                <condition id="4" name="On finished" sid="767047361809463" type="Protagonista">
                                                     <param id="0" name="Animation">&quot;ShootUp&quot;&amp;Protagonista.Direction</param>
                                                 </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="866292431549674" type="Protagonista">
+                                                <condition id="4" name="On finished" sid="907721098218028" type="Protagonista">
                                                     <param id="0" name="Animation">&quot;ShootDown&quot;&amp;Protagonista.Direction</param>
                                                 </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="587907172289021" type="Protagonista">
+                                                <condition id="4" name="On finished" sid="617084621037754" type="Protagonista">
                                                     <param id="0" name="Animation">&quot;ShootBody&quot;&amp;Protagonista.Direction</param>
                                                 </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="778521552000667" type="Protagonista">
+                                                <condition id="4" name="On finished" sid="531998327302106" type="Protagonista">
                                                     <param id="0" name="Animation">&quot;LaunchBomb&quot;&amp;Protagonista.Direction</param>
-                                                </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="377137943998258" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;Death&quot;&amp;Protagonista.Direction</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="4" name="Set animation" sid="629714918238730" type="Protagonista">
+                                                <action id="4" name="Set animation" sid="369372091311977" type="Protagonista">
                                                     <param id="0" name="Animation">&quot;Idle&quot;&amp;Protagonista.Direction</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="655932295196059">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="933461045883630" type="System" />
-                                            </conditions>
-                                            <actions />
-                                            <sub-events>
-                                                <event-block any="1" sid="397178676576464">
-                                                    <conditions>
-                                                        <condition id="4" name="On finished" sid="718373968998349" type="Protagonista">
-                                                            <param id="0" name="Animation">&quot;Shoot&quot;&amp;Protagonista.Direction</param>
-                                                        </condition>
-                                                        <condition id="4" name="On finished" sid="767047361809463" type="Protagonista">
-                                                            <param id="0" name="Animation">&quot;ShootUp&quot;&amp;Protagonista.Direction</param>
-                                                        </condition>
-                                                        <condition id="4" name="On finished" sid="907721098218028" type="Protagonista">
-                                                            <param id="0" name="Animation">&quot;ShootDown&quot;&amp;Protagonista.Direction</param>
-                                                        </condition>
-                                                        <condition id="4" name="On finished" sid="617084621037754" type="Protagonista">
-                                                            <param id="0" name="Animation">&quot;ShootBody&quot;&amp;Protagonista.Direction</param>
-                                                        </condition>
-                                                        <condition id="4" name="On finished" sid="531998327302106" type="Protagonista">
-                                                            <param id="0" name="Animation">&quot;LaunchBomb&quot;&amp;Protagonista.Direction</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="369372091311977" type="Protagonista">
-                                                            <param id="0" name="Animation">&quot;Idle&quot;&amp;Protagonista.Direction</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
-                                        </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block sid="616940355647577">
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="616940355647577">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="580748322194418" type="PlayerBox" />
+                                <condition behavior="Platform" id="0" name="Is moving" sid="465566273344515" type="PlayerBox" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="580934297894726" type="Text">
+                                    <param id="0" name="Text">&quot;Moving&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="287713613473596">
                                     <conditions>
-                                        <condition behavior="Platform" id="2" name="Is on floor" sid="580748322194418" type="PlayerBox" />
-                                        <condition behavior="Platform" id="0" name="Is moving" sid="465566273344515" type="PlayerBox" />
+                                        <condition id="0" name="On key pressed" sid="643436026980815" type="Keyboard">
+                                            <param id="0" name="Key">32 (Space)</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Set text" sid="580934297894726" type="Text">
-                                            <param id="0" name="Text">&quot;Moving&quot;</param>
+                                        <action id="0" name="Call function" sid="227871036565821" type="Function">
+                                            <param id="0" name="Name">&quot;setAttaccoProtagonista&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Move&quot;</param>
                                         </action>
                                     </actions>
-                                    <sub-events>
-                                        <event-block sid="287713613473596">
-                                            <conditions>
-                                                <condition id="0" name="On key pressed" sid="643436026980815" type="Keyboard">
-                                                    <param id="0" name="Key">32 (Space)</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="0" name="Call function" sid="227871036565821" type="Function">
-                                                    <param id="0" name="Name">&quot;setAttaccoProtagonista&quot;</param>
-                                                    <param id="1" name="Parameter {n}">&quot;Move&quot;</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="800275849272601">
-                                            <conditions>
-                                                <condition id="0" name="On key pressed" sid="957932834854234" type="Keyboard">
-                                                    <param id="0" name="Key">69 (E)</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="0" name="Call function" sid="949972466098164" type="Function">
-                                                    <param id="0" name="Name">&quot;setBombProtagonista&quot;</param>
-                                                    <param id="1" name="Parameter {n}">&quot;Floor&quot;</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="764562163020663">
-                                            <conditions>
-                                                <condition id="2" inverted="1" name="Is playing" sid="703631503560673" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;ShootRun&quot;&amp;Protagonista.Direction</param>
-                                                </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="326975389549579" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;ShootMoveUp&quot;&amp;Protagonista.Direction</param>
-                                                </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="781089249289868" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;ShootMoveDown&quot;&amp;Protagonista.Direction</param>
-                                                </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="941731478531186" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;ShootBody&quot;&amp;Protagonista.Direction</param>
-                                                </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="543824530413013" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;LaunchBomb&quot;&amp;Protagonista.Direction</param>
-                                                </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="327603352996292" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;Death&quot;&amp;Protagonista.Direction</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="4" name="Set animation" sid="416512641333288" type="Protagonista">
-                                                    <param id="0" name="Animation">Protagonista.Direction</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block any="1" sid="224054489888902">
-                                            <conditions>
-                                                <condition id="4" name="On finished" sid="590293405226480" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;ShootRun&quot;&amp;Protagonista.Direction</param>
-                                                </condition>
-                                                <condition id="4" name="On finished" sid="468105217720639" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;ShootMoveUp&quot;&amp;Protagonista.Direction</param>
-                                                </condition>
-                                                <condition id="4" name="On finished" sid="654848523202867" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;ShootMoveDown&quot;&amp;Protagonista.Direction</param>
-                                                </condition>
-                                                <condition id="4" name="On finished" sid="536681873928936" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;ShootBody&quot;&amp;Protagonista.Direction</param>
-                                                </condition>
-                                                <condition id="4" name="On finished" sid="824482913120626" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;LaunchBomb&quot;&amp;Protagonista.Direction</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="4" name="Set animation" sid="640925182640494" type="Protagonista">
-                                                    <param id="0" name="Animation">Protagonista.Direction</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
                                 </event-block>
-                                <event-block any="1" sid="528642556973375">
+                                <event-block sid="800275849272601">
                                     <conditions>
-                                        <condition behavior="Platform" id="3" name="Is jumping" sid="617578721071456" type="PlayerBox" />
-                                        <condition behavior="Platform" id="4" name="Is falling" sid="332427191024751" type="PlayerBox" />
+                                        <condition id="0" name="On key pressed" sid="957932834854234" type="Keyboard">
+                                            <param id="0" name="Key">69 (E)</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Set text" sid="358314491235809" type="Text">
-                                            <param id="0" name="Text">&quot;Jumping&quot;</param>
+                                        <action id="0" name="Call function" sid="949972466098164" type="Function">
+                                            <param id="0" name="Name">&quot;setBombProtagonista&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Floor&quot;</param>
                                         </action>
                                     </actions>
+                                </event-block>
+                                <event-block sid="764562163020663">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="703631503560673" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootRun&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="326975389549579" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootMoveUp&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="781089249289868" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootMoveDown&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="941731478531186" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootBody&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="543824530413013" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;LaunchBomb&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="416512641333288" type="Protagonista">
+                                            <param id="0" name="Animation">Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block any="1" sid="224054489888902">
+                                    <conditions>
+                                        <condition id="4" name="On finished" sid="590293405226480" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootRun&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="4" name="On finished" sid="468105217720639" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootMoveUp&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="4" name="On finished" sid="654848523202867" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootMoveDown&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="4" name="On finished" sid="536681873928936" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootBody&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="4" name="On finished" sid="824482913120626" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;LaunchBomb&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="640925182640494" type="Protagonista">
+                                            <param id="0" name="Animation">Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block any="1" sid="528642556973375">
+                            <conditions>
+                                <condition behavior="Platform" id="3" name="Is jumping" sid="617578721071456" type="PlayerBox" />
+                                <condition behavior="Platform" id="4" name="Is falling" sid="332427191024751" type="PlayerBox" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="358314491235809" type="Text">
+                                    <param id="0" name="Text">&quot;Jumping&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="332319277902081">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="624674554196799" type="Keyboard">
+                                            <param id="0" name="Key">32 (Space)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="904803021307070" type="Function">
+                                            <param id="0" name="Name">&quot;setAttaccoProtagonista&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Jump&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="124643996240949">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="813521112094007" type="Keyboard">
+                                            <param id="0" name="Key">69 (E)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="313377405074139" type="Function">
+                                            <param id="0" name="Name">&quot;setBombProtagonista&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Jump&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="948084969235860">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="149130955963531" type="Keyboard">
+                                            <param id="0" name="Key">38 (Up arrow)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="449669905486640" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootJumpUp&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="102642616556318">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="770958943327655" type="System" />
+                                        <condition id="2" name="Key is down" sid="820662589872098" type="Keyboard">
+                                            <param id="0" name="Key">40 (Down arrow)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="414745434480698" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootJumpDown&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="826709129713351">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="878554848152748" type="System" />
+                                        <condition id="2" inverted="1" name="Is playing" sid="509364608918802" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootJumpUp&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="985361699908089" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootJumpDown&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="546611104462467" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootJump&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="669030722809599" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;ShootBody&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="713916984848652" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;LaunchBombJump&quot;&amp;Protagonista.Direction</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="448589165462320" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;Jump&quot;&amp;Protagonista.Direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="927586584679322">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="611779063564707" type="System" />
+                                    </conditions>
+                                    <actions />
                                     <sub-events>
-                                        <event-block sid="332319277902081">
+                                        <event-block any="1" sid="848911529798079">
                                             <conditions>
-                                                <condition id="0" name="On key pressed" sid="624674554196799" type="Keyboard">
-                                                    <param id="0" name="Key">32 (Space)</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="0" name="Call function" sid="904803021307070" type="Function">
-                                                    <param id="0" name="Name">&quot;setAttaccoProtagonista&quot;</param>
-                                                    <param id="1" name="Parameter {n}">&quot;Jump&quot;</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="124643996240949">
-                                            <conditions>
-                                                <condition id="0" name="On key pressed" sid="813521112094007" type="Keyboard">
-                                                    <param id="0" name="Key">69 (E)</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="0" name="Call function" sid="313377405074139" type="Function">
-                                                    <param id="0" name="Name">&quot;setBombProtagonista&quot;</param>
-                                                    <param id="1" name="Parameter {n}">&quot;Jump&quot;</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="948084969235860">
-                                            <conditions>
-                                                <condition id="2" name="Key is down" sid="149130955963531" type="Keyboard">
-                                                    <param id="0" name="Key">38 (Up arrow)</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="4" name="Set animation" sid="449669905486640" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;ShootJumpUp&quot;&amp;Protagonista.Direction</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="102642616556318">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="770958943327655" type="System" />
-                                                <condition id="2" name="Key is down" sid="820662589872098" type="Keyboard">
-                                                    <param id="0" name="Key">40 (Down arrow)</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="4" name="Set animation" sid="414745434480698" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;ShootJumpDown&quot;&amp;Protagonista.Direction</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="826709129713351">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="878554848152748" type="System" />
-                                                <condition id="2" inverted="1" name="Is playing" sid="509364608918802" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;ShootJumpUp&quot;&amp;Protagonista.Direction</param>
-                                                </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="985361699908089" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;ShootJumpDown&quot;&amp;Protagonista.Direction</param>
-                                                </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="546611104462467" type="Protagonista">
+                                                <condition id="4" name="On finished" sid="447504217517690" type="Protagonista">
                                                     <param id="0" name="Animation">&quot;ShootJump&quot;&amp;Protagonista.Direction</param>
                                                 </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="669030722809599" type="Protagonista">
+                                                <condition id="4" name="On finished" sid="643418780652808" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;ShootJumpUp&quot;&amp;Protagonista.Direction</param>
+                                                </condition>
+                                                <condition id="4" name="On finished" sid="527639312196424" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;ShootJumpDown&quot;&amp;Protagonista.Direction</param>
+                                                </condition>
+                                                <condition id="4" name="On finished" sid="156066334679022" type="Protagonista">
                                                     <param id="0" name="Animation">&quot;ShootBody&quot;&amp;Protagonista.Direction</param>
                                                 </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="713916984848652" type="Protagonista">
+                                                <condition id="4" name="On finished" sid="130123276494405" type="Protagonista">
                                                     <param id="0" name="Animation">&quot;LaunchBombJump&quot;&amp;Protagonista.Direction</param>
-                                                </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="507806896742350" type="Protagonista">
-                                                    <param id="0" name="Animation">&quot;DeathJump&quot;&amp;Protagonista.Direction</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="4" name="Set animation" sid="448589165462320" type="Protagonista">
+                                                <action id="4" name="Set animation" sid="472665347754914" type="Protagonista">
                                                     <param id="0" name="Animation">&quot;Jump&quot;&amp;Protagonista.Direction</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                             </actions>
-                                        </event-block>
-                                        <event-block sid="927586584679322">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="611779063564707" type="System" />
-                                            </conditions>
-                                            <actions />
-                                            <sub-events>
-                                                <event-block any="1" sid="848911529798079">
-                                                    <conditions>
-                                                        <condition id="4" name="On finished" sid="447504217517690" type="Protagonista">
-                                                            <param id="0" name="Animation">&quot;ShootJump&quot;&amp;Protagonista.Direction</param>
-                                                        </condition>
-                                                        <condition id="4" name="On finished" sid="643418780652808" type="Protagonista">
-                                                            <param id="0" name="Animation">&quot;ShootJumpUp&quot;&amp;Protagonista.Direction</param>
-                                                        </condition>
-                                                        <condition id="4" name="On finished" sid="527639312196424" type="Protagonista">
-                                                            <param id="0" name="Animation">&quot;ShootJumpDown&quot;&amp;Protagonista.Direction</param>
-                                                        </condition>
-                                                        <condition id="4" name="On finished" sid="156066334679022" type="Protagonista">
-                                                            <param id="0" name="Animation">&quot;ShootBody&quot;&amp;Protagonista.Direction</param>
-                                                        </condition>
-                                                        <condition id="4" name="On finished" sid="130123276494405" type="Protagonista">
-                                                            <param id="0" name="Animation">&quot;LaunchBombJump&quot;&amp;Protagonista.Direction</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="472665347754914" type="Protagonista">
-                                                            <param id="0" name="Animation">&quot;Jump&quot;&amp;Protagonista.Direction</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>

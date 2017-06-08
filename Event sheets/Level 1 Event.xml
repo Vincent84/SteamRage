@@ -24,25 +24,6 @@
         </event-group>
         <event-group description="" sid="821326275561407" title="Soldato semplice">
             <sub-events>
-                <event-block disabled="1" sid="532332757004338">
-                    <conditions>
-                        <condition id="-8" name="Is boolean instance variable set" sid="785382081092161" type="SoldatoSemplice">
-                            <param id="0" name="Instance variable">Movable</param>
-                        </condition>
-                        <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="550212768922876" type="SoldatoSemplice">
-                            <param id="0" name="Object">Protagonista</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action behavior="Platform" id="7" name="Simulate control" sid="621085066545173" type="SoldatoSemplice">
-                            <param id="0" name="Control">1</param>
-                        </action>
-                        <action id="4" name="Set animation" sid="397564437483789" type="SoldatoSemplice">
-                            <param id="0" name="Animation">&quot;WalkRight&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="649789722389763">
                     <conditions>
                         <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="676435240007614" type="SoldatoSemplice">
