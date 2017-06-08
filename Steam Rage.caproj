@@ -30,6 +30,7 @@
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
@@ -720,6 +721,9 @@
                     <behavior-type name="BoundToLayout" sid="842089432119098">
                         <behavior id="bound" />
                     </behavior-type>
+                    <behavior-type name="ScrollTo" sid="691207293569147">
+                        <behavior id="scrollto" />
+                    </behavior-type>
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="438188895024973" speed="5">
@@ -754,22 +758,22 @@
                         <behavior id="solid" />
                     </behavior-type>
                 </behaviors>
-                <texture original-source="C:\Users\dbga_45\Downloads\Tilemaps1.0-20170607T141149Z-001\Tilemaps1.0\Livello1 Parte1\Piattaforme.png" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps2.0-20170608T014228Z-001\Tilemaps2.0\Tilemaps7giugnoNOTTE\Livello1Parte1\Piattaforme.png" />
                 <tiles />
             </object-type>
             <object-type name="TilemapSfondo" sid="674636549077051">
                 <plugin id="Tilemap" />
-                <texture original-source="C:\Users\dbga_45\Downloads\Tilemaps1.0-20170607T141149Z-001\Tilemaps1.0\Livello1 Parte1\TilemapSfondo.png" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps2.0-20170608T014228Z-001\Tilemaps2.0\Tilemaps7giugnoNOTTE\Livello1Parte1\TilemapSfondo.png" />
                 <tiles />
             </object-type>
             <object-type name="ArcadeDistruttoAvanti" sid="762538543010891">
                 <plugin id="Tilemap" />
-                <texture original-source="C:\Users\dbga_45\Downloads\Tilemaps1.0-20170607T141149Z-001\Tilemaps1.0\Livello1 Parte1\ArcadeDistruttoAvanti.png" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps2.0-20170608T014228Z-001\Tilemaps2.0\Tilemaps7giugnoNOTTE\Livello1Parte1\ArcadeDistruttoAvanti.png" />
                 <tiles />
             </object-type>
             <object-type name="TilemapProps" sid="356668303928306">
                 <plugin id="Tilemap" />
-                <texture original-source="C:\Users\dbga_45\Downloads\Tilemaps1.0-20170607T141149Z-001\Tilemaps1.0\Livello1 Parte1\TilemapProps.png" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps2.0-20170608T014228Z-001\Tilemaps2.0\Tilemaps7giugnoNOTTE\Livello1Parte1\TilemapProps.png" />
                 <tiles />
             </object-type>
             <object-type name="TilemapSolidi" sid="947254710462065">
@@ -782,7 +786,7 @@
                         <behavior id="Physics" />
                     </behavior-type>
                 </behaviors>
-                <texture original-source="C:\Users\dbga_45\Downloads\Tilemaps1.0-20170607T141149Z-001\Tilemaps1.0\Livello1 Parte1\TilemapSolidi.png" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps2.0-20170608T014228Z-001\Tilemaps2.0\Tilemaps7giugnoNOTTE\Livello1Parte1\TilemapSolidi.png" />
                 <tiles />
             </object-type>
             <object-type name="ArcadeDistruttoAvanti2" sid="729560048891280">
@@ -792,7 +796,7 @@
             </object-type>
             <object-type name="ArcadeDistruttoDietro" sid="702537366487107">
                 <plugin id="Tilemap" />
-                <texture original-source="C:\Users\dbga_45\Downloads\Tilemaps1.0-20170607T141149Z-001\Tilemaps1.0\Livello1 Parte1\ArcadeDistruttoDietro.png" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps2.0-20170608T014228Z-001\Tilemaps2.0\Tilemaps7giugnoNOTTE\Livello1Parte1\ArcadeDistruttoDietro.png" />
                 <tiles />
             </object-type>
             <object-type name="TilemapJumpTrue" sid="934311966236178">
@@ -807,7 +811,7 @@
             </object-type>
             <object-type name="TilemapMorte" sid="634867917598656">
                 <plugin id="Tilemap" />
-                <texture original-source="C:\Users\dbga_45\Downloads\Tilemaps1.0-20170607T141149Z-001\Tilemaps1.0\Livello1 Parte1\TilemapMorte.png" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps2.0-20170608T014228Z-001\Tilemaps2.0\Tilemaps7giugnoNOTTE\Livello1Parte1\TilemapMorte.png" />
                 <tiles />
             </object-type>
             <object-type name="TiledBackground" sid="446987245922176">
@@ -1061,11 +1065,8 @@
             </object-type>
             <object-type name="Kamikaze" sid="998683874340369">
                 <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable name="Direction" sid="488484204699527" type="string" />
-                </instance-variables>
                 <animation-folder>
-                    <animation framecount="5" loop="1" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="649430639070382" speed="8">
+                    <animation framecount="5" loop="1" name="IdleLeft" pingpong="0" repeatcount="1" repeatto="0" sid="649430639070382" speed="8">
                         <frame duration="1" hotspotX="0.5" hotspotY="1">
                             <image-point name="Imagepoint 1" x="0.5" y="0.5" />
                         </frame>
@@ -1080,6 +1081,53 @@
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="1">
                             <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                    </animation>
+                    <animation framecount="5" loop="1" name="IdleRight" pingpong="0" repeatcount="1" repeatto="0" sid="235766060223798" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
                         </frame>
                     </animation>
                     <animation framecount="4" loop="1" name="Run" pingpong="0" repeatcount="1" repeatto="0" sid="903468501529199" speed="12">
@@ -1280,53 +1328,6 @@
                                 <point x="1" y="0" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="1">
-                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
-                            <collision-poly>
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                                <point x="1" y="0" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="1">
-                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
-                            <collision-poly>
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                                <point x="1" y="0" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="1">
-                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
-                            <collision-poly>
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                                <point x="1" y="0" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="1">
-                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
-                            <collision-poly>
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                                <point x="1" y="0" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="1">
-                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
-                            <collision-poly>
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                                <point x="1" y="0" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="5" loop="1" name="IdleMirror" pingpong="0" repeatcount="1" repeatto="0" sid="235766060223798" speed="8">
                         <frame duration="1" hotspotX="0.5" hotspotY="1">
                             <image-point name="Imagepoint 1" x="0.5" y="0.5" />
                             <collision-poly>
@@ -1674,9 +1675,35 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="761992064068862" speed="0">
+                <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="761992064068862" speed="0">
                     <frame duration="1" hotspotX="0.6" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.6" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.6" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.6" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.6" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Ponte" sid="500259587017171">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="863763722081605">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="935465587145752" speed="5">
+                    <frame duration="1" hotspotX="0.501312" hotspotY="0.5" original-source="C:\Users\Vincenzo\Downloads\PonteLivello1.png">
+                        <collision-poly>
+                            <point x="0.976378" y="0.145161" />
+                            <point x="1" y="0.5" />
+                            <point x="0.963255" y="0.774194" />
+                            <point x="0.501312" y="0.774194" />
+                            <point x="0" y="1" />
+                            <point x="0.0104987" y="0.0645161" />
+                            <point x="0.501312" y="0" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -1723,6 +1750,7 @@
             <instance-variables>
                 <instance-variable name="Point" sid="104073823990102" type="number" />
                 <instance-variable name="isDead" sid="504741174190660" type="boolean" />
+                <instance-variable name="Direction" sid="530425412427113" type="string" />
             </instance-variables>
         </family>
     </families>
