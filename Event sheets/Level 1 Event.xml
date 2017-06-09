@@ -735,6 +735,55 @@
         </event-group>
         <event-group description="" sid="568898928986234" title="Mech">
             <sub-events>
+                <event-group description="" sid="214944404730618" title="Proiettile Invisibile">
+                    <sub-events>
+                        <event-block sid="529417120876501">
+                            <conditions>
+                                <condition id="-18" name="On created" sid="457302791752859" type="proiettile_invisibile" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="130267015287022" type="proiettile_invisibile">
+                                    <param id="0" name="Angle">90</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="510966290307121">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="950492389666836" type="proiettile_invisibile">
+                                    <param id="0" name="Object">TilemapSolidi</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="676373593737192" type="proiettile_invisibile">
+                                    <param id="0" name="Object">Caduta_Razzo</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="459945168375477" type="Caduta_Razzo">
+                                    <param id="0" name="Angle">90</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="548170646338428" type="proiettile_invisibile" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="622591272170054" title="Raggio Visivo">
+                    <sub-events>
+                        <event-block sid="631522593218107">
+                            <conditions>
+                                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="802389799109002" type="Mech">
+                                    <param id="0" name="Object">Protagonista</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="322402808455208" type="Mech">
+                                    <param id="0" name="Instance variable">LoVedo</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
                 <event-group description="Ricordarsi di nmettere variabile globale per dire quanti colpi ha una cartuccera!!!" sid="701370492717313" title="Mitragliatrice tank">
                     <sub-events>
                         <event-block sid="622876807741501">
@@ -883,12 +932,12 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group description="" sid="491606520620854" title="Vita tank">
+                <event-group description="" sid="491606520620854" title="Vita Mech">
                     <sub-events>
                         <event-block sid="865208191125741">
                             <conditions>
                                 <condition id="1" name="Is overlapping another object" sid="930256599823983" type="Mech">
-                                    <param id="0" name="Object">ProiettileTorretta</param>
+                                    <param id="0" name="Object">Proiettile</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -896,11 +945,11 @@
                                     <param id="0" name="Instance variable">Vita</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="-9" name="Destroy" sid="216462028054080" type="ProiettileTorretta" />
+                                <action id="-9" name="Destroy" sid="216462028054080" type="Proiettile" />
                                 <action behavior="Flash" id="0" name="Flash" sid="773755561088717" type="Mech">
                                     <param id="0" name="&apos;On&apos; time">0.1</param>
                                     <param id="1" name="&apos;Off&apos; time">0.1</param>
-                                    <param id="2" name="Duration">0.1</param>
+                                    <param id="2" name="Duration">0.05</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -960,7 +1009,7 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group description="" sid="738982837920311" title="Movimento tank">
+                <event-group description="" sid="738982837920311" title="Movimento Mech">
                     <sub-events>
                         <event-block sid="612210441016967">
                             <conditions>
@@ -968,6 +1017,11 @@
                                     <param id="0" name="Instance variable">Mostra_Debolezza</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="332809555145969" type="Mech">
+                                    <param id="0" name="Instance variable">LoVedo</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -1246,7 +1300,7 @@
                                     <conditions>
                                         <condition id="-1" name="Compare X" sid="667544232062983" type="Protagonista">
                                             <param id="0" name="Comparison">4</param>
-                                            <param id="1" name="X co-ordinate">mech.X - 100</param>
+                                            <param id="1" name="X co-ordinate">mech.X - 50</param>
                                         </condition>
                                         <condition id="-6" name="Every X seconds" sid="270351840507658" type="System">
                                             <param id="0" name="Interval (seconds)">2</param>
@@ -1258,7 +1312,7 @@
                                             <param id="1" name="Layer">0</param>
                                             <param id="2" name="Image point">0</param>
                                         </action>
-                                        <action id="-24" name="Move to top" sid="822101497545163" type="fumo1" />
+                                        <action id="-24" name="Move to top" sid="866895705621827" type="Mech" />
                                         <action id="7" name="Set mirrored" sid="504631451485395" type="fumo1">
                                             <param id="0" name="State">0</param>
                                         </action>
@@ -1270,7 +1324,7 @@
                                             <param id="1" name="Layer">0</param>
                                             <param id="2" name="Image point">0</param>
                                         </action>
-                                        <action id="-24" name="Move to top" sid="750733319961679" type="fumo3" />
+                                        <action id="-24" name="Move to top" sid="172037706670035" type="Mech" />
                                         <action id="7" name="Set mirrored" sid="414780098703428" type="fumo3">
                                             <param id="0" name="State">0</param>
                                         </action>
@@ -1279,7 +1333,7 @@
                                             <param id="1" name="Layer">0</param>
                                             <param id="2" name="Image point">0</param>
                                         </action>
-                                        <action id="-24" name="Move to top" sid="397481932801394" type="fumo2" />
+                                        <action id="-24" name="Move to top" sid="113029527325922" type="Mech" />
                                         <action id="-8" name="Set angle" sid="395219595463650" type="fumo2">
                                             <param id="0" name="Angle">-90</param>
                                         </action>
@@ -1303,7 +1357,7 @@
                                     <param id="1" name="Layer">0</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
-                                <action id="-24" name="Move to top" sid="444248767040350" type="fumo1" />
+                                <action id="-25" name="Move to bottom" sid="444248767040350" type="fumo1" />
                                 <action id="7" name="Set mirrored" sid="156618178177866" type="fumo1">
                                     <param id="0" name="State">0</param>
                                 </action>
@@ -1315,7 +1369,7 @@
                                     <param id="1" name="Layer">0</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
-                                <action id="-24" name="Move to top" sid="618121270321263" type="fumo3" />
+                                <action id="-25" name="Move to bottom" sid="618121270321263" type="fumo3" />
                                 <action id="7" name="Set mirrored" sid="614932088500401" type="fumo3">
                                     <param id="0" name="State">0</param>
                                 </action>
@@ -1324,9 +1378,13 @@
                                     <param id="1" name="Layer">0</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
-                                <action id="-24" name="Move to top" sid="763253354196883" type="fumo2" />
+                                <action id="-25" name="Move to bottom" sid="763253354196883" type="fumo2" />
                                 <action id="-8" name="Set angle" sid="956708533608731" type="fumo2">
                                     <param id="0" name="Angle">-90</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="984466341201852" type="Mech">
+                                    <param id="0" name="Animation">&quot;Debolezza_Esposta&quot;</param>
+                                    <param id="1" name="From">1</param>
                                 </action>
                             </actions>
                         </event-block>

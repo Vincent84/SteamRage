@@ -533,6 +533,7 @@
                         <N_Cartuccere>3</N_Cartuccere>
                         <Mostra_Debolezza>0</Mostra_Debolezza>
                         <Avvia_Timer>1</Avvia_Timer>
+                        <LoVedo>0</LoVedo>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">
@@ -565,6 +566,14 @@
                                 <set-angle>No</set-angle>
                                 <default-controls>Yes</default-controls>
                                 <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="LineOfSight">
+                            <properties>
+                                <obstacles>Solids</obstacles>
+                                <range>300</range>
+                                <cone-of-view>360</cone-of-view>
+                                <use-collision-cells>Yes</use-collision-cells>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
@@ -3017,28 +3026,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite" uid="125">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>-168</x>
-                        <y>1693</y>
-                        <z>0</z>
-                        <width>250</width>
-                        <height>250</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
                 <instance type="fumo1" uid="126">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -3049,7 +3036,7 @@
                     <behavior-instances>
                         <behavior-instance type="Bullet">
                             <properties>
-                                <speed>400</speed>
+                                <speed>50</speed>
                                 <acceleration>0</acceleration>
                                 <gravity>0</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>
@@ -3070,8 +3057,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-164</x>
-                        <y>1683</y>
+                        <x>-114.890853882</x>
+                        <y>1623.168212891</y>
                         <z>0</z>
                         <width>128</width>
                         <height>128</height>
@@ -3092,7 +3079,7 @@
                     <behavior-instances>
                         <behavior-instance type="Bullet">
                             <properties>
-                                <speed>100</speed>
+                                <speed>50</speed>
                                 <acceleration>0</acceleration>
                                 <gravity>0</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>
@@ -3113,8 +3100,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-161</x>
-                        <y>1622</y>
+                        <x>-232.688323975</x>
+                        <y>1622.562133789</y>
                         <z>0</z>
                         <width>128</width>
                         <height>128</height>
@@ -3144,7 +3131,7 @@
                         </behavior-instance>
                         <behavior-instance type="Bullet">
                             <properties>
-                                <speed>120</speed>
+                                <speed>60</speed>
                                 <acceleration>0</acceleration>
                                 <gravity>0</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>
@@ -3156,8 +3143,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-160</x>
-                        <y>1572</y>
+                        <x>-381.274047852</x>
+                        <y>1619.982055664</y>
                         <z>0</z>
                         <width>128</width>
                         <height>128</height>
