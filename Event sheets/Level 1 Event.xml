@@ -438,11 +438,11 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="215277602206277" title="Soldato corazzato">
+        <event-group description="" disabled="1" sid="215277602206277" title="Soldato corazzato old">
             <sub-events>
-                <event-group description="" sid="428354777173785" title="IA Corazzato">
+                <event-group description="" disabled="1" sid="428354777173785" title="IA Corazzato">
                     <sub-events>
-                        <event-block sid="671902385690594">
+                        <event-block disabled="1" sid="671902385690594">
                             <conditions>
                                 <condition id="-6" name="Every X seconds" sid="460628889753028" type="System">
                                     <param id="0" name="Interval (seconds)">2.0</param>
@@ -470,7 +470,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="809581758702684">
+                        <event-block disabled="1" sid="809581758702684">
                             <conditions>
                                 <condition id="0" name="On collision with another object" sid="980487287436358" type="ProiettileCorazzato">
                                     <param id="0" name="Object">Protagonista</param>
@@ -492,7 +492,7 @@
                                 </action>
                             </actions>
                             <sub-events>
-                                <event-block sid="463869465870703">
+                                <event-block disabled="1" sid="463869465870703">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="103748189694058" type="Protagonista">
                                             <param id="0" name="Instance variable">Direction</param>
@@ -507,7 +507,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="685936474989282">
+                                <event-block disabled="1" sid="685936474989282">
                                     <conditions>
                                         <condition id="-22" name="Else" sid="758877685341063" type="System" />
                                         <condition id="-7" name="Compare instance variable" sid="107189210791674" type="Protagonista">
@@ -525,7 +525,7 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="799607982760169">
+                        <event-block disabled="1" sid="799607982760169">
                             <conditions>
                                 <condition id="4" name="On finished" sid="763255761780909" type="Corazzato">
                                     <param id="0" name="Animation">&quot;Shoot&quot;</param>

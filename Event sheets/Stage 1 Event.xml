@@ -24,6 +24,9 @@
                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="520581987269689" type="SoldatoSemplice">
                                             <param id="0" name="Instance variable">isDead</param>
                                         </condition>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="333037245151163" type="Protagonista">
+                                            <param id="0" name="Instance variable">IsDeading</param>
+                                        </condition>
                                     </conditions>
                                     <actions />
                                     <sub-events>
@@ -226,6 +229,19 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
+                        <event-block sid="283070498469004">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="276907522186280" type="ProiettileSoldatoSemplice">
+                                    <param id="0" name="Object">PlayerBox</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="709079509914385" type="Function">
+                                    <param id="0" name="Name">&quot;setCharacterDeath&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-group>
                 <event-group description="" sid="989097508411791" title="Gestione Movimento Soldato Semplice">
@@ -248,6 +264,12 @@
                             <conditions>
                                 <condition id="-8" name="Is boolean instance variable set" sid="368328343337287" type="SoldatoSemplice">
                                     <param id="0" name="Instance variable">Active</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="690637566060742" type="SoldatoSemplice">
+                                    <param id="0" name="Instance variable">isDead</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="392284156124569" type="Protagonista">
+                                    <param id="0" name="Instance variable">IsDeading</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -305,6 +327,12 @@
                             <conditions>
                                 <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="943701221926301" type="SoldatoSemplice">
                                     <param id="0" name="Object">Protagonista</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="845001093294970" type="SoldatoSemplice">
+                                    <param id="0" name="Instance variable">isDead</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="861986111361816" type="Protagonista">
+                                    <param id="0" name="Instance variable">IsDeading</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -394,6 +422,12 @@
                                 <condition id="-8" name="Is boolean instance variable set" sid="651958712267882" type="SoldatoSemplice">
                                     <param id="0" name="Instance variable">Movable</param>
                                 </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="186792576669544" type="SoldatoSemplice">
+                                    <param id="0" name="Instance variable">isDead</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="644765855204287" type="Protagonista">
+                                    <param id="0" name="Instance variable">IsDeading</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="4" name="Set animation" sid="655379003040604" type="SoldatoSemplice">
@@ -470,6 +504,122 @@
                                     </sub-events>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="188319217559390" title="Gestione Soldato Corazzato">
+            <sub-events>
+                <event-group description="" sid="656589272735561" title="Gestione Movimento Soldato Corazzato">
+                    <sub-events>
+                        <event-block sid="653271257623629">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="952170500665807" type="Corazzato">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">PlayerBox.X</param>
+                                </condition>
+                                <condition id="-1" name="Compare X" sid="400373568338284" type="ScudoCorazzato">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">PlayerBox.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="435508461476847" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="850009858801314" type="Corazzato">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="730184745189930" type="ScudoCorazzato">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="814317279350054">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="634600577262657" type="Corazzato">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">PlayerBox.X</param>
+                                </condition>
+                                <condition id="-1" name="Compare X" sid="119686878887340" type="ScudoCorazzato">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">PlayerBox.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="430331027053419" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="336086532157234" type="Corazzato">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="756245370047083" type="ScudoCorazzato">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="243904834386608" title="Gestione Attacco Soldato Corazzato">
+                    <sub-events>
+                        <event-block sid="297691293406736">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="754837804650880" type="System">
+                                    <param id="0" name="Interval (seconds)">0.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="701396646270713" type="ScudoCorazzato">
+                                    <param id="0" name="Instance variable">CountAttacco</param>
+                                    <param id="1" name="Value">0.5</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="327634184673944">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="567864011896564" type="ScudoCorazzato">
+                                            <param id="0" name="Instance variable">CountAttacco</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="367726642277953" type="ScudoCorazzato">
+                                            <param id="0" name="Object">VaporeScudo</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="189283221962722" type="ScudoCorazzato">
+                                            <param id="0" name="Instance variable">CountAttacco</param>
+                                            <param id="1" name="Value">Self.CadenzaAttacco</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="300552916145783">
+                                            <conditions>
+                                                <condition id="7" name="Is mirrored" sid="129252405560323" type="ScudoCorazzato" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="7" name="Set mirrored" sid="237114868739431" type="VaporeScudo">
+                                                    <param id="0" name="State">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="491557916410839">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="918169972669511" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="963623856057671" type="ScudoCorazzato">
+                                    <param id="0" name="Object">Corazzato</param>
+                                    <param id="1" name="Image point (optional)">1</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-group>
