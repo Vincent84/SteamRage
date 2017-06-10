@@ -4,6 +4,19 @@
     <name>Stage 1 Event</name>
     <events>
         <include>General Event</include>
+        <event-block sid="117128903758121">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="268788006776362" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Turret" id="1" name="Add object to target" sid="833852535480574" type="Torretta">
+                    <param id="0" name="Target">Protagonista</param>
+                </action>
+                <action id="-6" name="Scroll to Y" sid="309477345303454" type="System">
+                    <param id="0" name="Y">PlayerBox.Y-240</param>
+                </action>
+            </actions>
+        </event-block>
         <event-group description="" sid="124715259887079" title="Gestione Soldato Semplice">
             <sub-events>
                 <event-group description="" sid="734800093109713" title="Gestione Attacco Soldato Semplice">
@@ -519,20 +532,18 @@
                                     <param id="0" name="Comparison">4</param>
                                     <param id="1" name="X co-ordinate">PlayerBox.X</param>
                                 </condition>
-                                <condition id="-1" name="Compare X" sid="400373568338284" type="ScudoCorazzato">
-                                    <param id="0" name="Comparison">4</param>
-                                    <param id="1" name="X co-ordinate">PlayerBox.X</param>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="751038640669662" type="Corazzato">
+                                    <param id="0" name="Instance variable">isDead</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-16" name="Wait" sid="435508461476847" type="System">
-                                    <param id="0" name="Seconds">1.0</param>
+                                <action id="-10" name="Set value" sid="434930078358726" type="Corazzato">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">&quot;Left&quot;</param>
                                 </action>
-                                <action id="7" name="Set mirrored" sid="850009858801314" type="Corazzato">
-                                    <param id="0" name="State">1</param>
-                                </action>
-                                <action id="7" name="Set mirrored" sid="730184745189930" type="ScudoCorazzato">
-                                    <param id="0" name="State">1</param>
+                                <action id="4" name="Set animation" sid="492281074410947" type="Corazzato">
+                                    <param id="0" name="Animation">&quot;IdleLeft&quot;</param>
+                                    <param id="1" name="From">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -542,20 +553,18 @@
                                     <param id="0" name="Comparison">2</param>
                                     <param id="1" name="X co-ordinate">PlayerBox.X</param>
                                 </condition>
-                                <condition id="-1" name="Compare X" sid="119686878887340" type="ScudoCorazzato">
-                                    <param id="0" name="Comparison">2</param>
-                                    <param id="1" name="X co-ordinate">PlayerBox.X</param>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="696431077351352" type="Corazzato">
+                                    <param id="0" name="Instance variable">isDead</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-16" name="Wait" sid="430331027053419" type="System">
-                                    <param id="0" name="Seconds">1.0</param>
+                                <action id="-10" name="Set value" sid="273153595310327" type="Corazzato">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">&quot;Right&quot;</param>
                                 </action>
-                                <action id="7" name="Set mirrored" sid="336086532157234" type="Corazzato">
-                                    <param id="0" name="State">0</param>
-                                </action>
-                                <action id="7" name="Set mirrored" sid="756245370047083" type="ScudoCorazzato">
-                                    <param id="0" name="State">0</param>
+                                <action id="4" name="Set animation" sid="575132409469690" type="Corazzato">
+                                    <param id="0" name="Animation">&quot;IdleRight&quot;</param>
+                                    <param id="1" name="From">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -563,66 +572,278 @@
                 </event-group>
                 <event-group description="" sid="243904834386608" title="Gestione Attacco Soldato Corazzato">
                     <sub-events>
-                        <event-block sid="297691293406736">
+                        <event-block sid="472254870176191">
                             <conditions>
-                                <condition id="-6" name="Every X seconds" sid="754837804650880" type="System">
-                                    <param id="0" name="Interval (seconds)">0.5</param>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="258043325168751" type="Corazzato">
+                                    <param id="0" name="Instance variable">isDead</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="-12" name="Subtract from" sid="701396646270713" type="ScudoCorazzato">
-                                    <param id="0" name="Instance variable">CountAttacco</param>
-                                    <param id="1" name="Value">0.5</param>
-                                </action>
-                            </actions>
+                            <actions />
                             <sub-events>
-                                <event-block sid="327634184673944">
+                                <event-block sid="297691293406736">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="567864011896564" type="ScudoCorazzato">
-                                            <param id="0" name="Instance variable">CountAttacco</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Value">0</param>
+                                        <condition id="-6" name="Every X seconds" sid="754837804650880" type="System">
+                                            <param id="0" name="Interval (seconds)">0.5</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Spawn another object" sid="367726642277953" type="ScudoCorazzato">
-                                            <param id="0" name="Object">VaporeScudo</param>
-                                            <param id="1" name="Layer">1</param>
-                                            <param id="2" name="Image point">1</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="189283221962722" type="ScudoCorazzato">
+                                        <action id="-12" name="Subtract from" sid="701396646270713" type="Corazzato">
                                             <param id="0" name="Instance variable">CountAttacco</param>
-                                            <param id="1" name="Value">Self.CadenzaAttacco</param>
+                                            <param id="1" name="Value">0.5</param>
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="300552916145783">
+                                        <event-block sid="327634184673944">
                                             <conditions>
-                                                <condition id="7" name="Is mirrored" sid="129252405560323" type="ScudoCorazzato" />
+                                                <condition id="-7" name="Compare instance variable" sid="567864011896564" type="Corazzato">
+                                                    <param id="0" name="Instance variable">CountAttacco</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
                                             </conditions>
-                                            <actions>
-                                                <action id="7" name="Set mirrored" sid="237114868739431" type="VaporeScudo">
-                                                    <param id="0" name="State">0</param>
-                                                </action>
-                                            </actions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="363981806836956">
+                                                    <conditions>
+                                                        <condition id="-11" name="For Each" sid="300925192847374" type="System">
+                                                            <param id="0" name="Object">Corazzato</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="189283221962722" type="Corazzato">
+                                                            <param id="0" name="Instance variable">CountAttacco</param>
+                                                            <param id="1" name="Value">Self.CadenzaAttacco</param>
+                                                        </action>
+                                                        <action id="0" name="Spawn another object" sid="413126831842596" type="Corazzato">
+                                                            <param id="0" name="Object">VaporeScudo</param>
+                                                            <param id="1" name="Layer">1</param>
+                                                            <param id="2" name="Image point">1</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="640298924488421">
+                                                            <conditions>
+                                                                <condition id="2" name="Is playing" sid="822928430431883" type="Corazzato">
+                                                                    <param id="0" name="Animation">&quot;IdleRight&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="561322596063303" type="VaporeScudo">
+                                                                    <param id="0" name="Animation">&quot;Right&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="491557916410839">
+                        <event-block any="1" sid="632819732072951">
                             <conditions>
-                                <condition id="-1" name="Every tick" sid="918169972669511" type="System" />
+                                <condition id="4" name="On finished" sid="995592502720193" type="VaporeScudo">
+                                    <param id="0" name="Animation">&quot;Left&quot;</param>
+                                </condition>
+                                <condition id="4" name="On finished" sid="791611773716230" type="VaporeScudo">
+                                    <param id="0" name="Animation">&quot;Right&quot;</param>
+                                </condition>
                             </conditions>
                             <actions>
-                                <action id="-4" name="Set position to another object" sid="963623856057671" type="ScudoCorazzato">
-                                    <param id="0" name="Object">Corazzato</param>
-                                    <param id="1" name="Image point (optional)">1</param>
+                                <action id="-9" name="Destroy" sid="429323939464824" type="VaporeScudo" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="316819555347554">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="976383160583706" type="VaporeScudo">
+                                    <param id="0" name="Object">Protagonista</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="749138416783667" type="Function">
+                                    <param id="0" name="Name">&quot;setCharacterDeath&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="512720799818187" title="Gestione Kamikaze">
+            <sub-events>
+                <event-block sid="847930289983773">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="556216723013321" type="Protagonista">
+                            <param id="0" name="Instance variable">IsDeading</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="246468891203544" type="Kamikaze">
+                            <param id="0" name="Instance variable">isDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="715723684122876" type="Kamikaze">
+                            <param id="0" name="Animation">&quot;IdleRight&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="706844053485923">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="569744955769270" type="Kamikaze">
+                            <param id="0" name="Object">Protagonista</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="296520973767341" type="Kamikaze">
+                            <param id="0" name="Instance variable">isDead</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="671885710095670" type="Protagonista">
+                            <param id="0" name="Instance variable">IsDeading</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="708494436983408">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="533319732605844" type="Kamikaze">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">Protagonista.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="447337717740389" type="Kamikaze">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">&quot;Left&quot;</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="524738071223218" type="Kamikaze">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="405200849915242">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="737884628716675" type="Kamikaze">
+                                            <param id="0" name="Object">Protagonista</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="651856660077645" type="Kamikaze">
+                                            <param id="0" name="Animation">&quot;Attack&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="170939713716597">
+                                            <conditions>
+                                                <condition id="4" name="On finished" sid="446653947256217" type="Kamikaze">
+                                                    <param id="0" name="Animation">&quot;AttackMirror&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="979380252880337" type="Function">
+                                                    <param id="0" name="Name">&quot;setCharacterDeath&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="194558386196799">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="665789584584445" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="703123578144018" type="Kamikaze">
+                                            <param id="0" name="Control">0</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="867228535261288" type="Kamikaze">
+                                            <param id="0" name="Animation">&quot;Run&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="775994477642335">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="593886677080729" type="Kamikaze">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="X co-ordinate">Protagonista.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="299604480347198" type="Kamikaze">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">&quot;Right&quot;</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="150609100996328" type="Kamikaze">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="146322711991217">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="966817883701274" type="Kamikaze">
+                                            <param id="0" name="Object">Protagonista</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="943074843925764" type="Kamikaze">
+                                            <param id="0" name="Animation">&quot;AttackMirror&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="368556711085093">
+                                            <conditions>
+                                                <condition id="4" name="On finished" sid="928182692516264" type="Kamikaze">
+                                                    <param id="0" name="Animation">&quot;AttackMirror&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="187118812753272" type="Function">
+                                                    <param id="0" name="Name">&quot;setCharacterDeath&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="152163904396634">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="381903951816815" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="500728723300529" type="Kamikaze">
+                                            <param id="0" name="Control">1</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="357797612723013" type="Kamikaze">
+                                            <param id="0" name="Animation">&quot;RunMirror&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="664478055877487">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="759082445546582" type="Kamikaze">
+                            <param id="0" name="Object">Protagonista</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="513609758828093" type="Kamikaze">
+                            <param id="0" name="Instance variable">isDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="306513478550831" type="Kamikaze">
+                            <param id="0" name="Animation">&quot;IdleRight&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
     </events>

@@ -2726,7 +2726,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="4" name="Set animation" sid="122102247570022" type="Corazzato">
-                                            <param id="0" name="Animation">&quot;Death&quot;</param>
+                                            <param id="0" name="Animation">&quot;Death&quot;&amp;Corazzato.Direction</param>
                                             <param id="1" name="From">1</param>
                                         </action>
                                         <action id="-13" name="Set boolean" sid="454240156352424" type="Corazzato">
@@ -2739,20 +2739,15 @@
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="813584476194949">
+                                        <event-block sid="206161199658197">
                                             <conditions>
-                                                <condition id="-15" name="Pick nearest/furthest" sid="681736599147232" type="ScudoCorazzato">
-                                                    <param id="0" name="Which">0</param>
-                                                    <param id="1" name="X">Corazzato.X</param>
-                                                    <param id="2" name="Y">Corazzato.Y</param>
+                                                <condition id="-7" name="Compare instance variable" sid="721591877453918" type="Corazzato">
+                                                    <param id="0" name="Instance variable">Direction</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;Left&quot;</param>
                                                 </condition>
                                             </conditions>
-                                            <actions>
-                                                <action id="4" name="Set animation" sid="657755370694309" type="ScudoCorazzato">
-                                                    <param id="0" name="Animation">&quot;Destroy&quot;</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                            </actions>
+                                            <actions />
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -2798,24 +2793,14 @@
                         <action id="-9" name="Destroy" sid="766415386304207" type="Kamikaze" />
                     </actions>
                 </event-block>
-                <event-block sid="662224134565027">
+                <event-block any="1" sid="662224134565027">
                     <conditions>
                         <condition id="4" name="On finished" sid="908319791695741" type="Corazzato">
-                            <param id="0" name="Animation">&quot;Death&quot;</param>
+                            <param id="0" name="Animation">&quot;Death&quot;&amp;Corazzato.Direction</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="220305781091633" type="Corazzato" />
-                    </actions>
-                </event-block>
-                <event-block sid="520833275197052">
-                    <conditions>
-                        <condition id="4" name="On finished" sid="460561310571257" type="ScudoCorazzato">
-                            <param id="0" name="Animation">&quot;Destroy&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="250512004672853" type="ScudoCorazzato" />
                     </actions>
                 </event-block>
                 <event-block sid="846610109732571">
@@ -2863,11 +2848,31 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="106935926853202" type="Proiettile" />
-                        <action id="0" name="Call function" sid="358026894999215" type="Function">
-                            <param id="0" name="Name">&quot;setMorteNemici&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;Corazzato&quot;{###}Corazzato.UID</param>
+                        <action id="0" name="Spawn another object" sid="398218512587793" type="Proiettile">
+                            <param id="0" name="Object">ScintilleProiettile</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="566693193643421" type="ScintilleProiettile">
+                            <param id="0" name="Angle">0</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="393128974644194">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="132484341268032" type="Corazzato">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Left&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-8" name="Set angle" sid="241685773270525" type="ScintilleProiettile">
+                                    <param id="0" name="Angle">180</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="165865407162946">
                     <conditions>
@@ -2914,24 +2919,6 @@
                         <action id="0" name="Call function" sid="724092721192850" type="Function">
                             <param id="0" name="Name">&quot;setMorteNemici&quot;</param>
                             <param id="1" name="Parameter {n}">&quot;Corazzato&quot;{###}Corazzato.UID</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="185014007747497">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="584769303033131" type="Proiettile">
-                            <param id="0" name="Object">ScudoCorazzato</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="787850490285236" type="Proiettile" />
-                        <action id="0" name="Spawn another object" sid="398218512587793" type="Proiettile">
-                            <param id="0" name="Object">ScintilleProiettile</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="Image point">0</param>
-                        </action>
-                        <action id="-8" name="Set angle" sid="241685773270525" type="ScintilleProiettile">
-                            <param id="0" name="Angle">180</param>
                         </action>
                     </actions>
                 </event-block>
@@ -3082,7 +3069,7 @@
                                         <event-block sid="601385400325853">
                                             <conditions>
                                                 <condition id="2" name="Is playing" sid="574121679701424" type="Corazzato">
-                                                    <param id="0" name="Animation">&quot;Death&quot;</param>
+                                                    <param id="0" name="Animation">&quot;Death&quot;&amp;Corazzato.Direction</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
