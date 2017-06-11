@@ -4,7 +4,7 @@
     <name>Stage 1 Event</name>
     <events>
         <include>General Event</include>
-        <event-block disabled="1" sid="117128903758121">
+        <event-block sid="117128903758121">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="268788006776362" type="System" />
             </conditions>
@@ -14,6 +14,9 @@
                 </action>
                 <action id="-6" name="Scroll to Y" sid="309477345303454" type="System">
                     <param id="0" name="Y">PlayerBox.Y-240</param>
+                </action>
+                <action behavior="LineOfSight" id="2" name="Add obstacle" sid="334450115060346" type="SoldatoSemplice">
+                    <param id="0" name="Obstacle">Solidi</param>
                 </action>
             </actions>
         </event-block>
@@ -29,24 +32,27 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="193873743876525">
+                                <event-block sid="259818038129133">
                                     <conditions>
-                                        <condition id="-8" name="Is boolean instance variable set" sid="799350253247353" type="SoldatoSemplice">
-                                            <param id="0" name="Instance variable">Active</param>
-                                        </condition>
-                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="520581987269689" type="SoldatoSemplice">
-                                            <param id="0" name="Instance variable">isDead</param>
-                                        </condition>
-                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="333037245151163" type="Protagonista">
-                                            <param id="0" name="Instance variable">IsDeading</param>
+                                        <condition id="-11" name="For Each" sid="205083889770208" type="System">
+                                            <param id="0" name="Object">SoldatoSemplice</param>
                                         </condition>
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="516492086729463">
+                                        <event-block sid="193873743876525">
                                             <conditions>
-                                                <condition id="-11" name="For Each" sid="951333076540439" type="System">
-                                                    <param id="0" name="Object">SoldatoSemplice</param>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="799350253247353" type="SoldatoSemplice">
+                                                    <param id="0" name="Instance variable">Active</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="520581987269689" type="SoldatoSemplice">
+                                                    <param id="0" name="Instance variable">isDead</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="333037245151163" type="Protagonista">
+                                                    <param id="0" name="Instance variable">IsDeading</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="707663163733510" type="SoldatoSemplice">
+                                                    <param id="0" name="Animation">&quot;Sleeping&quot;</param>
                                                 </condition>
                                             </conditions>
                                             <actions />
@@ -284,6 +290,9 @@
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="392284156124569" type="Protagonista">
                                     <param id="0" name="Instance variable">IsDeading</param>
                                 </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="649973511276517" type="SoldatoSemplice">
+                                    <param id="0" name="Animation">&quot;Sleeping&quot;</param>
+                                </condition>
                             </conditions>
                             <actions />
                             <sub-events>
@@ -321,14 +330,14 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="905002099292630">
+                                <event-block sid="370397262931906">
                                     <conditions>
-                                        <condition id="-6" name="Every X seconds" sid="185283966413365" type="System">
+                                        <condition id="-6" name="Every X seconds" sid="924015369249521" type="System">
                                             <param id="0" name="Interval (seconds)">CadenzaMoschetto</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="412968502074369" type="Function">
+                                        <action id="0" name="Call function" sid="127529019579683" type="Function">
                                             <param id="0" name="Name">&quot;set8DirectionAttack&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
@@ -346,6 +355,9 @@
                                 </condition>
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="861986111361816" type="Protagonista">
                                     <param id="0" name="Instance variable">IsDeading</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="801732093994291" type="SoldatoSemplice">
+                                    <param id="0" name="Animation">&quot;Sleeping&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -440,6 +452,9 @@
                                 </condition>
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="644765855204287" type="Protagonista">
                                     <param id="0" name="Instance variable">IsDeading</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="223879151625943" type="SoldatoSemplice">
+                                    <param id="0" name="Animation">&quot;Sleeping&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
