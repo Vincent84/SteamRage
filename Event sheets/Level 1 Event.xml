@@ -578,11 +578,7 @@
                             </actions>
                         </event-block>
                         <event-block sid="510966290307121">
-                            <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="950492389666836" type="proiettile_invisibile">
-                                    <param id="0" name="Object">TilemapSolidi</param>
-                                </condition>
-                            </conditions>
+                            <conditions />
                             <actions>
                                 <action id="0" name="Spawn another object" sid="676373593737192" type="proiettile_invisibile">
                                     <param id="0" name="Object">Caduta_Razzo</param>

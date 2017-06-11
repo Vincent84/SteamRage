@@ -42,7 +42,7 @@
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>768</width>
+        <width>800</width>
         <height>608</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
@@ -755,75 +755,129 @@
             </object-type>
         </object-folder>
         <object-folder name="Ambiente">
-            <object-type name="Piattaforme" sid="676960588966685">
+            <object-type name="SfondiDesaturati" sid="171911080807726">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps DEFINITIVE-20170611T144159Z-001\Tilemaps DEFINITIVE\TilemapsDEFF\01-SfondiDESATURATI.png" />
+                <tiles />
+            </object-type>
+            <object-type name="SfondiTorreDesaturata" sid="607179367436850">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\TilemapAGGIORNAMENTO1-20170611T165755Z-001\TilemapAGGIORNAMENTO1\SfondoTorreDESATURATO.png" />
+                <tiles />
+            </object-type>
+            <object-type name="Sfondi" sid="328179149681776">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps DEFINITIVE-20170611T144159Z-001\Tilemaps DEFINITIVE\TilemapsDEFF\02-Sfondi.png" />
+                <tiles />
+            </object-type>
+            <object-type name="ArcadeDietro" sid="685621718321696">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps DEFINITIVE-20170611T144159Z-001\Tilemaps DEFINITIVE\TilemapsDEFF\03-ArcadeDietro.png" />
+                <tiles />
+            </object-type>
+            <object-type name="Solidi" sid="811092562265490">
                 <plugin id="Tilemap" />
                 <behaviors>
-                    <behavior-type name="Jumpthru" sid="775553756616996">
-                        <behavior id="jumpthru" />
-                    </behavior-type>
-                    <behavior-type name="Physics" sid="707948987431618">
-                        <behavior id="Physics" />
-                    </behavior-type>
-                </behaviors>
-                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps2.0-20170608T014228Z-001\Tilemaps2.0\Tilemaps7giugnoNOTTE\Livello1Parte1\Piattaforme.png" />
-                <tiles />
-            </object-type>
-            <object-type name="TilemapSfondo" sid="674636549077051">
-                <plugin id="Tilemap" />
-                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps2.0-20170608T014228Z-001\Tilemaps2.0\Tilemaps7giugnoNOTTE\Livello1Parte1\TilemapSfondo.png" />
-                <tiles />
-            </object-type>
-            <object-type name="ArcadeDistruttoAvanti" sid="762538543010891">
-                <plugin id="Tilemap" />
-                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps2.0-20170608T014228Z-001\Tilemaps2.0\Tilemaps7giugnoNOTTE\Livello1Parte1\ArcadeDistruttoAvanti.png" />
-                <tiles />
-            </object-type>
-            <object-type name="TilemapProps" sid="356668303928306">
-                <plugin id="Tilemap" />
-                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps2.0-20170608T014228Z-001\Tilemaps2.0\Tilemaps7giugnoNOTTE\Livello1Parte1\TilemapProps.png" />
-                <tiles />
-            </object-type>
-            <object-type name="TilemapSolidi" sid="947254710462065">
-                <plugin id="Tilemap" />
-                <behaviors>
-                    <behavior-type name="Solid" sid="530549315520588">
+                    <behavior-type name="Solid" sid="732746066759397">
                         <behavior id="solid" />
                     </behavior-type>
-                    <behavior-type name="Physics" sid="536326258063503">
+                    <behavior-type name="Physics" sid="575892496791848">
                         <behavior id="Physics" />
                     </behavior-type>
                 </behaviors>
-                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps2.0-20170608T014228Z-001\Tilemaps2.0\Tilemaps7giugnoNOTTE\Livello1Parte1\TilemapSolidi.png" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\TilemapAGGIORNAMENTO1-20170611T165755Z-001\TilemapAGGIORNAMENTO1\Solid.png" />
                 <tiles />
             </object-type>
-            <object-type name="ArcadeDistruttoAvanti2" sid="729560048891280">
+            <object-type name="TileMorte" sid="798221953043703">
                 <plugin id="Tilemap" />
-                <texture original-source="C:\Users\dbga_45\Downloads\Environment Layers-20170606T075146Z-001\Environment Layers\64x64 Arcade Distrutto Tutorial.png" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps DEFINITIVE-20170611T144159Z-001\Tilemaps DEFINITIVE\TilemapsDEFF\04-TileMORTE.png" />
                 <tiles />
             </object-type>
-            <object-type name="ArcadeDistruttoDietro" sid="702537366487107">
-                <plugin id="Tilemap" />
-                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps2.0-20170608T014228Z-001\Tilemaps2.0\Tilemaps7giugnoNOTTE\Livello1Parte1\ArcadeDistruttoDietro.png" />
-                <tiles />
-            </object-type>
-            <object-type name="TilemapJumpTrue" sid="934311966236178">
+            <object-type name="Piattaforme" sid="381630535471261">
                 <plugin id="Tilemap" />
                 <behaviors>
-                    <behavior-type name="Jumpthru" sid="242441020641890">
-                        <behavior id="jumpthru" />
+                    <behavior-type name="Solid" sid="368092417150411">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="Physics" sid="957098170952186">
+                        <behavior id="Physics" />
                     </behavior-type>
                 </behaviors>
-                <texture original-source="C:\Users\dbga_45\Desktop\TilemapJumpTrue.png" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps DEFINITIVE-20170611T144159Z-001\Tilemaps DEFINITIVE\TilemapsDEFF\05-Piattaforme.png" />
                 <tiles />
             </object-type>
-            <object-type name="TilemapMorte" sid="634867917598656">
+            <object-type name="PiattaformeJumper" sid="279550648935053">
                 <plugin id="Tilemap" />
-                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps2.0-20170608T014228Z-001\Tilemaps2.0\Tilemaps7giugnoNOTTE\Livello1Parte1\TilemapMorte.png" />
+                <behaviors>
+                    <behavior-type name="Jumpthru" sid="239953464254749">
+                        <behavior id="jumpthru" />
+                    </behavior-type>
+                    <behavior-type name="Physics" sid="423589074334824">
+                        <behavior id="Physics" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps DEFINITIVE-20170611T144159Z-001\Tilemaps DEFINITIVE\TilemapsDEFF\05-PiattaformeJumpthru.png" />
                 <tiles />
             </object-type>
-            <object-type name="TiledBackground" sid="446987245922176">
+            <object-type name="Props" sid="402034954168769">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps DEFINITIVE-20170611T144159Z-001\Tilemaps DEFINITIVE\TilemapsDEFF\06-Props.png" />
+                <tiles />
+            </object-type>
+            <object-type name="PropsDesaturati" sid="573398776383161">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps DEFINITIVE-20170611T144159Z-001\Tilemaps DEFINITIVE\TilemapsDEFF\06-PropsDESATURATI.png" />
+                <tiles />
+            </object-type>
+            <object-type name="PropsTorreDesaturati" sid="728690864228152">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\TilemapAGGIORNAMENTO1-20170611T165755Z-001\TilemapAGGIORNAMENTO1\PropsTorreDESATURATI.png" />
+                <tiles />
+            </object-type>
+            <object-type name="SolidiFarlocchi" sid="197151552221900">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps DEFINITIVE-20170611T144159Z-001\Tilemaps DEFINITIVE\TilemapsDEFF\07-SolidFarlocche.png" />
+                <tiles />
+            </object-type>
+            <object-type name="ArcadeAvanti" sid="837058825966767">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps DEFINITIVE-20170611T144159Z-001\Tilemaps DEFINITIVE\TilemapsDEFF\08-ArcadeAvanti.png" />
+                <tiles />
+            </object-type>
+            <object-type name="PropsAvanti" sid="813307134038105">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Tilemaps DEFINITIVE-20170611T144159Z-001\Tilemaps DEFINITIVE\TilemapsDEFF\08-PropsAVANTI.png" />
+                <tiles />
+            </object-type>
+            <object-type name="SfondoArcade" sid="520819348358862">
                 <plugin id="TiledBg" />
-                <texture original-source="C:\Users\dbga_45\Downloads\Sfondo Città Intera.jpg" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Sfondi-20170611T153359Z-001\Sfondi\Sfondo Città Intera_Desaturato.jpg" />
+            </object-type>
+            <object-type name="SfondoCittaDistrutta" sid="178256798187882">
+                <plugin id="TiledBg" />
+                <texture original-source="C:\Users\Vincenzo\Downloads\Sfondi-20170611T153359Z-001\Sfondi\Sfondo Città Distrutta.jpg" />
+            </object-type>
+            <object-type name="TilemapTrasparente" sid="454939969056635">
+                <plugin id="Tilemap" />
+                <behaviors>
+                    <behavior-type name="Jumpthru" sid="457369564178887">
+                        <behavior id="jumpthru" />
+                    </behavior-type>
+                    <behavior-type name="Physics" sid="965584557188007">
+                        <behavior id="Physics" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+                <tiles />
+            </object-type>
+            <object-type name="TriggerStanzeSegrete" sid="548499789101215">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="583474919955864" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                    </animation>
+                </animation-folder>
             </object-type>
         </object-folder>
         <object-folder name="Nemici">
@@ -1085,26 +1139,166 @@
                         </frame>
                     </animation>
                     <animation framecount="20" loop="1" name="Sleeping" pingpong="0" repeatcount="1" repeatto="0" sid="304685155014420" speed="12">
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -2192,17 +2386,31 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="5" loop="1" name="Inactive" pingpong="0" repeatcount="1" repeatto="0" sid="533882772194444" speed="8">
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
                     </animation>
                     <animation framecount="4" loop="1" name="Active" pingpong="0" repeatcount="1" repeatto="0" sid="415561895038728" speed="8">
                         <frame duration="1" hotspotX="0.5" hotspotY="1" />
                         <frame duration="1" hotspotX="0.5" hotspotY="1" />
                         <frame duration="1" hotspotX="0.5" hotspotY="1" />
                         <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="TrappolaVapore" sid="225534114249133">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Static" pingpong="0" repeatcount="1" repeatto="0" sid="749149495986289" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                    </animation>
+                    <animation framecount="4" loop="0" name="Active" pingpong="0" repeatcount="1" repeatto="0" sid="331217299181916" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -2229,12 +2437,29 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="6" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="296469174302174" speed="8">
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="VaporeTrappola" sid="146817138260589">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="10" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="239663561576525" speed="12">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -2307,6 +2532,35 @@
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="707453412171718" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Oggetti interagibili">
+            <object-type name="MuroInfrangibile" sid="977423908641058">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="395939984498167">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="619393325228482" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Pulsante" sid="392290645935499">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Static" pingpong="0" repeatcount="1" repeatto="0" sid="619013166708921" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                    </animation>
+                    <animation framecount="4" loop="0" name="Active" pingpong="0" repeatcount="1" repeatto="0" sid="848240692412314" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
                     </animation>
                 </animation-folder>
             </object-type>

@@ -3,11 +3,11 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>General Event</name>
     <events>
-        <variable constant="0" name="UseGamepad" sid="737766454094629" static="0" type="number">1</variable>
+        <variable constant="0" name="UseGamepad" sid="737766454094629" static="0" type="number">0</variable>
         <variable constant="0" name="CameraScrollX" sid="987848811541454" static="0" type="number">200</variable>
         <variable constant="0" name="CameraMoveX" sid="975195414662300" static="0" type="number">1</variable>
         <variable constant="0" name="CameraMoveY" sid="751976523677711" static="0" type="number">0</variable>
-        <variable constant="0" name="WithWeapon" sid="837656086603762" static="0" type="number">1</variable>
+        <variable constant="0" name="WithWeapon" sid="837656086603762" static="0" type="number">0</variable>
         <variable constant="1" name="COMBO_MAX" sid="969684154536394" static="0" type="number">5</variable>
         <variable constant="0" name="ComboCount" sid="424798668338193" static="0" type="number">0</variable>
         <variable constant="0" name="BombImpulseY" sid="257949413262742" static="0" type="number">0.6</variable>
@@ -219,8 +219,8 @@
                 </event-block>
                 <event-block sid="607712565969605">
                     <conditions>
-                        <condition id="0" name="On collision with another object" sid="309948119408716" type="FamigliaProiettile">
-                            <param id="0" name="Object">TilemapSolidi</param>
+                        <condition id="0" name="On collision with another object" sid="965356782085972" type="FamigliaProiettile">
+                            <param id="0" name="Object">Solidi</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -504,7 +504,7 @@
                                 <event-block sid="114000838211756">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="533983324307564" type="Keyboard">
-                                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                            <param id="0" name="Key">32 (Space)</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -532,7 +532,7 @@
                                         <event-block sid="960587939118961">
                                             <conditions>
                                                 <condition id="0" name="On key pressed" sid="777687798707177" type="Keyboard">
-                                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                                    <param id="0" name="Key">32 (Space)</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -657,7 +657,7 @@
                                         <event-block sid="775136612974528">
                                             <conditions>
                                                 <condition id="0" name="On key pressed" sid="243554316603708" type="Keyboard">
-                                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                                    <param id="0" name="Key">32 (Space)</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -746,7 +746,7 @@
                                         <event-block sid="266630232619320">
                                             <conditions>
                                                 <condition id="0" name="On key pressed" sid="463807430015446" type="Keyboard">
-                                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                                    <param id="0" name="Key">32 (Space)</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -2605,16 +2605,6 @@
                                 <action id="-9" name="Destroy" sid="126979360117111" type="Protagonista" />
                             </actions>
                         </event-block>
-                        <event-block sid="443992567181144">
-                            <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="181821772115445" type="PlayerBox">
-                                    <param id="0" name="Object">TilemapMorte</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-26" name="Restart layout" sid="255771272307427" type="System" />
-                            </actions>
-                        </event-block>
                         <event-block sid="560460906670657">
                             <conditions>
                                 <condition id="6" name="On button pressed" sid="450973621277305" type="Gamepad">
@@ -3109,11 +3099,7 @@
                     </actions>
                 </event-block>
                 <event-block sid="865891987013509">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="940735681527969" type="FamigliaProiettile">
-                            <param id="0" name="Object">TilemapSolidi</param>
-                        </condition>
-                    </conditions>
+                    <conditions />
                     <actions>
                         <action id="-9" name="Destroy" sid="751111760886977" type="FamigliaProiettile" />
                     </actions>
@@ -3328,7 +3314,7 @@
                         <event-block disabled="1" sid="686731845620233">
                             <conditions>
                                 <condition id="0" name="On key pressed" sid="601233742697327" type="Keyboard">
-                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                    <param id="0" name="Key">32 (Space)</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -3356,7 +3342,7 @@
                                 <event-block disabled="1" sid="531452908445165">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="758314847894103" type="Keyboard">
-                                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                            <param id="0" name="Key">32 (Space)</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -3481,7 +3467,7 @@
                                 <event-block disabled="1" sid="287713613473596">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="643436026980815" type="Keyboard">
-                                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                            <param id="0" name="Key">32 (Space)</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -3570,7 +3556,7 @@
                                 <event-block disabled="1" sid="332319277902081">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="624674554196799" type="Keyboard">
-                                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                            <param id="0" name="Key">32 (Space)</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -4334,11 +4320,7 @@
                             </actions>
                         </event-block>
                         <event-block disabled="1" sid="877829127046080">
-                            <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="689254139705067" type="PlayerBox">
-                                    <param id="0" name="Object">TilemapMorte</param>
-                                </condition>
-                            </conditions>
+                            <conditions />
                             <actions>
                                 <action id="-26" name="Restart layout" sid="625230991187351" type="System" />
                             </actions>

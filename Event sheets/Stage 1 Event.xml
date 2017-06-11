@@ -4,7 +4,7 @@
     <name>Stage 1 Event</name>
     <events>
         <include>General Event</include>
-        <event-block sid="117128903758121">
+        <event-block disabled="1" sid="117128903758121">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="268788006776362" type="System" />
             </conditions>
