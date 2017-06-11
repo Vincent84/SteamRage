@@ -2012,13 +2012,13 @@
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
-                    <animation framecount="4" loop="0" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="100093262263119" speed="5">
+                    <animation framecount="4" loop="1" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="100093262263119" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
-                    <animation framecount="4" loop="0" name="Camminata" pingpong="0" repeatcount="1" repeatto="0" sid="347231833640131" speed="5">
+                    <animation framecount="4" loop="1" name="Camminata" pingpong="0" repeatcount="1" repeatto="0" sid="347231833640131" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -2591,6 +2591,19 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="918828463434747" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Esplosione_razzo" sid="521661468560524">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="103671786372217">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="248014508249958" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>

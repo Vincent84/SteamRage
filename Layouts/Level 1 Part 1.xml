@@ -2,7 +2,7 @@
 <c2layout>
     <name>Level 1 Part 1</name>
     <sid>913137941687188</sid>
-    <event-sheet>Stage 1 Event</event-sheet>
+    <event-sheet>Level 1 Event</event-sheet>
     <size>
         <width>30000</width>
         <height>3000</height>
@@ -2865,8 +2865,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>7328</x>
-                        <y>2112</y>
+                        <x>241</x>
+                        <y>1917</y>
                         <z>0</z>
                         <width>25</width>
                         <height>64</height>
@@ -2894,8 +2894,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>288</x>
-                        <y>1920</y>
+                        <x>394</x>
+                        <y>1918</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -3369,11 +3369,44 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>6112</x>
-                        <y>1856</y>
+                        <x>555.036193848</x>
+                        <y>1856.265991211</y>
                         <z>0</z>
                         <width>128</width>
                         <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Esplosione_razzo" uid="136">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>Yes</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>1</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-248</x>
+                        <y>2195</y>
+                        <z>0</z>
+                        <width>65.878677368</width>
+                        <height>65.878677368</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -3414,8 +3447,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>0</x>
-                        <y>0</y>
+                        <x>-51</x>
+                        <y>-4</y>
                         <z>0</z>
                         <width>29984</width>
                         <height>2976</height>

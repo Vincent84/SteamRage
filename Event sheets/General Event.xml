@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>General Event</name>
     <events>
-        <variable constant="0" name="UseGamepad" sid="737766454094629" static="0" type="number">0</variable>
+        <variable constant="0" name="UseGamepad" sid="737766454094629" static="0" type="number">1</variable>
         <variable constant="0" name="CameraScrollX" sid="987848811541454" static="0" type="number">200</variable>
         <variable constant="0" name="CameraMoveX" sid="975195414662300" static="0" type="number">1</variable>
         <variable constant="0" name="CameraMoveY" sid="751976523677711" static="0" type="number">0</variable>
@@ -504,7 +504,7 @@
                                 <event-block sid="114000838211756">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="533983324307564" type="Keyboard">
-                                            <param id="0" name="Key">32 (Space)</param>
+                                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -532,7 +532,7 @@
                                         <event-block sid="960587939118961">
                                             <conditions>
                                                 <condition id="0" name="On key pressed" sid="777687798707177" type="Keyboard">
-                                                    <param id="0" name="Key">32 (Space)</param>
+                                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -657,7 +657,7 @@
                                         <event-block sid="775136612974528">
                                             <conditions>
                                                 <condition id="0" name="On key pressed" sid="243554316603708" type="Keyboard">
-                                                    <param id="0" name="Key">32 (Space)</param>
+                                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -746,7 +746,7 @@
                                         <event-block sid="266630232619320">
                                             <conditions>
                                                 <condition id="0" name="On key pressed" sid="463807430015446" type="Keyboard">
-                                                    <param id="0" name="Key">32 (Space)</param>
+                                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -3328,7 +3328,7 @@
                         <event-block disabled="1" sid="686731845620233">
                             <conditions>
                                 <condition id="0" name="On key pressed" sid="601233742697327" type="Keyboard">
-                                    <param id="0" name="Key">32 (Space)</param>
+                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -3356,7 +3356,7 @@
                                 <event-block disabled="1" sid="531452908445165">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="758314847894103" type="Keyboard">
-                                            <param id="0" name="Key">32 (Space)</param>
+                                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -3481,7 +3481,7 @@
                                 <event-block disabled="1" sid="287713613473596">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="643436026980815" type="Keyboard">
-                                            <param id="0" name="Key">32 (Space)</param>
+                                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -3570,7 +3570,7 @@
                                 <event-block disabled="1" sid="332319277902081">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="624674554196799" type="Keyboard">
-                                            <param id="0" name="Key">32 (Space)</param>
+                                            <param id="0" name="Key">32 (Barra Spaziatrice)</param>
                                         </condition>
                                     </conditions>
                                     <actions>

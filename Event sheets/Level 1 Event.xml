@@ -5,9 +5,9 @@
     <events>
         <variable constant="0" name="CadenzaMoschetto" sid="847045418227894" static="0" type="number">2</variable>
         <include>General Event</include>
-        <event-group description="" disabled="1" sid="662601858594603" title="Level 1 Configuration">
+        <event-group description="" sid="662601858594603" title="Level 1 Configuration">
             <sub-events>
-                <event-block disabled="1" sid="205717570987646">
+                <event-block sid="205717570987646">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="467320196550498" type="System" />
                     </conditions>
@@ -758,6 +758,64 @@
                                         </action>
                                     </actions>
                                 </event-block>
+                                <event-block sid="117240848204525">
+                                    <conditions>
+                                        <condition id="0" name="On collision with another object" sid="232806981921560" type="ProiettileTorretta">
+                                            <param id="0" name="Object">Protagonista</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="593033543120731" type="ProiettileTorretta" />
+                                        <action id="-13" name="Set boolean" sid="749756170458416" type="Protagonista">
+                                            <param id="0" name="Instance variable">IsDeading</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-12" name="Set group active" sid="930775253582083" type="System">
+                                            <param id="0" name="Group name">&quot;KeyboardMovement&quot;</param>
+                                            <param id="1" name="State">0</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="508808024273576" type="System">
+                                            <param id="0" name="Variable">Vite</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action behavior="Turret" id="5" name="Set enabled" sid="551289500936046" type="Torretta">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="736633448597004">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="552295967271625" type="Protagonista">
+                                                    <param id="0" name="Instance variable">Direction</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;Right&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="656030991999610" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;DeathRight&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="112330054803952">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="333222322329397" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="713580089277801" type="Protagonista">
+                                                    <param id="0" name="Instance variable">Direction</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;Left&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="659326767759792" type="Protagonista">
+                                                    <param id="0" name="Animation">&quot;DeathLeft&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
                             </sub-events>
                         </event-block>
                     </sub-events>
@@ -776,10 +834,11 @@
                                     <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="-9" name="Destroy" sid="216462028054080" type="Proiettile" />
-                                <action behavior="Flash" id="0" name="Flash" sid="773755561088717" type="Mech">
-                                    <param id="0" name="&apos;On&apos; time">0.1</param>
-                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
-                                    <param id="2" name="Duration">0.05</param>
+                                <action id="-3" name="Create object" sid="840809530406512" type="System">
+                                    <param id="0" name="Object to create">Esplosione</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">mech.X</param>
+                                    <param id="3" name="Y">Mech.Y - 32</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -1103,7 +1162,7 @@
                             </conditions>
                             <actions>
                                 <action id="-3" name="Create object" sid="294560423598966" type="System">
-                                    <param id="0" name="Object to create">Esplosione</param>
+                                    <param id="0" name="Object to create">Esplosione_razzo</param>
                                     <param id="1" name="Layer">0</param>
                                     <param id="2" name="X">missile_mech.X</param>
                                     <param id="3" name="Y">Protagonista.Y-35</param>
@@ -1111,6 +1170,63 @@
                                 <action id="-9" name="Destroy" sid="600793400293267" type="missile_mech" />
                                 <action id="-9" name="Destroy" sid="873980375875087" type="Caduta_Razzo" />
                             </actions>
+                        </event-block>
+                        <event-block sid="483196254569850">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="900386185778438" type="Esplosione_razzo">
+                                    <param id="0" name="Object">Protagonista</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="766141371786397" type="Protagonista">
+                                    <param id="0" name="Instance variable">IsDeading</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="259163147142233" type="System">
+                                    <param id="0" name="Group name">&quot;KeyboardMovement&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="223675561275361" type="System">
+                                    <param id="0" name="Variable">Vite</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Turret" id="5" name="Set enabled" sid="551070339808203" type="Torretta">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="808725990471009">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="269441713243775" type="Protagonista">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Right&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="861197709493159" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;DeathRight&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="757244561606897">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="494328425128205" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="843725392426151" type="Protagonista">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Left&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="998098998602257" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;DeathLeft&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-group>
@@ -1166,6 +1282,177 @@
                                         <action id="-24" name="Move to top" sid="113029527325922" type="Mech" />
                                         <action id="-8" name="Set angle" sid="395219595463650" type="fumo2">
                                             <param id="0" name="Angle">-90</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="751619310344965">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="325740873885179" type="fumo2">
+                                    <param id="0" name="Object">Protagonista</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="976364196532457" type="Protagonista">
+                                    <param id="0" name="Instance variable">IsDeading</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="559340687383260" type="System">
+                                    <param id="0" name="Group name">&quot;KeyboardMovement&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="878108590286839" type="System">
+                                    <param id="0" name="Variable">Vite</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Turret" id="5" name="Set enabled" sid="424996166885174" type="Torretta">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="462841450259674">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="958061649761368" type="Protagonista">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Right&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="299992880167063" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;DeathRight&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="839654449220293">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="976432059108947" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="981865061135311" type="Protagonista">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Left&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="895135089688495" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;DeathLeft&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="295744374430224">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="878006290526376" type="fumo1">
+                                    <param id="0" name="Object">Protagonista</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="901003183022490" type="Protagonista">
+                                    <param id="0" name="Instance variable">IsDeading</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="986847500718208" type="System">
+                                    <param id="0" name="Group name">&quot;KeyboardMovement&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="111152055178335" type="System">
+                                    <param id="0" name="Variable">Vite</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Turret" id="5" name="Set enabled" sid="132284822849189" type="Torretta">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="841316604702012">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="163417076144780" type="Protagonista">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Right&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="657762586914708" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;DeathRight&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="823024966849327">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="520341556719233" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="292820341644515" type="Protagonista">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Left&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="765869429019113" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;DeathLeft&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="831694082962505">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="858721252656595" type="fumo3">
+                                    <param id="0" name="Object">Protagonista</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="295757877477528" type="Protagonista">
+                                    <param id="0" name="Instance variable">IsDeading</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="220113325020113" type="System">
+                                    <param id="0" name="Group name">&quot;KeyboardMovement&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="463937651597636" type="System">
+                                    <param id="0" name="Variable">Vite</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Turret" id="5" name="Set enabled" sid="560049190369370" type="Torretta">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="827356622017498">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="625555375253134" type="Protagonista">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Right&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="446832659099141" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;DeathRight&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="495777261724933">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="410050111275697" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="621435461437942" type="Protagonista">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Left&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="241660981954557" type="Protagonista">
+                                            <param id="0" name="Animation">&quot;DeathLeft&quot;</param>
+                                            <param id="1" name="From">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
