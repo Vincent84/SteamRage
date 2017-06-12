@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>General Event</name>
     <events>
+        <variable constant="0" name="BombsNumber" sid="642377457454036" static="0" type="number">15</variable>
         <variable constant="0" name="UseGamepad" sid="737766454094629" static="0" type="number">0</variable>
         <variable constant="0" name="CameraScrollX" sid="987848811541454" static="0" type="number">200</variable>
         <variable constant="0" name="CameraMoveX" sid="975195414662300" static="0" type="number">1</variable>
@@ -14,7 +15,7 @@
         <variable constant="0" name="BombImpulseX" sid="789822567067255" static="0" type="number">0.4</variable>
         <variable constant="0" name="TimerBomb" sid="240951084070759" static="0" type="number">3</variable>
         <variable constant="0" name="Score" sid="531643037558724" static="0" type="number">0</variable>
-        <variable constant="0" name="Vite" sid="397504901047189" static="0" type="number">1</variable>
+        <variable constant="0" name="Vite" sid="397504901047189" static="0" type="number">3</variable>
         <event-group description="" sid="177602005943140" title="Initial Configuration">
             <sub-events>
                 <event-block sid="812198309918971">
@@ -40,6 +41,9 @@
                                     <param id="0" name="Group name">&quot;Gestione Protagonista Tastiera&quot;</param>
                                     <param id="1" name="State">1</param>
                                 </action>
+                                <action id="-15" name="Set visible" sid="838146156995655" type="TutorialGamepad">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="626481544022844">
@@ -59,6 +63,9 @@
                                 <action id="-12" name="Set group active" sid="659218646209686" type="System">
                                     <param id="0" name="Group name">&quot;Gestione Protagonista Tastiera&quot;</param>
                                     <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="157922107353026" type="TutorialKeyboard">
+                                    <param id="0" name="Visibility">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -103,6 +110,15 @@
                         <action id="-4" name="Set position to another object" sid="422129077248486" type="Protagonista">
                             <param id="0" name="Object">PlayerBox</param>
                             <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="464823004311768" type="Score">
+                            <param id="0" name="Text">&quot;Score:&quot;&amp;Score</param>
+                        </action>
+                        <action id="0" name="Set text" sid="192699161846131" type="Bombs">
+                            <param id="0" name="Text">&quot;Bombs:&quot;&amp;BombsNumber</param>
+                        </action>
+                        <action id="0" name="Set text" sid="461621068776677" type="Vite">
+                            <param id="0" name="Text">&quot;Lives: &quot;&amp;Vite</param>
                         </action>
                     </actions>
                 </event-block>
@@ -502,6 +518,11 @@
                                                 <condition id="0" name="On key pressed" sid="381160284149762" type="Keyboard">
                                                     <param id="0" name="Key">69 (E)</param>
                                                 </condition>
+                                                <condition id="-14" name="Compare variable" sid="862480173264741" type="System">
+                                                    <param id="0" name="Variable">BombsNumber</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
                                             </conditions>
                                             <actions>
                                                 <action id="0" name="Call function" sid="757012280467202" type="Function">
@@ -627,6 +648,11 @@
                                                 <condition id="0" name="On key pressed" sid="766457293407227" type="Keyboard">
                                                     <param id="0" name="Key">69 (E)</param>
                                                 </condition>
+                                                <condition id="-14" name="Compare variable" sid="331868289635292" type="System">
+                                                    <param id="0" name="Variable">BombsNumber</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
                                             </conditions>
                                             <actions>
                                                 <action id="0" name="Call function" sid="226788681351046" type="Function">
@@ -715,6 +741,11 @@
                                             <conditions>
                                                 <condition id="0" name="On key pressed" sid="938812940329254" type="Keyboard">
                                                     <param id="0" name="Key">69 (E)</param>
+                                                </condition>
+                                                <condition id="-14" name="Compare variable" sid="178712497884758" type="System">
+                                                    <param id="0" name="Variable">BombsNumber</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">0</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -835,6 +866,12 @@
                                                     <param id="0" name="Animation">&quot;ShootBody&quot;&amp;Protagonista.Direction</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
+                                                <action id="0" name="Play" sid="351456319649412" type="Audio">
+                                                    <param id="0" name="Audio file">coltellata</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
                                             </actions>
                                             <sub-events>
                                                 <event-block sid="534728259367188">
@@ -893,7 +930,14 @@
                                             <conditions>
                                                 <condition id="-22" name="Else" sid="722528230938398" type="System" />
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="0" name="Play" sid="332678505979124" type="Audio">
+                                                    <param id="0" name="Audio file">sparo</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <event-block sid="753406868478771">
                                                     <conditions>
@@ -1165,6 +1209,12 @@
                                                     <param id="0" name="Animation">&quot;ShootBodySimple&quot;&amp;Protagonista.Direction</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
+                                                <action id="0" name="Play" sid="614268715090760" type="Audio">
+                                                    <param id="0" name="Audio file">coltellata</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
                                             </actions>
                                             <sub-events>
                                                 <event-block sid="677631386672165">
@@ -1227,7 +1277,12 @@
                                             <param id="0" name="Name">&quot;setBombProtagonista&quot;</param>
                                         </condition>
                                     </conditions>
-                                    <actions />
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="515609185699141" type="System">
+                                            <param id="0" name="Variable">BombsNumber</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
                                     <sub-events>
                                         <event-block sid="942158867334907">
                                             <conditions>
@@ -1365,6 +1420,16 @@
                                             <param id="2" name="Image point">1</param>
                                         </action>
                                         <action id="-9" name="Destroy" sid="466368677473003" type="Bomba" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="238737325924435">
+                                    <conditions>
+                                        <condition id="4" name="On finished" sid="447686197018405" type="Esplosione">
+                                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="281477993933899" type="Esplosione" />
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -2512,6 +2577,12 @@
                                     <param id="0" name="Group name">&quot;Gestione Protagonista Tastiera&quot;</param>
                                     <param id="1" name="State">0</param>
                                 </action>
+                                <action id="0" name="Play" sid="358923412516335" type="Audio">
+                                    <param id="0" name="Audio file">grida2</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <event-block sid="468874614806465">
@@ -2614,6 +2685,12 @@
                                             <param id="0" name="Name">&quot;setEnemyPoint&quot;</param>
                                             <param id="1" name="Parameter {n}">&quot;Semplice&quot;{###}SoldatoSemplice.UID</param>
                                         </action>
+                                        <action id="0" name="Play" sid="984980523478491" type="Audio">
+                                            <param id="0" name="Audio file">grida-nemico</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -2637,7 +2714,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="4" name="Set animation" sid="717436586848254" type="Kamikaze">
-                                            <param id="0" name="Animation">&quot;Death&quot;&amp;Kamikaze.Direction</param>
+                                            <param id="0" name="Animation">&quot;Death&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
                                         <action id="-13" name="Set boolean" sid="252785499469337" type="Kamikaze">
@@ -2647,6 +2724,12 @@
                                         <action id="0" name="Call function" sid="480150519079291" type="Function">
                                             <param id="0" name="Name">&quot;setEnemyPoint&quot;</param>
                                             <param id="1" name="Parameter {n}">&quot;Kamikaze&quot;{###}Kamikaze.UID</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="348851843524834" type="Audio">
+                                            <param id="0" name="Audio file">grida-nemico2</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -2682,19 +2765,13 @@
                                             <param id="0" name="Name">&quot;setEnemyPoint&quot;</param>
                                             <param id="1" name="Parameter {n}">&quot;Corazzato&quot;{###}Corazzato.UID</param>
                                         </action>
+                                        <action id="0" name="Play" sid="403707016720477" type="Audio">
+                                            <param id="0" name="Audio file">grida-nemico</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
                                     </actions>
-                                    <sub-events>
-                                        <event-block sid="206161199658197">
-                                            <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="721591877453918" type="Corazzato">
-                                                    <param id="0" name="Instance variable">Direction</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">&quot;Left&quot;</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions />
-                                        </event-block>
-                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -2732,7 +2809,7 @@
                 <event-block any="1" sid="132870643794419">
                     <conditions>
                         <condition id="4" name="On finished" sid="800487413717439" type="Kamikaze">
-                            <param id="0" name="Animation">&quot;Death&quot;&amp;Kamikaze.Direction</param>
+                            <param id="0" name="Animation">&quot;Death&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -2801,6 +2878,12 @@
                         </action>
                         <action id="-8" name="Set angle" sid="566693193643421" type="ScintilleProiettile">
                             <param id="0" name="Angle">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="904446815691798" type="Audio">
+                            <param id="0" name="Audio file">torrettaColpita</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -2920,6 +3003,10 @@
                                         <action id="0" name="Set text" sid="277872723426505" type="EnemyPoints">
                                             <param id="0" name="Text">SoldatoSemplice.Point*ComboCount</param>
                                         </action>
+                                        <action id="-10" name="Add to" sid="316243370674530" type="System">
+                                            <param id="0" name="Variable">Score</param>
+                                            <param id="1" name="Value">SoldatoSemplice.Point*ComboCount</param>
+                                        </action>
                                     </actions>
                                     <sub-events>
                                         <event-block sid="403077173308333">
@@ -2965,12 +3052,16 @@
                                         <action id="0" name="Set text" sid="639155774658269" type="EnemyPoints">
                                             <param id="0" name="Text">Kamikaze.Point*ComboCount</param>
                                         </action>
+                                        <action id="-10" name="Add to" sid="240608791269337" type="System">
+                                            <param id="0" name="Variable">Score</param>
+                                            <param id="1" name="Value">Kamikaze.Point*ComboCount</param>
+                                        </action>
                                     </actions>
                                     <sub-events>
                                         <event-block sid="571476275045131">
                                             <conditions>
                                                 <condition id="2" name="Is playing" sid="756053089688692" type="Kamikaze">
-                                                    <param id="0" name="Animation">&quot;Death&quot;&amp;Kamikaze.Direction</param>
+                                                    <param id="0" name="Animation">&quot;Death&quot;</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -3009,6 +3100,10 @@
                                         </action>
                                         <action id="0" name="Set text" sid="971796186984564" type="EnemyPoints">
                                             <param id="0" name="Text">Corazzato.Point*ComboCount</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="107637830136514" type="System">
+                                            <param id="0" name="Variable">Score</param>
+                                            <param id="1" name="Value">Corazzato.Point*ComboCount</param>
                                         </action>
                                     </actions>
                                     <sub-events>
